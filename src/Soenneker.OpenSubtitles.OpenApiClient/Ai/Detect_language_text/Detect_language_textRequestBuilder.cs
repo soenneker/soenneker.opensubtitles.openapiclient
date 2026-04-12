@@ -36,20 +36,20 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text
         /// <summary>
         /// &quot;**Detect language** of subtitle file.At least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Method is returning ```{  \&quot;data\&quot;: {    \&quot;format\&quot;: \&quot;SubRip\&quot;,    \&quot;type\&quot;: \&quot;text\&quot;,    \&quot;language\&quot;: {      \&quot;W3C\&quot;: \&quot;en\&quot;,      \&quot;name\&quot;: \&quot;english\&quot;,      \&quot;native\&quot;: \&quot;english\&quot;,      \&quot;ISO_639_1\&quot;: \&quot;en\&quot;,      \&quot;ISO_639_2b\&quot;: \&quot;eng\&quot;    }  }}```&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Detect_language_text_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Detect_language_text_200?> PostAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text.Detect_language_textRequestBuilder.Detect_language_textRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200?> PostAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text.Detect_language_textRequestBuilder.Detect_language_textRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Detect_language_text_200> PostAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text.Detect_language_textRequestBuilder.Detect_language_textRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200> PostAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text.Detect_language_textRequestBuilder.Detect_language_textRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Detect_language_text_200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Detect_language_text_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**Detect language** of subtitle file.At least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Method is returning ```{  \&quot;data\&quot;: {    \&quot;format\&quot;: \&quot;SubRip\&quot;,    \&quot;type\&quot;: \&quot;text\&quot;,    \&quot;language\&quot;: {      \&quot;W3C\&quot;: \&quot;en\&quot;,      \&quot;name\&quot;: \&quot;english\&quot;,      \&quot;native\&quot;: \&quot;english\&quot;,      \&quot;ISO_639_1\&quot;: \&quot;en\&quot;,      \&quot;ISO_639_2b\&quot;: \&quot;eng\&quot;    }  }}```&quot;

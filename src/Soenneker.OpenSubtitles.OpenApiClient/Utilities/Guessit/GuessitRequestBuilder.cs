@@ -36,20 +36,20 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Utilities.Guessit
         /// <summary>
         /// Extracts as much information as possible from a video filename.It has a very powerful matcher that allows to guess properties from a video using its filename only. This matcher works with both movies and tv shows episodes.This is a simple implementation of the python guessit library.https://guessit-io.github.io/guessit/Find examples of the returned data.https://guessit-io.github.io/guessit/properties/
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Utilities.Guessit.GuessitRequestBuilder.GuessitRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit200?> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Utilities.Guessit.GuessitRequestBuilder.GuessitRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit_200> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Utilities.Guessit.GuessitRequestBuilder.GuessitRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit200> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Utilities.Guessit.GuessitRequestBuilder.GuessitRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit_200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Extracts as much information as possible from a video filename.It has a very powerful matcher that allows to guess properties from a video using its filename only. This matcher works with both movies and tv shows episodes.This is a simple implementation of the python guessit library.https://guessit-io.github.io/guessit/Find examples of the returned data.https://guessit-io.github.io/guessit/properties/

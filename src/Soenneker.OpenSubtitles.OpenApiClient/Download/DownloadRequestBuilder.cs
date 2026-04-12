@@ -36,22 +36,22 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Download
         /// <summary>
         /// &quot;Request a download url for a subtitle. Subtitle file in temporary URL will be always in UTF-8 encoding.&lt;!-- theme: warning --&gt;&gt; VERY IMPORTANT: In HTTP request must be both headers: ```Api-Key``` and ```Authorization``` stoplight.io doesn&apos;t allow to use in shown example both headers&gt; The download count is calculated on this action, not the file download itself&gt; IN and OUT FPS must be indicated for subtitle conversions, we want to make sure you know what you are doing, and therefore collected the current FPS from the subtitle search result, or calculated it somehow.&lt;!-- theme: warning --&gt;&gt; The download URL is temporary, and cannot be used more than 3 hours, so do not cache it, but you can download the file more than once if needed.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download_200?> PostAsync(global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download200?> PostAsync(global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download_200> PostAsync(global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download200> PostAsync(global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download_200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Download200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Request a download url for a subtitle. Subtitle file in temporary URL will be always in UTF-8 encoding.&lt;!-- theme: warning --&gt;&gt; VERY IMPORTANT: In HTTP request must be both headers: ```Api-Key``` and ```Authorization``` stoplight.io doesn&apos;t allow to use in shown example both headers&gt; The download count is calculated on this action, not the file download itself&gt; IN and OUT FPS must be indicated for subtitle conversions, we want to make sure you know what you are doing, and therefore collected the current FPS from the subtitle search result, or calculated it somehow.&lt;!-- theme: warning --&gt;&gt; The download URL is temporary, and cannot be used more than 3 hours, so do not cache it, but you can download the file more than once if needed.&quot;

@@ -36,20 +36,20 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Features
         /// <summary>
         /// &quot;With the \&quot;query\&quot; parameter, search for a Feature from a simple text input. Typically used for a text search or autocomplete.With an ID, get basic information and subtitles count for a specific title.With the \&quot;query_match\&quot; you can define the matched applied to the query:  - \&quot;start\&quot; is the default behavior, it will query on the first letter entered to offer suggestions - \&quot;word\&quot; will return the match on the word, but not always matching the fulll title, for example searching \&quot;roma\&quot; will return \&quot;holiday in roma\&quot; - \&quot;exact\&quot; will exactly match the title, so here searching for \&quot;roma\&quot; will only return the movie(s) named \&quot;roma\&quot; With the \&quot;full_search\&quot; you can extend the search to the translations of the title, so \&quot;roma\&quot; will also return \&quot;rome\&quot; &lt;!-- theme: warning --&gt;&gt; ### Watch Out!&gt;&gt; If you create an autocomplete, don&apos;t set a too small refresh limit, remember you must not go over 40 requests per 10 seconds!&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Features.FeaturesRequestBuilder.FeaturesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features200?> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Features.FeaturesRequestBuilder.FeaturesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features_200> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Features.FeaturesRequestBuilder.FeaturesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features200> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Features.FeaturesRequestBuilder.FeaturesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features_200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Features200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;With the \&quot;query\&quot; parameter, search for a Feature from a simple text input. Typically used for a text search or autocomplete.With an ID, get basic information and subtitles count for a specific title.With the \&quot;query_match\&quot; you can define the matched applied to the query:  - \&quot;start\&quot; is the default behavior, it will query on the first letter entered to offer suggestions - \&quot;word\&quot; will return the match on the word, but not always matching the fulll title, for example searching \&quot;roma\&quot; will return \&quot;holiday in roma\&quot; - \&quot;exact\&quot; will exactly match the title, so here searching for \&quot;roma\&quot; will only return the movie(s) named \&quot;roma\&quot; With the \&quot;full_search\&quot; you can extend the search to the translations of the title, so \&quot;roma\&quot; will also return \&quot;rome\&quot; &lt;!-- theme: warning --&gt;&gt; ### Watch Out!&gt;&gt; If you create an autocomplete, don&apos;t set a too small refresh limit, remember you must not go over 40 requests per 10 seconds!&quot;

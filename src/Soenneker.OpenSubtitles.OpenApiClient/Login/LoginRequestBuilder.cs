@@ -36,22 +36,22 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Login
         /// <summary>
         /// Create a token to authenticate a user. If response code is ```401 Unathorized``` stop sending further requests with the same credentials, login is &quot;expensive&quot; operation.Request rate limit is 1 request per 1 second, 10 requests per minute and 30 requests per hour because some clients just endlessly sending wrong credentials in loop.Further API requests must continue on returned ```base_url``` host, which can have different cache time for search results and different request rate limits. If ```base_url``` equals ```vip-api.opensubtitles.com``` make sure you always send with every request JWT token (if available), otherwise request might fail with 4xx code.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login_200?> PostAsync(global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login200?> PostAsync(global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login_200> PostAsync(global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login200> PostAsync(global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login_200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login200>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a token to authenticate a user. If response code is ```401 Unathorized``` stop sending further requests with the same credentials, login is &quot;expensive&quot; operation.Request rate limit is 1 request per 1 second, 10 requests per minute and 30 requests per hour because some clients just endlessly sending wrong credentials in loop.Further API requests must continue on returned ```base_url``` host, which can have different cache time for search results and different request rate limits. If ```base_url``` equals ```vip-api.opensubtitles.com``` make sure you always send with every request JWT token (if available), otherwise request might fail with 4xx code.
