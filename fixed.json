@@ -789,7 +789,33 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/MostDownloaded200"
+                  "required": [
+                    "total_pages",
+                    "total_count",
+                    "page",
+                    "data"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "total_pages": {
+                      "type": "number"
+                    },
+                    "total_count": {
+                      "type": "number"
+                    },
+                    "page": {
+                      "type": "number"
+                    },
+                    "data": {
+                      "minItems": 1,
+                      "uniqueItems": true,
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Subtitle"
+                      }
+                    }
+                  },
+                  "description": ""
                 },
                 "example": {
                   "total_pages": 1,
@@ -5131,12 +5157,6 @@
           }
         }
       },
-      "FeatureEpisodeAttributesOriginalTitle": {
-        "type": "object"
-      },
-      "FeatureEpisodeAttributesParentImdbId": {
-        "type": "object"
-      },
       "FeatureEpisodeAttributesSubtitlesCounts": {
         "required": [
           "ar",
@@ -5438,12 +5458,6 @@
             "type": "number"
           }
         }
-      },
-      "FeatureMovieAttributesEpisodeNumber": {
-        "type": "object"
-      },
-      "FeatureMovieAttributesParentImdbId": {
-        "type": "object"
       },
       "Login": {
         "required": [
@@ -5876,35 +5890,6 @@
                   }
                 }
               }
-            }
-          }
-        },
-        "description": ""
-      },
-      "MostDownloaded200": {
-        "required": [
-          "total_pages",
-          "total_count",
-          "page",
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "total_pages": {
-            "type": "number"
-          },
-          "total_count": {
-            "type": "number"
-          },
-          "page": {
-            "type": "number"
-          },
-          "data": {
-            "minItems": 1,
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Subtitle"
             }
           }
         },

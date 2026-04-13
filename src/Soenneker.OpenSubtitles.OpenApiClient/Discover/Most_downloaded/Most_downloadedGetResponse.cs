@@ -2,14 +2,15 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.OpenSubtitles.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.OpenSubtitles.OpenApiClient.Models
+namespace Soenneker.OpenSubtitles.OpenApiClient.Discover.Most_downloaded
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MostDownloaded200 : IAdditionalDataHolder, IParsable
+    public partial class Most_downloadedGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,21 +30,21 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The total_pages property</summary>
         public double? TotalPages { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.MostDownloaded200"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Discover.Most_downloaded.Most_downloadedGetResponse"/> and sets the default values.
         /// </summary>
-        public MostDownloaded200()
+        public Most_downloadedGetResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.MostDownloaded200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Discover.Most_downloaded.Most_downloadedGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.OpenSubtitles.OpenApiClient.Models.MostDownloaded200 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.OpenSubtitles.OpenApiClient.Discover.Most_downloaded.Most_downloadedGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenSubtitles.OpenApiClient.Models.MostDownloaded200();
+            return new global::Soenneker.OpenSubtitles.OpenApiClient.Discover.Most_downloaded.Most_downloadedGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
