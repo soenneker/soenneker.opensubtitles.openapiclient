@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.OpenSubtitles.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class OpenSubtitlesOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class OpenSubtitlesOpenApiClientTests : HostedUnitTest
 {
-    public OpenSubtitlesOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public OpenSubtitlesOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
