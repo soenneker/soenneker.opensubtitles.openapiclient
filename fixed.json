@@ -32,8 +32,8 @@
           "Authentication"
         ],
         "summary": "Login",
-        "description": "Create a token to authenticate a user. If response code is ```401 Unathorized``` stop sending further requests with the same credentials, login is \"expensive\" operation.\n\nRequest rate limit is 1 request per 1 second, 10 requests per minute and 30 requests per hour because some clients just endlessly sending wrong credentials in loop.\n\nFurther API requests must continue on returned ```base_url``` host, which can have different cache time for search results and different request rate limits. If ```base_url``` equals ```vip-api.opensubtitles.com``` make sure you always send with every request JWT token (if available), otherwise request might fail with 4xx code.",
-        "operationId": "login",
+        "description": "Create a token to authenticate a user. If response code is \u0060\u0060\u0060401 Unathorized\u0060\u0060\u0060 stop sending further requests with the same credentials, login is \u0022expensive\u0022 operation.\n\nRequest rate limit is 1 request per 1 second, 10 requests per minute and 30 requests per hour because some clients just endlessly sending wrong credentials in loop.\n\nFurther API requests must continue on returned \u0060\u0060\u0060base_url\u0060\u0060\u0060 host, which can have different cache time for search results and different request rate limits. If \u0060\u0060\u0060base_url\u0060\u0060\u0060 equals \u0060\u0060\u0060vip-api.opensubtitles.com\u0060\u0060\u0060 make sure you always send with every request JWT token (if available), otherwise request might fail with 4xx code.",
+        "operationId": "Login",
         "parameters": [
           {
             "name": "Content-Type",
@@ -48,7 +48,7 @@
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -58,7 +58,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Login"
+                "$ref": "#/components/schemas/LoginRequest"
               }
             }
           }
@@ -69,7 +69,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Login200"
+                  "$ref": "#/components/schemas/Login200Response"
                 },
                 "example": {
                   "user": {
@@ -90,7 +90,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -102,12 +102,12 @@
         ],
         "summary": "Logout",
         "description": "Destroy a user token to end a session. Bearer token is required for this endpoint.",
-        "operationId": "logout",
+        "operationId": "Logout",
         "parameters": [
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -119,7 +119,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/Logout200ResponseResponseJson"
                 },
                 "example": {
                   "message": "token successfully destroyed",
@@ -131,10 +131,10 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           },
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -146,12 +146,12 @@
         ],
         "summary": "Subtitle Formats",
         "description": "List subtitle formats recognized by the API  ",
-        "operationId": "formats",
+        "operationId": "Formats",
         "parameters": [
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -163,7 +163,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Formats200"
+                  "$ref": "#/components/schemas/Formats200Response"
                 },
                 "examples": {
                   "example": {
@@ -187,7 +187,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -199,12 +199,12 @@
         ],
         "summary": "Languages",
         "description": "Get the languages information",
-        "operationId": "languages",
+        "operationId": "Languages",
         "parameters": [
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -216,7 +216,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Languages200"
+                  "$ref": "#/components/schemas/Languages200Response"
                 },
                 "example": {
                   "data": [
@@ -524,7 +524,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -536,12 +536,12 @@
         ],
         "summary": "User Informations",
         "description": "Gather informations about the user authenticated by a bearer token. User information are already sent when user is authenticated, and the remaining downloads is returned with each download, but you can also get these information here.",
-        "operationId": "userinfo",
+        "operationId": "Userinfo",
         "parameters": [
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -553,7 +553,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Userinfo200"
+                  "$ref": "#/components/schemas/Userinfo200Response"
                 },
                 "example": {
                   "data": {
@@ -572,10 +572,10 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           },
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -587,12 +587,12 @@
         ],
         "summary": "Popular features",
         "description": "Discover popular features on opensubtitles.com, according to last 30 days downloads.",
-        "operationId": "popular",
+        "operationId": "Popular",
         "parameters": [
           {
             "name": "language",
             "in": "query",
-            "description": "Language code, 1 language per query, or \"all\"",
+            "description": "Language code, 1 language per query, or \u0022all\u0022",
             "schema": {
               "type": "string"
             }
@@ -608,7 +608,7 @@
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -628,7 +628,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -640,12 +640,12 @@
         ],
         "summary": "Latest subtitles",
         "description": "Lists 60 latest uploaded subtitles",
-        "operationId": "latest",
+        "operationId": "Latest",
         "parameters": [
           {
             "name": "language",
             "in": "query",
-            "description": "Language code, 1 language per query, or \"all\"",
+            "description": "Language code, 1 language per query, or \u0022all\u0022",
             "schema": {
               "type": "string"
             }
@@ -661,7 +661,7 @@
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -673,7 +673,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Latest200"
+                  "$ref": "#/components/schemas/Latest200Response"
                 },
                 "examples": {
                   "example": {
@@ -692,7 +692,7 @@
                             "new_download_count": 0,
                             "hearing_impaired": true,
                             "hd": true,
-                            "format": { },
+                            "format": {},
                             "fps": 0,
                             "votes": 0,
                             "points": 0,
@@ -700,7 +700,7 @@
                             "from_trusted": true,
                             "foreign_parts_only": true,
                             "ai_translated": true,
-                            "machine_translated": { },
+                            "machine_translated": {},
                             "upload_date": "string",
                             "release": "string",
                             "comments": "string",
@@ -717,7 +717,7 @@
                               "title": "string",
                               "movie_name": "string",
                               "imdb_id": 0,
-                              "tmdb_id": { }
+                              "tmdb_id": {}
                             },
                             "url": "string",
                             "related_links": {
@@ -744,7 +744,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -756,12 +756,12 @@
         ],
         "summary": "Most downloaded subtitles",
         "description": "Discover popular subtitles, according to last 30 days downloads on opensubtitles.com. This list can be filtered by language code or feature type (movie, episode)",
-        "operationId": "most-downloaded",
+        "operationId": "MostDownloaded",
         "parameters": [
           {
             "name": "language",
             "in": "query",
-            "description": "Language code, 1 language per query, or \"all\"",
+            "description": "Language code, 1 language per query, or \u0022all\u0022",
             "schema": {
               "type": "string"
             }
@@ -777,7 +777,7 @@
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -789,33 +789,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "required": [
-                    "total_pages",
-                    "total_count",
-                    "page",
-                    "data"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "total_pages": {
-                      "type": "number"
-                    },
-                    "total_count": {
-                      "type": "number"
-                    },
-                    "page": {
-                      "type": "number"
-                    },
-                    "data": {
-                      "minItems": 1,
-                      "uniqueItems": true,
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Subtitle"
-                      }
-                    }
-                  },
-                  "description": ""
+                  "$ref": "#/components/schemas/MostDownloaded200Response"
                 },
                 "example": {
                   "total_pages": 1,
@@ -896,7 +870,7 @@
                         "ai_translated": false,
                         "machine_translated": false,
                         "upload_date": "2008-03-23T21:04:04.000Z",
-                        "release": "Le mépris",
+                        "release": "Le m\u00E9pris",
                         "comments": "",
                         "legacy_subtitle_id": 3264195,
                         "uploader": {
@@ -1383,7 +1357,7 @@
                         "machine_translated": false,
                         "upload_date": "2011-05-28T08:48:56.000Z",
                         "release": "Le Mepris (1963) HDRip Dual XviD Ac3 by FitoCorleone",
-                        "comments": "El.Desprecio.(Le.Mepris).(1963).HDRip.Dual.(Spa.Fr.).(Xvid+2Ac3).(proteinicos.es)...FitoCorleone.avi [1.47 Gb]/ Corregidos por el GTC de DivXClasico para Proteinicos y DXC",
+                        "comments": "El.Desprecio.(Le.Mepris).(1963).HDRip.Dual.(Spa.Fr.).(Xvid\u002B2Ac3).(proteinicos.es)...FitoCorleone.avi [1.47 Gb]/ Corregidos por el GTC de DivXClasico para Proteinicos y DXC",
                         "legacy_subtitle_id": 4184944,
                         "uploader": {
                           "uploader_id": 32127,
@@ -1920,7 +1894,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -1931,8 +1905,8 @@
           "Features"
         ],
         "summary": "Search for features",
-        "description": "\"With the \\\"query\\\" parameter, search for a Feature from a simple text input. Typically used for a text search or autocomplete.\n\nWith an ID, get basic information and subtitles count for a specific title.\n\nWith the \\\"query_match\\\" you can define the matched applied to the query: \n - \\\"start\\\" is the default behavior, it will query on the first letter entered to offer suggestions\n - \\\"word\\\" will return the match on the word, but not always matching the fulll title, for example searching \\\"roma\\\" will return \\\"holiday in roma\\\"\n - \\\"exact\\\" will exactly match the title, so here searching for \\\"roma\\\" will only return the movie(s) named \\\"roma\\\" \n\nWith the \\\"full_search\\\" you can extend the search to the translations of the title, so \\\"roma\\\" will also return \\\"rome\\\" \n\n<!-- theme: warning -->\n\n> ### Watch Out!\n>\n> If you create an autocomplete, don't set a too small refresh limit, remember you must not go over 40 requests per 10 seconds!\"",
-        "operationId": "features",
+        "description": "\u0022With the \\\u0022query\\\u0022 parameter, search for a Feature from a simple text input. Typically used for a text search or autocomplete.\n\nWith an ID, get basic information and subtitles count for a specific title.\n\nWith the \\\u0022query_match\\\u0022 you can define the matched applied to the query: \n - \\\u0022start\\\u0022 is the default behavior, it will query on the first letter entered to offer suggestions\n - \\\u0022word\\\u0022 will return the match on the word, but not always matching the fulll title, for example searching \\\u0022roma\\\u0022 will return \\\u0022holiday in roma\\\u0022\n - \\\u0022exact\\\u0022 will exactly match the title, so here searching for \\\u0022roma\\\u0022 will only return the movie(s) named \\\u0022roma\\\u0022 \n\nWith the \\\u0022full_search\\\u0022 you can extend the search to the translations of the title, so \\\u0022roma\\\u0022 will also return \\\u0022rome\\\u0022 \n\n\u003C!-- theme: warning --\u003E\n\n\u003E ### Watch Out!\n\u003E\n\u003E If you create an autocomplete, don\u0027t set a too small refresh limit, remember you must not go over 40 requests per 10 seconds!\u0022",
+        "operationId": "Features",
         "parameters": [
           {
             "name": "query",
@@ -1986,7 +1960,7 @@
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -1994,7 +1968,7 @@
           {
             "name": "query_match",
             "in": "query",
-            "description": "\"Type of matching applied to the query: **start** (default), **word**, **exact**  \"",
+            "description": "\u0022Type of matching applied to the query: **start** (default), **word**, **exact**  \u0022",
             "schema": {
               "type": "string"
             }
@@ -2014,7 +1988,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Features200"
+                  "$ref": "#/components/schemas/Features200Response"
                 },
                 "example": {
                   "data": [
@@ -2066,7 +2040,7 @@
                         "feature_id": "9803",
                         "title_aka": [
                           "Waking the Dead",
-                          " Waking the Dead – Im Auftrag der Toten"
+                          " Waking the Dead \u2013 Im Auftrag der Toten"
                         ],
                         "feature_type": "Tvshow",
                         "url": "https://www.opensubtitles.com/en/tvshows/2000-waking-the-dead",
@@ -2077,61 +2051,61 @@
                             "episodes": [
                               {
                                 "episode_number": 1,
-                                "title": "\"Waking the Dead\" Pilot: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Pilot: Part 1",
                                 "feature_id": 126854,
                                 "feature_imdb_id": 743365
                               },
                               {
                                 "episode_number": 2,
-                                "title": "\"Waking the Dead\" Pilot: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Pilot: Part 2",
                                 "feature_id": 126863,
                                 "feature_imdb_id": 936019
                               },
                               {
                                 "episode_number": 3,
-                                "title": "\"Waking the Dead\" Burn Out: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Burn Out: Part 1",
                                 "feature_id": 126861,
                                 "feature_imdb_id": 743355
                               },
                               {
                                 "episode_number": 4,
-                                "title": "\"Waking the Dead\" Burn Out: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Burn Out: Part 2",
                                 "feature_id": 126858,
                                 "feature_imdb_id": 936016
                               },
                               {
                                 "episode_number": 5,
-                                "title": "\"Waking the Dead\" Blind Beggar: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Blind Beggar: Part 1",
                                 "feature_id": 126862,
                                 "feature_imdb_id": 743353
                               },
                               {
                                 "episode_number": 6,
-                                "title": "\"Waking the Dead\" Blind Beggar: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Blind Beggar: Part 2",
                                 "feature_id": 126859,
                                 "feature_imdb_id": 936017
                               },
                               {
                                 "episode_number": 7,
-                                "title": "\"Waking the Dead\" A Simple Sacrifice: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 A Simple Sacrifice: Part 1",
                                 "feature_id": 126860,
                                 "feature_imdb_id": 743350
                               },
                               {
                                 "episode_number": 8,
-                                "title": "\"Waking the Dead\" A Simple Sacrifice: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 A Simple Sacrifice: Part 2",
                                 "feature_id": 126864,
                                 "feature_imdb_id": 936015
                               },
                               {
                                 "episode_number": 9,
-                                "title": "\"Waking the Dead\" Every Breath You Take: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Every Breath You Take: Part 1",
                                 "feature_id": 126865,
                                 "feature_imdb_id": 743358
                               },
                               {
                                 "episode_number": 10,
-                                "title": "\"Waking the Dead\" Every Breath You Take: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Every Breath You Take: Part 2",
                                 "feature_id": 126869,
                                 "feature_imdb_id": 936018
                               }
@@ -2142,49 +2116,49 @@
                             "episodes": [
                               {
                                 "episode_number": 1,
-                                "title": "\"Waking the Dead\" Life Sentence: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Life Sentence: Part 1",
                                 "feature_id": 126868,
                                 "feature_imdb_id": 743363
                               },
                               {
                                 "episode_number": 2,
-                                "title": "\"Waking the Dead\" Life Sentence: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Life Sentence: Part 2",
                                 "feature_id": 126871,
                                 "feature_imdb_id": 1108804
                               },
                               {
                                 "episode_number": 3,
-                                "title": "\"Waking the Dead\" Deathwatch: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Deathwatch: Part 1",
                                 "feature_id": 126867,
                                 "feature_imdb_id": 743357
                               },
                               {
                                 "episode_number": 4,
-                                "title": "\"Waking the Dead\" Deathwatch: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Deathwatch: Part 2",
                                 "feature_id": 126870,
                                 "feature_imdb_id": 1108805
                               },
                               {
                                 "episode_number": 5,
-                                "title": "\"Waking the Dead\" Special Relationship: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Special Relationship: Part 1",
                                 "feature_id": 126872,
                                 "feature_imdb_id": 743367
                               },
                               {
                                 "episode_number": 6,
-                                "title": "\"Waking the Dead\" Special Relationship: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Special Relationship: Part 2",
                                 "feature_id": 126878,
                                 "feature_imdb_id": 1091606
                               },
                               {
                                 "episode_number": 7,
-                                "title": "\"Waking the Dead\" Thin Air: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Thin Air: Part 1",
                                 "feature_id": 126875,
                                 "feature_imdb_id": 743371
                               },
                               {
                                 "episode_number": 8,
-                                "title": "\"Waking the Dead\" Thin Air: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Thin Air: Part 2",
                                 "feature_id": 126877,
                                 "feature_imdb_id": 1167299
                               }
@@ -2195,49 +2169,49 @@
                             "episodes": [
                               {
                                 "episode_number": 1,
-                                "title": "\"Waking the Dead\" Multistorey: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Multistorey: Part 1",
                                 "feature_id": 126876,
                                 "feature_imdb_id": 743364
                               },
                               {
                                 "episode_number": 2,
-                                "title": "\"Waking the Dead\" Multistorey: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Multistorey: Part 2",
                                 "feature_id": 126883,
                                 "feature_imdb_id": 1167294
                               },
                               {
                                 "episode_number": 3,
-                                "title": "\"Waking the Dead\" Walking on Water: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Walking on Water: Part 1",
                                 "feature_id": 126884,
                                 "feature_imdb_id": 743374
                               },
                               {
                                 "episode_number": 4,
-                                "title": "\"Waking the Dead\" Walking on Water: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Walking on Water: Part 2",
                                 "feature_id": 126879,
                                 "feature_imdb_id": 1167302
                               },
                               {
                                 "episode_number": 5,
-                                "title": "\"Waking the Dead\" Breaking Glass: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Breaking Glass: Part 1",
                                 "feature_id": 126885,
                                 "feature_imdb_id": 743354
                               },
                               {
                                 "episode_number": 6,
-                                "title": "\"Waking the Dead\" Breaking Glass: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Breaking Glass: Part 2",
                                 "feature_id": 126881,
                                 "feature_imdb_id": 1167289
                               },
                               {
                                 "episode_number": 7,
-                                "title": "\"Waking the Dead\" Final Cut: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Final Cut: Part 1",
                                 "feature_id": 126887,
                                 "feature_imdb_id": 743360
                               },
                               {
                                 "episode_number": 8,
-                                "title": "\"Waking the Dead\" Final Cut: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Final Cut: Part 2",
                                 "feature_id": 126882,
                                 "feature_imdb_id": 1167292
                               }
@@ -2248,73 +2222,73 @@
                             "episodes": [
                               {
                                 "episode_number": 1,
-                                "title": "\"Waking the Dead\" In Sight of the Lord: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 In Sight of the Lord: Part 1",
                                 "feature_id": 126888,
                                 "feature_imdb_id": 743362
                               },
                               {
                                 "episode_number": 2,
-                                "title": "\"Waking the Dead\" In Sight of the Lord: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 In Sight of the Lord: Part 2",
                                 "feature_id": 126866,
                                 "feature_imdb_id": 1103924
                               },
                               {
                                 "episode_number": 3,
-                                "title": "\"Waking the Dead\" False Flag: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 False Flag: Part 1",
                                 "feature_id": 126852,
                                 "feature_imdb_id": 743359
                               },
                               {
                                 "episode_number": 4,
-                                "title": "\"Waking the Dead\" False Flag: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 False Flag: Part 2",
                                 "feature_id": 126857,
                                 "feature_imdb_id": 1167291
                               },
                               {
                                 "episode_number": 5,
-                                "title": "\"Waking the Dead\" Fugue States: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Fugue States: Part 1",
                                 "feature_id": 126880,
                                 "feature_imdb_id": 743361
                               },
                               {
                                 "episode_number": 6,
-                                "title": "\"Waking the Dead\" Fugue States: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Fugue States: Part 2",
                                 "feature_id": 126886,
                                 "feature_imdb_id": 1167293
                               },
                               {
                                 "episode_number": 7,
-                                "title": "\"Waking the Dead\" Anger Management: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Anger Management: Part 1",
                                 "feature_id": 126889,
                                 "feature_imdb_id": 743351
                               },
                               {
                                 "episode_number": 8,
-                                "title": "\"Waking the Dead\" Anger Management: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Anger Management: Part 2",
                                 "feature_id": 126874,
                                 "feature_imdb_id": 1167287
                               },
                               {
                                 "episode_number": 9,
-                                "title": "\"Waking the Dead\" The Hardest Word: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 The Hardest Word: Part 1",
                                 "feature_id": 126891,
                                 "feature_imdb_id": 743370
                               },
                               {
                                 "episode_number": 10,
-                                "title": "\"Waking the Dead\" The Hardest Word: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 The Hardest Word: Part 2",
                                 "feature_id": 126890,
                                 "feature_imdb_id": 1167298
                               },
                               {
                                 "episode_number": 11,
-                                "title": "\"Waking the Dead\" Shadowplay: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Shadowplay: Part 1",
                                 "feature_id": 126893,
                                 "feature_imdb_id": 743366
                               },
                               {
                                 "episode_number": 12,
-                                "title": "\"Waking the Dead\" Shadowplay: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Shadowplay: Part 2",
                                 "feature_id": 126892,
                                 "feature_imdb_id": 1167295
                               }
@@ -2325,73 +2299,73 @@
                             "episodes": [
                               {
                                 "episode_number": 1,
-                                "title": "\"Waking the Dead\" Towers of Silence: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Towers of Silence: Part 1",
                                 "feature_id": 126810,
                                 "feature_imdb_id": 743372
                               },
                               {
                                 "episode_number": 2,
-                                "title": "\"Waking the Dead\" Towers of Silence: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Towers of Silence: Part 2",
                                 "feature_id": 126811,
                                 "feature_imdb_id": 1167300
                               },
                               {
                                 "episode_number": 3,
-                                "title": "\"Waking the Dead\" Black Run: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Black Run: Part 1",
                                 "feature_id": 126814,
                                 "feature_imdb_id": 743352
                               },
                               {
                                 "episode_number": 4,
-                                "title": "\"Waking the Dead\" Black Run: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Black Run: Part 2",
                                 "feature_id": 126808,
                                 "feature_imdb_id": 1167288
                               },
                               {
                                 "episode_number": 5,
-                                "title": "\"Waking the Dead\" Subterraneans: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Subterraneans: Part 1",
                                 "feature_id": 126816,
                                 "feature_imdb_id": 743369
                               },
                               {
                                 "episode_number": 6,
-                                "title": "\"Waking the Dead\" Subterraneans: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Subterraneans: Part 2",
                                 "feature_id": 126818,
                                 "feature_imdb_id": 1167297
                               },
                               {
                                 "episode_number": 7,
-                                "title": "\"Waking the Dead\" Straw Dog: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Straw Dog: Part 1",
                                 "feature_id": 126820,
                                 "feature_imdb_id": 743368
                               },
                               {
                                 "episode_number": 8,
-                                "title": "\"Waking the Dead\" Straw Dog: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Straw Dog: Part 2",
                                 "feature_id": 126822,
                                 "feature_imdb_id": 1167296
                               },
                               {
                                 "episode_number": 9,
-                                "title": "\"Waking the Dead\" Undertow: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Undertow: Part 1",
                                 "feature_id": 126819,
                                 "feature_imdb_id": 743373
                               },
                               {
                                 "episode_number": 10,
-                                "title": "\"Waking the Dead\" Undertow: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Undertow: Part 2",
                                 "feature_id": 126821,
                                 "feature_imdb_id": 1167301
                               },
                               {
                                 "episode_number": 11,
-                                "title": "\"Waking the Dead\" Cold Fusion: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Cold Fusion: Part 1",
                                 "feature_id": 126823,
                                 "feature_imdb_id": 743356
                               },
                               {
                                 "episode_number": 12,
-                                "title": "\"Waking the Dead\" Cold Fusion: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Cold Fusion: Part 2",
                                 "feature_id": 126817,
                                 "feature_imdb_id": 1167290
                               }
@@ -2402,73 +2376,73 @@
                             "episodes": [
                               {
                                 "episode_number": 1,
-                                "title": "\"Waking the Dead\" Wren Boys: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Wren Boys: Part 1",
                                 "feature_id": 126895,
                                 "feature_imdb_id": 930851
                               },
                               {
                                 "episode_number": 2,
-                                "title": "\"Waking the Dead\" Wren Boys: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Wren Boys: Part 2",
                                 "feature_id": 126855,
                                 "feature_imdb_id": 932475
                               },
                               {
                                 "episode_number": 3,
-                                "title": "\"Waking the Dead\" Deus Ex Machina: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Deus Ex Machina: Part 1",
                                 "feature_id": 126894,
                                 "feature_imdb_id": 932472
                               },
                               {
                                 "episode_number": 4,
-                                "title": "\"Waking the Dead\" Deus Ex Machina: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Deus Ex Machina: Part 2",
                                 "feature_id": 126896,
                                 "feature_imdb_id": 932473
                               },
                               {
                                 "episode_number": 5,
-                                "title": "\"Waking the Dead\" The Fall: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 The Fall: Part 1",
                                 "feature_id": 126898,
                                 "feature_imdb_id": 875569
                               },
                               {
                                 "episode_number": 6,
-                                "title": "\"Waking the Dead\" The Fall: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 The Fall: Part 2",
                                 "feature_id": 126873,
                                 "feature_imdb_id": 938259
                               },
                               {
                                 "episode_number": 7,
-                                "title": "\"Waking the Dead\" Mask of Sanity: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Mask of Sanity: Part 1",
                                 "feature_id": 126899,
                                 "feature_imdb_id": 952542
                               },
                               {
                                 "episode_number": 8,
-                                "title": "\"Waking the Dead\" Mask of Sanity: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Mask of Sanity: Part 2",
                                 "feature_id": 126902,
                                 "feature_imdb_id": 952543
                               },
                               {
                                 "episode_number": 9,
-                                "title": "\"Waking the Dead\" Double Bind: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Double Bind: Part 1",
                                 "feature_id": 126897,
                                 "feature_imdb_id": 952540
                               },
                               {
                                 "episode_number": 10,
-                                "title": "\"Waking the Dead\" Double Bind: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Double Bind: Part 2",
                                 "feature_id": 126903,
                                 "feature_imdb_id": 952541
                               },
                               {
                                 "episode_number": 11,
-                                "title": "\"Waking the Dead\" Yahrzeit: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Yahrzeit: Part 1",
                                 "feature_id": 126901,
                                 "feature_imdb_id": 892727
                               },
                               {
                                 "episode_number": 12,
-                                "title": "\"Waking the Dead\" Yahrzeit: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Yahrzeit: Part 2",
                                 "feature_id": 126900,
                                 "feature_imdb_id": 942279
                               }
@@ -2479,73 +2453,73 @@
                             "episodes": [
                               {
                                 "episode_number": 1,
-                                "title": "\"Waking the Dead\" Missing Persons: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Missing Persons: Part 1",
                                 "feature_id": 126825,
                                 "feature_imdb_id": 1215441
                               },
                               {
                                 "episode_number": 2,
-                                "title": "\"Waking the Dead\" Missing Persons: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Missing Persons: Part 2",
                                 "feature_id": 126824,
                                 "feature_imdb_id": 1215442
                               },
                               {
                                 "episode_number": 3,
-                                "title": "\"Waking the Dead\" Sins: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Sins: Part 1",
                                 "feature_id": 126815,
                                 "feature_imdb_id": 1218284
                               },
                               {
                                 "episode_number": 4,
-                                "title": "\"Waking the Dead\" Sins: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Sins: Part 2",
                                 "feature_id": 126826,
                                 "feature_imdb_id": 1218285
                               },
                               {
                                 "episode_number": 5,
-                                "title": "\"Waking the Dead\" Duty and Honour: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Duty and Honour: Part 1",
                                 "feature_id": 126828,
                                 "feature_imdb_id": 1221781
                               },
                               {
                                 "episode_number": 6,
-                                "title": "\"Waking the Dead\" Duty and Honour: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Duty and Honour: Part 2",
                                 "feature_id": 126830,
                                 "feature_imdb_id": 1221782
                               },
                               {
                                 "episode_number": 7,
-                                "title": "\"Waking the Dead\" Skin: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Skin: Part 1",
                                 "feature_id": 126829,
                                 "feature_imdb_id": 1225236
                               },
                               {
                                 "episode_number": 8,
-                                "title": "\"Waking the Dead\" Skin: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Skin: Part 2",
                                 "feature_id": 126831,
                                 "feature_imdb_id": 1225237
                               },
                               {
                                 "episode_number": 9,
-                                "title": "\"Waking the Dead\" Wounds: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Wounds: Part 1",
                                 "feature_id": 126827,
                                 "feature_imdb_id": 1227115
                               },
                               {
                                 "episode_number": 10,
-                                "title": "\"Waking the Dead\" Wounds: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Wounds: Part 2",
                                 "feature_id": 126834,
                                 "feature_imdb_id": 1227116
                               },
                               {
                                 "episode_number": 11,
-                                "title": "\"Waking the Dead\" Pieta: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Pieta: Part 1",
                                 "feature_id": 126833,
                                 "feature_imdb_id": 1231221
                               },
                               {
                                 "episode_number": 12,
-                                "title": "\"Waking the Dead\" Pietà: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Piet\u00E0: Part 2",
                                 "feature_id": 126832,
                                 "feature_imdb_id": 1231222
                               }
@@ -2556,49 +2530,49 @@
                             "episodes": [
                               {
                                 "episode_number": 1,
-                                "title": "\"Waking the Dead\" Magdalene 26: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Magdalene 26: Part 1",
                                 "feature_id": 126836,
                                 "feature_imdb_id": 1506431
                               },
                               {
                                 "episode_number": 2,
-                                "title": "\"Waking the Dead\" Magdalene 26: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Magdalene 26: Part 2",
                                 "feature_id": 126839,
                                 "feature_imdb_id": 1506432
                               },
                               {
                                 "episode_number": 3,
-                                "title": "\"Waking the Dead\" End of the Night: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 End of the Night: Part 1",
                                 "feature_id": 126837,
                                 "feature_imdb_id": 1509622
                               },
                               {
                                 "episode_number": 4,
-                                "title": "\"Waking the Dead\" End of the Night: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 End of the Night: Part 2",
                                 "feature_id": 126838,
                                 "feature_imdb_id": 1509623
                               },
                               {
                                 "episode_number": 5,
-                                "title": "\"Waking the Dead\" Substitute: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Substitute: Part 1",
                                 "feature_id": 126840,
                                 "feature_imdb_id": 1513669
                               },
                               {
                                 "episode_number": 6,
-                                "title": "\"Waking the Dead\" Substitute: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Substitute: Part 2",
                                 "feature_id": 126842,
                                 "feature_imdb_id": 1514406
                               },
                               {
                                 "episode_number": 7,
-                                "title": "\"Waking the Dead\" End Game: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 End Game: Part 1",
                                 "feature_id": 126846,
                                 "feature_imdb_id": 1519231
                               },
                               {
                                 "episode_number": 8,
-                                "title": "\"Waking the Dead\" End Game: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 End Game: Part 2",
                                 "feature_id": 126843,
                                 "feature_imdb_id": 1519232
                               }
@@ -2609,61 +2583,61 @@
                             "episodes": [
                               {
                                 "episode_number": 1,
-                                "title": "\"Waking the Dead\" Harbinger: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Harbinger: Part 1",
                                 "feature_id": 126856,
                                 "feature_imdb_id": 1862440
                               },
                               {
                                 "episode_number": 2,
-                                "title": "\"Waking the Dead\" Harbinger: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Harbinger: Part 2",
                                 "feature_id": 126853,
                                 "feature_imdb_id": 1862441
                               },
                               {
                                 "episode_number": 3,
-                                "title": "\"Waking the Dead\" Care: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Care: Part 1",
                                 "feature_id": 126844,
                                 "feature_imdb_id": 1865234
                               },
                               {
                                 "episode_number": 4,
-                                "title": "\"Waking the Dead\" Care: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Care: Part 2",
                                 "feature_id": 126845,
                                 "feature_imdb_id": 1865235
                               },
                               {
                                 "episode_number": 5,
-                                "title": "\"Waking the Dead\" Solidarity: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Solidarity: Part 1",
                                 "feature_id": 126849,
                                 "feature_imdb_id": 1869183
                               },
                               {
                                 "episode_number": 6,
-                                "title": "\"Waking the Dead\" Solidarity: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Solidarity: Part 2",
                                 "feature_id": 126851,
                                 "feature_imdb_id": 1869184
                               },
                               {
                                 "episode_number": 7,
-                                "title": "\"Waking the Dead\" Conviction: Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Conviction: Part 1",
                                 "feature_id": 126848,
                                 "feature_imdb_id": 1877523
                               },
                               {
                                 "episode_number": 8,
-                                "title": "\"Waking the Dead\" Conviction: Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Conviction: Part 2",
                                 "feature_id": 126841,
                                 "feature_imdb_id": 1877524
                               },
                               {
                                 "episode_number": 9,
-                                "title": "\"Waking the Dead\" Waterloo, Part 1",
+                                "title": "\u0022Waking the Dead\u0022 Waterloo, Part 1",
                                 "feature_id": 126850,
                                 "feature_imdb_id": 1886367
                               },
                               {
                                 "episode_number": 10,
-                                "title": "\"Waking the Dead\" Waterloo, Part 2",
+                                "title": "\u0022Waking the Dead\u0022 Waterloo, Part 2",
                                 "feature_id": 126847,
                                 "feature_imdb_id": 1886368
                               }
@@ -2676,7 +2650,7 @@
                       "id": "126842",
                       "type": "feature",
                       "attributes": {
-                        "title": "\"Waking the Dead\" Substitute: Part 2",
+                        "title": "\u0022Waking the Dead\u0022 Substitute: Part 2",
                         "original_title": "",
                         "year": "2009",
                         "subtitles_counts": {
@@ -2695,19 +2669,19 @@
                         "parent_imdb_id": 259733,
                         "feature_id": "126842",
                         "title_aka": [
-                          "\"Waking the Dead\" Substitute: Part 2"
+                          "\u0022Waking the Dead\u0022 Substitute: Part 2"
                         ],
                         "feature_type": "Episode",
                         "url": "https://www.opensubtitles.com/en/tvshows/2000-waking-the-dead/seasons/8/episodes/6-waking-the-dead-substitute-part-2",
                         "img_url": "https://s9.osdb.link/features/2/4/8/126842.jpg",
-                        "seasons": [ ]
+                        "seasons": []
                       }
                     },
                     {
                       "id": "126810",
                       "type": "feature",
                       "attributes": {
-                        "title": "\"Waking the Dead\" Towers of Silence: Part 1",
+                        "title": "\u0022Waking the Dead\u0022 Towers of Silence: Part 1",
                         "original_title": "",
                         "year": "2005",
                         "subtitles_counts": {
@@ -2750,12 +2724,12 @@
                         "parent_imdb_id": 259733,
                         "feature_id": "126810",
                         "title_aka": [
-                          "\"Waking the Dead\" Towers of Silence: Part 1"
+                          "\u0022Waking the Dead\u0022 Towers of Silence: Part 1"
                         ],
                         "feature_type": "Episode",
                         "url": "https://www.opensubtitles.com/en/tvshows/2000-waking-the-dead/seasons/5/episodes/1-waking-the-dead-towers-of-silence-part-1",
                         "img_url": "https://s9.osdb.link/features/0/1/8/126810.jpg",
-                        "seasons": [ ]
+                        "seasons": []
                       }
                     },
                     {
@@ -2807,23 +2781,23 @@
                         "title_aka": [
                           "Waking the Dead",
                           " Resucitar un amor",
-                          " Le Fantôme de Sarah Williams",
+                          " Le Fant\u00F4me de Sarah Williams",
                           " Szerelmem szelleme",
                           " Amor Maior que a Vida",
-                          " Пробуждая мертвецов",
-                          " 死亡中惊醒"
+                          " \u041F\u0440\u043E\u0431\u0443\u0436\u0434\u0430\u044F \u043C\u0435\u0440\u0442\u0432\u0435\u0446\u043E\u0432",
+                          " \u6B7B\u4EA1\u4E2D\u60CA\u9192"
                         ],
                         "feature_type": "Movie",
                         "url": "https://www.opensubtitles.com/en/movies/2000-waking-the-dead-5559",
                         "img_url": "https://s9.osdb.link/features/6/8/7/646786.jpg",
-                        "seasons": [ ]
+                        "seasons": []
                       }
                     },
                     {
                       "id": "126847",
                       "type": "feature",
                       "attributes": {
-                        "title": "\"Waking the Dead\" Waterloo, Part 2",
+                        "title": "\u0022Waking the Dead\u0022 Waterloo, Part 2",
                         "original_title": "",
                         "year": "2011",
                         "subtitles_counts": {
@@ -2842,20 +2816,20 @@
                         "parent_imdb_id": 259733,
                         "feature_id": "126847",
                         "title_aka": [
-                          "\"Waking the Dead\" Waterloo",
+                          "\u0022Waking the Dead\u0022 Waterloo",
                           " Part 2"
                         ],
                         "feature_type": "Episode",
                         "url": "https://www.opensubtitles.com/en/tvshows/2000-waking-the-dead/seasons/9/episodes/10-waking-the-dead-waterloo-part-2",
                         "img_url": "",
-                        "seasons": [ ]
+                        "seasons": []
                       }
                     },
                     {
                       "id": "126857",
                       "type": "feature",
                       "attributes": {
-                        "title": "\"Waking the Dead\" False Flag: Part 2",
+                        "title": "\u0022Waking the Dead\u0022 False Flag: Part 2",
                         "original_title": "",
                         "year": "2004",
                         "subtitles_counts": {
@@ -2873,19 +2847,19 @@
                         "parent_imdb_id": 259733,
                         "feature_id": "126857",
                         "title_aka": [
-                          "\"Waking the Dead\" False Flag: Part 2"
+                          "\u0022Waking the Dead\u0022 False Flag: Part 2"
                         ],
                         "feature_type": "Episode",
                         "url": "https://www.opensubtitles.com/en/tvshows/2000-waking-the-dead/seasons/4/episodes/4-waking-the-dead-false-flag-part-2",
                         "img_url": "https://s9.osdb.link/features/7/5/8/126857.jpg",
-                        "seasons": [ ]
+                        "seasons": []
                       }
                     },
                     {
                       "id": "62212",
                       "type": "feature",
                       "attributes": {
-                        "title": "\"Point Pleasant\" Waking the Dead",
+                        "title": "\u0022Point Pleasant\u0022 Waking the Dead",
                         "original_title": "",
                         "year": "2005",
                         "subtitles_counts": {
@@ -2912,19 +2886,19 @@
                         "parent_imdb_id": 435576,
                         "feature_id": "62212",
                         "title_aka": [
-                          "\"Point Pleasant\" Waking the Dead"
+                          "\u0022Point Pleasant\u0022 Waking the Dead"
                         ],
                         "feature_type": "Episode",
                         "url": "https://www.opensubtitles.com/en/tvshows/2005-point-pleasant/seasons/1/episodes/9-point-pleasant-waking-the-dead",
                         "img_url": "https://s9.osdb.link/features/2/1/2/62212.jpg",
-                        "seasons": [ ]
+                        "seasons": []
                       }
                     },
                     {
                       "id": "126869",
                       "type": "feature",
                       "attributes": {
-                        "title": "\"Waking the Dead\" Every Breath You Take: Part 2",
+                        "title": "\u0022Waking the Dead\u0022 Every Breath You Take: Part 2",
                         "original_title": "",
                         "year": "2001",
                         "subtitles_counts": {
@@ -2942,19 +2916,19 @@
                         "parent_imdb_id": 259733,
                         "feature_id": "126869",
                         "title_aka": [
-                          "\"Waking the Dead\" Every Breath You Take: Part 2"
+                          "\u0022Waking the Dead\u0022 Every Breath You Take: Part 2"
                         ],
                         "feature_type": "Episode",
                         "url": "https://www.opensubtitles.com/en/tvshows/2000-waking-the-dead/seasons/1/episodes/10-waking-the-dead-every-breath-you-take-part-2",
                         "img_url": "",
-                        "seasons": [ ]
+                        "seasons": []
                       }
                     },
                     {
                       "id": "126826",
                       "type": "feature",
                       "attributes": {
-                        "title": "\"Waking the Dead\" Sins: Part 2",
+                        "title": "\u0022Waking the Dead\u0022 Sins: Part 2",
                         "original_title": "",
                         "year": "2008",
                         "subtitles_counts": {
@@ -2972,19 +2946,19 @@
                         "parent_imdb_id": 259733,
                         "feature_id": "126826",
                         "title_aka": [
-                          "\"Waking the Dead\" Sins: Part 2"
+                          "\u0022Waking the Dead\u0022 Sins: Part 2"
                         ],
                         "feature_type": "Episode",
                         "url": "https://www.opensubtitles.com/en/tvshows/2000-waking-the-dead/seasons/7/episodes/4-waking-the-dead-sins-part-2",
                         "img_url": "",
-                        "seasons": [ ]
+                        "seasons": []
                       }
                     },
                     {
                       "id": "126837",
                       "type": "feature",
                       "attributes": {
-                        "title": "\"Waking the Dead\" End of the Night: Part 1",
+                        "title": "\u0022Waking the Dead\u0022 End of the Night: Part 1",
                         "original_title": "",
                         "year": "2009",
                         "subtitles_counts": {
@@ -3003,12 +2977,12 @@
                         "parent_imdb_id": 259733,
                         "feature_id": "126837",
                         "title_aka": [
-                          "\"Waking the Dead\" End of the Night: Part 1"
+                          "\u0022Waking the Dead\u0022 End of the Night: Part 1"
                         ],
                         "feature_type": "Episode",
                         "url": "https://www.opensubtitles.com/en/tvshows/2000-waking-the-dead/seasons/8/episodes/3-waking-the-dead-end-of-the-night-part-1",
                         "img_url": "https://s9.osdb.link/features/7/3/8/126837.jpg",
-                        "seasons": [ ]
+                        "seasons": []
                       }
                     }
                   ],
@@ -3020,7 +2994,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -3031,8 +3005,8 @@
           "Subtitles"
         ],
         "summary": "Search for subtitles",
-        "description": "\"Find subtitle for a video file. All parameters can be combined following various logics: searching by a specific external id (imdb, tmdb), a file moviehash, or a simple text query.\n\n<!-- theme: warning -->\n> Something wrong? Read about [common mistakes and best practices](docs/2-Best-Practices.md). \n\n> Getting no results? Follow HTTP redirects! ```curl --location``` and use verbose mode\n\n> Use ```imdb_id for``` movie or episode. Use ```parent_imdb_id``` for TV Shows\n\n\n\nImplement the logic that best fits your needs, keeping in mind the following guidelines:\n\n- If you can obtain the moviehash from the file, please send it along.\n- If you possess the ID, whether it's IMDB or TMDB, send it instead of a query, as an ID provides more precision.\n- When searching for TV show episodes, it is recommended to send the parent ID, along with the episode and season number for optimal results.  If you have the unique ID of an episode, only send this ID, excluding the episode or season number.\n- Include the filename as a query parameter along with the moviehash for improved results. If your filenames are generally irrelevant, such as dynamically generated filenames from a streaming service, there's no need to include them.\n- Consider treating parameters as filters rather than additional criteria. If you have a specific ID and send a query with conflicting data, like a wrong year, it could result in fewer matches.\n- Explore querying the /features endpoint to gather the exact list of available episodes.\n- Keep in mind that this is a collaborative project where subtitles are submitted by users, filtered by admins, and movie/show results are processed through various APIs. Occasionally, errors may occur, and we depend on user feedback to address and rectify them.\n\n\n> Avoid http redirection by sending request parameters sorted and without default values, and send all queries in lowercase. Remove leading zeroes in ID parameters (IMDB ID, TMDB ID...)\n\n### Moviehash \nIf a ```moviehash``` is sent with a request, a ```moviehash_match``` boolean field will be added to the response.\n\nThe matching subtitles will always come first in the response.\n\n\n### Ordering\n\n<!-- theme: warning -->\n> If possible, don't order results, because sorting on server is \\\"expensive, time consuming operation\\\" and also you have much higher chance to get cached result when not using this function.\n\nYou can order the results using the ```order_by``` parameter. Ordering is possible on the following fields:\n```language```, ```download_count```, ```new_download_count```, ```hearing_impaired```, ```hd```, ```fps```, ```votes```, ```points```, ```ratings```, ```from_trusted```, ```foreign_parts_only```, ```ai_translated```, ```machine_translated```, ```upload_date```, ```release```, ```comments```\n\nChange the order direction with *order_direction* (asc/desc)\n\n### Final notes\n```ai_translated``` (default include in search results) subtitles should be much better quality than ```machine_translated``` subtitles (excluded in search results).\"",
-        "operationId": "subtitles",
+        "description": "\u0022Find subtitle for a video file. All parameters can be combined following various logics: searching by a specific external id (imdb, tmdb), a file moviehash, or a simple text query.\n\n\u003C!-- theme: warning --\u003E\n\u003E Something wrong? Read about [common mistakes and best practices](docs/2-Best-Practices.md). \n\n\u003E Getting no results? Follow HTTP redirects! \u0060\u0060\u0060curl --location\u0060\u0060\u0060 and use verbose mode\n\n\u003E Use \u0060\u0060\u0060imdb_id for\u0060\u0060\u0060 movie or episode. Use \u0060\u0060\u0060parent_imdb_id\u0060\u0060\u0060 for TV Shows\n\n\n\nImplement the logic that best fits your needs, keeping in mind the following guidelines:\n\n- If you can obtain the moviehash from the file, please send it along.\n- If you possess the ID, whether it\u0027s IMDB or TMDB, send it instead of a query, as an ID provides more precision.\n- When searching for TV show episodes, it is recommended to send the parent ID, along with the episode and season number for optimal results.  If you have the unique ID of an episode, only send this ID, excluding the episode or season number.\n- Include the filename as a query parameter along with the moviehash for improved results. If your filenames are generally irrelevant, such as dynamically generated filenames from a streaming service, there\u0027s no need to include them.\n- Consider treating parameters as filters rather than additional criteria. If you have a specific ID and send a query with conflicting data, like a wrong year, it could result in fewer matches.\n- Explore querying the /features endpoint to gather the exact list of available episodes.\n- Keep in mind that this is a collaborative project where subtitles are submitted by users, filtered by admins, and movie/show results are processed through various APIs. Occasionally, errors may occur, and we depend on user feedback to address and rectify them.\n\n\n\u003E Avoid http redirection by sending request parameters sorted and without default values, and send all queries in lowercase. Remove leading zeroes in ID parameters (IMDB ID, TMDB ID...)\n\n### Moviehash \nIf a \u0060\u0060\u0060moviehash\u0060\u0060\u0060 is sent with a request, a \u0060\u0060\u0060moviehash_match\u0060\u0060\u0060 boolean field will be added to the response.\n\nThe matching subtitles will always come first in the response.\n\n\n### Ordering\n\n\u003C!-- theme: warning --\u003E\n\u003E If possible, don\u0027t order results, because sorting on server is \\\u0022expensive, time consuming operation\\\u0022 and also you have much higher chance to get cached result when not using this function.\n\nYou can order the results using the \u0060\u0060\u0060order_by\u0060\u0060\u0060 parameter. Ordering is possible on the following fields:\n\u0060\u0060\u0060language\u0060\u0060\u0060, \u0060\u0060\u0060download_count\u0060\u0060\u0060, \u0060\u0060\u0060new_download_count\u0060\u0060\u0060, \u0060\u0060\u0060hearing_impaired\u0060\u0060\u0060, \u0060\u0060\u0060hd\u0060\u0060\u0060, \u0060\u0060\u0060fps\u0060\u0060\u0060, \u0060\u0060\u0060votes\u0060\u0060\u0060, \u0060\u0060\u0060points\u0060\u0060\u0060, \u0060\u0060\u0060ratings\u0060\u0060\u0060, \u0060\u0060\u0060from_trusted\u0060\u0060\u0060, \u0060\u0060\u0060foreign_parts_only\u0060\u0060\u0060, \u0060\u0060\u0060ai_translated\u0060\u0060\u0060, \u0060\u0060\u0060machine_translated\u0060\u0060\u0060, \u0060\u0060\u0060upload_date\u0060\u0060\u0060, \u0060\u0060\u0060release\u0060\u0060\u0060, \u0060\u0060\u0060comments\u0060\u0060\u0060\n\nChange the order direction with *order_direction* (asc/desc)\n\n### Final notes\n\u0060\u0060\u0060ai_translated\u0060\u0060\u0060 (default include in search results) subtitles should be much better quality than \u0060\u0060\u0060machine_translated\u0060\u0060\u0060 subtitles (excluded in search results).\u0022",
+        "operationId": "Subtitles",
         "parameters": [
           {
             "name": "id",
@@ -3061,7 +3035,7 @@
           {
             "name": "type",
             "in": "query",
-            "description": "\"movie, episode or all, (default: all) \"",
+            "description": "\u0022movie, episode or all, (default: all) \u0022",
             "schema": {
               "type": "string"
             }
@@ -3104,7 +3078,7 @@
           {
             "name": "hearing_impaired",
             "in": "query",
-            "description": "\"include, exclude, only. (default: include)\"",
+            "description": "\u0022include, exclude, only. (default: include)\u0022",
             "schema": {
               "type": "string"
             }
@@ -3112,7 +3086,7 @@
           {
             "name": "foreign_parts_only",
             "in": "query",
-            "description": "\"exclude, include, only (default: include)\"",
+            "description": "\u0022exclude, include, only (default: include)\u0022",
             "schema": {
               "type": "string"
             }
@@ -3120,7 +3094,7 @@
           {
             "name": "trusted_sources",
             "in": "query",
-            "description": "\"include, only (default: include)\"",
+            "description": "\u0022include, only (default: include)\u0022",
             "schema": {
               "type": "string"
             }
@@ -3128,7 +3102,7 @@
           {
             "name": "machine_translated",
             "in": "query",
-            "description": "\"exclude, include  (default: exclude)\"",
+            "description": "\u0022exclude, include  (default: exclude)\u0022",
             "schema": {
               "type": "string"
             }
@@ -3136,7 +3110,7 @@
           {
             "name": "ai_translated",
             "in": "query",
-            "description": "\"exclude, include  (default: include)\"",
+            "description": "\u0022exclude, include  (default: include)\u0022",
             "schema": {
               "type": "string"
             }
@@ -3208,7 +3182,7 @@
           {
             "name": "moviehash_match",
             "in": "query",
-            "description": "\"include, only (default: include)\"",
+            "description": "\u0022include, only (default: include)\u0022",
             "schema": {
               "type": "string"
             }
@@ -3224,7 +3198,7 @@
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -3236,7 +3210,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Subtitles200"
+                  "$ref": "#/components/schemas/Subtitles200Response"
                 }
               }
             }
@@ -3244,7 +3218,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -3255,13 +3229,13 @@
           "Download"
         ],
         "summary": "Download",
-        "description": "\"Request a download url for a subtitle. Subtitle file in temporary URL will be always in UTF-8 encoding.\n\n<!-- theme: warning -->\n\n> VERY IMPORTANT: In HTTP request must be both headers: ```Api-Key``` and ```Authorization``` stoplight.io doesn't allow to use in shown example both headers\n\n\n> The download count is calculated on this action, not the file download itself\n\n> IN and OUT FPS must be indicated for subtitle conversions, we want to make sure you know what you are doing, and therefore collected the current FPS from the subtitle search result, or calculated it somehow.\n\n<!-- theme: warning -->\n\n> The download URL is temporary, and cannot be used more than 3 hours, so do not cache it, but you can download the file more than once if needed.\"",
-        "operationId": "download",
+        "description": "\u0022Request a download url for a subtitle. Subtitle file in temporary URL will be always in UTF-8 encoding.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E VERY IMPORTANT: In HTTP request must be both headers: \u0060\u0060\u0060Api-Key\u0060\u0060\u0060 and \u0060\u0060\u0060Authorization\u0060\u0060\u0060 stoplight.io doesn\u0027t allow to use in shown example both headers\n\n\n\u003E The download count is calculated on this action, not the file download itself\n\n\u003E IN and OUT FPS must be indicated for subtitle conversions, we want to make sure you know what you are doing, and therefore collected the current FPS from the subtitle search result, or calculated it somehow.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E The download URL is temporary, and cannot be used more than 3 hours, so do not cache it, but you can download the file more than once if needed.\u0022",
+        "operationId": "Download",
         "parameters": [
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -3272,7 +3246,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Download"
+                "$ref": "#/components/schemas/DownloadRequest"
               },
               "examples": {
                 "example-1": {
@@ -3290,7 +3264,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Download200"
+                  "$ref": "#/components/schemas/Download200Response"
                 },
                 "examples": {
                   "example-1": {
@@ -3311,10 +3285,10 @@
         },
         "security": [
           {
-            "Bearer": [ ]
+            "Bearer": []
           },
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -3326,7 +3300,7 @@
         ],
         "summary": "Guessit",
         "description": "Extracts as much information as possible from a video filename.\n\nIt has a very powerful matcher that allows to guess properties from a video using its filename only. This matcher works with both movies and tv shows episodes.\n\nThis is a simple implementation of the python guessit library.\nhttps://guessit-io.github.io/guessit/\n\nFind examples of the returned data.\nhttps://guessit-io.github.io/guessit/properties/",
-        "operationId": "guessit",
+        "operationId": "Guessit",
         "parameters": [
           {
             "name": "filename",
@@ -3339,7 +3313,7 @@
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -3351,7 +3325,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Guessit200"
+                  "$ref": "#/components/schemas/Guessit200Response"
                 }
               }
             }
@@ -3359,7 +3333,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -3371,12 +3345,12 @@
         ],
         "summary": "User Credits Informations",
         "description": "Check how much credits have logged-in user. \n[Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)",
-        "operationId": "get-credits",
+        "operationId": "GetCredits",
         "parameters": [
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -3388,7 +3362,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetCredits200"
+                  "$ref": "#/components/schemas/GetCredits200Response"
                 }
               }
             }
@@ -3396,9 +3370,9 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           },
-          { }
+          {}
         ]
       }
     },
@@ -3409,12 +3383,12 @@
         ],
         "summary": "Buy Credits",
         "description": "Buy credits - packages with checkout URL",
-        "operationId": "buy-credits",
+        "operationId": "BuyCredits",
         "parameters": [
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -3426,7 +3400,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BuyCredits200"
+                  "$ref": "#/components/schemas/BuyCredits200Response"
                 }
               }
             }
@@ -3434,9 +3408,9 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           },
-          { }
+          {}
         ]
       }
     },
@@ -3446,13 +3420,13 @@
           "Infos"
         ],
         "summary": "AI Translation",
-        "description": "Available translation APIs and Languages. User doesn't need to be authentificated.\n\n",
-        "operationId": "translation",
+        "description": "Available translation APIs and Languages. User doesn\u0027t need to be authentificated.\n\n",
+        "operationId": "Translation",
         "parameters": [
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -3464,7 +3438,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Translation200"
+                  "$ref": "#/components/schemas/Translation200Response"
                 },
                 "examples": {
                   "Example 1": {
@@ -4034,7 +4008,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -4045,8 +4019,8 @@
           "AI Translate"
         ],
         "summary": "AI Translate",
-        "description": "\"**Translate** subtitles using AI from one language to another language. \n\nCredits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get AI Translate status](../open_api.json/paths/~1ai~1translate~1{correlation_id}/get)\n\nMethod is returning \n```\n{\n  \\\"status\\\": \\\"CREATED\\\",\n  \\\"correlation_id\\\": \\\"67eda18f52e11\\\"\n}\n```\nStatus possible values: \n```\nCREATED     -> Initial state`\nPENDING     -> procedure is still running\nCOMPLETED   -> remote procedure call is completed and has a result\nERROR       -> procedure resulted in an error and is not running anymore\nTIMEOUT     -> No matching procedure call found before timeout\n```\nUsing `correlation_id` can check status of job using GET\n\"",
-        "operationId": "translate",
+        "description": "\u0022**Translate** subtitles using AI from one language to another language. \n\nCredits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get AI Translate status](../open_api.json/paths/~1ai~1translate~1{correlation_id}/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \\\u0022status\\\u0022: \\\u0022CREATED\\\u0022,\n  \\\u0022correlation_id\\\u0022: \\\u002267eda18f52e11\\\u0022\n}\n\u0060\u0060\u0060\nStatus possible values: \n\u0060\u0060\u0060\nCREATED     -\u003E Initial state\u0060\nPENDING     -\u003E procedure is still running\nCOMPLETED   -\u003E remote procedure call is completed and has a result\nERROR       -\u003E procedure resulted in an error and is not running anymore\nTIMEOUT     -\u003E No matching procedure call found before timeout\n\u0060\u0060\u0060\nUsing \u0060correlation_id\u0060 can check status of job using GET\n\u0022",
+        "operationId": "Translate",
         "parameters": [
           {
             "name": "api",
@@ -4099,7 +4073,7 @@
             "content": {
               "multipart/form-data": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/Translate200ResponseResponseFormData"
                 }
               }
             }
@@ -4107,31 +4081,29 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           },
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
     },
-    "/ai/translate/{correlation_id}": {
+    "/ai/translate/{correlationId}": {
       "get": {
         "tags": [
           "AI Translate"
         ],
         "summary": "AI Translate status",
-        "description": "Get status of **[translate](..open_api.json/paths/~1ai~1translate/post)** job using `correlation_id`\n",
-        "operationId": "translate-status",
+        "description": "Get status of **[translate](..open_api.json/paths/~1ai~1translate/post)** job using \u0060correlation_id\u0060\n",
+        "operationId": "TranslateStatus",
         "responses": {
           "200": {
             "description": "Default",
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponse"
                 }
               }
             }
@@ -4139,16 +4111,16 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           },
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       },
       "parameters": [
         {
-          "name": "correlation_id",
+          "name": "correlationId",
           "in": "path",
           "description": "correlation_id",
           "required": true,
@@ -4164,13 +4136,13 @@
           "Infos"
         ],
         "summary": "AI Transcription",
-        "description": "Available transcription APIs and languages. User doesn't need to be authentificated.",
-        "operationId": "transcription",
+        "description": "Available transcription APIs and languages. User doesn\u0027t need to be authentificated.",
+        "operationId": "Transcription",
         "parameters": [
           {
             "name": "User-Agent",
             "in": "header",
-            "description": "<<{{APP_NAME}} v{{APP_VERSION}}>>",
+            "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -4182,7 +4154,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Transcription200"
+                  "$ref": "#/components/schemas/Transcription200Response"
                 },
                 "examples": {
                   "Example 1": {
@@ -4216,7 +4188,7 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           }
         ]
       }
@@ -4227,8 +4199,8 @@
           "AI Transcribe"
         ],
         "summary": "AI Transcribe",
-        "description": "\"**Transcribe** media (audio, video) file using AI into subtitles. Max size of file: 100 MB \n\nCredits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get AI Transcribe status](../open_api.json/paths/~1ai~1transcribe~1{correlation_id}/get)\n\nMethod is returning \n```\n{\n  \\\"status\\\": \\\"CREATED\\\",\n  \\\"correlation_id\\\": \\\"67eda18f52e11\\\"\n}\n```\nStatus possible values: \n```\nCREATED     -> Initial state`\nPENDING     -> procedure is still running\nCOMPLETED   -> remote procedure call is completed and has a result\nERROR       -> procedure resulted in an error and is not running anymore\nTIMEOUT     -> No matching procedure call found before timeout\n```\nUsing `correlation_id` can check status of job using GET\n\"",
-        "operationId": "transcribe",
+        "description": "\u0022**Transcribe** media (audio, video) file using AI into subtitles. Max size of file: 100 MB \n\nCredits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get AI Transcribe status](../open_api.json/paths/~1ai~1transcribe~1{correlation_id}/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \\\u0022status\\\u0022: \\\u0022CREATED\\\u0022,\n  \\\u0022correlation_id\\\u0022: \\\u002267eda18f52e11\\\u0022\n}\n\u0060\u0060\u0060\nStatus possible values: \n\u0060\u0060\u0060\nCREATED     -\u003E Initial state\u0060\nPENDING     -\u003E procedure is still running\nCOMPLETED   -\u003E remote procedure call is completed and has a result\nERROR       -\u003E procedure resulted in an error and is not running anymore\nTIMEOUT     -\u003E No matching procedure call found before timeout\n\u0060\u0060\u0060\nUsing \u0060correlation_id\u0060 can check status of job using GET\n\u0022",
+        "operationId": "Transcribe",
         "parameters": [
           {
             "name": "api",
@@ -4264,7 +4236,7 @@
             "content": {
               "multipart/form-data": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/Transcribe200ResponseResponseFormData"
                 }
               }
             }
@@ -4272,31 +4244,29 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           },
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
     },
-    "/ai/transcribe/{correlation_id}": {
+    "/ai/transcribe/{correlationId}": {
       "get": {
         "tags": [
           "AI Transcribe"
         ],
         "summary": "AI Transcribe status",
-        "description": "Get status of **[transcribe](../open_api.json/paths/~1ai~1transcribe)** job using `correlation_id`",
-        "operationId": "transcribe-status",
+        "description": "Get status of **[transcribe](../open_api.json/paths/~1ai~1transcribe)** job using \u0060correlation_id\u0060",
+        "operationId": "TranscribeStatus",
         "responses": {
           "200": {
             "description": "Default",
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
                 }
               }
             }
@@ -4304,16 +4274,16 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           },
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       },
       "parameters": [
         {
-          "name": "correlation_id",
+          "name": "correlationId",
           "in": "path",
           "description": "correlation_id",
           "required": true,
@@ -4329,8 +4299,8 @@
           "Utilities"
         ],
         "summary": "Detect Language Text",
-        "description": "\"**Detect language** of subtitle file.\n\nAt least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nMethod is returning \n```\n{\n  \\\"data\\\": {\n    \\\"format\\\": \\\"SubRip\\\",\n    \\\"type\\\": \\\"text\\\",\n    \\\"language\\\": {\n      \\\"W3C\\\": \\\"en\\\",\n      \\\"name\\\": \\\"english\\\",\n      \\\"native\\\": \\\"english\\\",\n      \\\"ISO_639_1\\\": \\\"en\\\",\n      \\\"ISO_639_2b\\\": \\\"eng\\\"\n    }\n  }\n}\n```\"",
-        "operationId": "detect-language-text",
+        "description": "\u0022**Detect language** of subtitle file.\n\nAt least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \\\u0022data\\\u0022: {\n    \\\u0022format\\\u0022: \\\u0022SubRip\\\u0022,\n    \\\u0022type\\\u0022: \\\u0022text\\\u0022,\n    \\\u0022language\\\u0022: {\n      \\\u0022W3C\\\u0022: \\\u0022en\\\u0022,\n      \\\u0022name\\\u0022: \\\u0022english\\\u0022,\n      \\\u0022native\\\u0022: \\\u0022english\\\u0022,\n      \\\u0022ISO_639_1\\\u0022: \\\u0022en\\\u0022,\n      \\\u0022ISO_639_2b\\\u0022: \\\u0022eng\\\u0022\n    }\n  }\n}\n\u0060\u0060\u0060\u0022",
+        "operationId": "DetectLanguageText",
         "parameters": [
           {
             "name": "file",
@@ -4348,7 +4318,7 @@
             "content": {
               "multipart/form-data": {
                 "schema": {
-                  "$ref": "#/components/schemas/DetectLanguageText200"
+                  "$ref": "#/components/schemas/DetectLanguageText200Response"
                 }
               }
             }
@@ -4356,10 +4326,10 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           },
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
@@ -4370,8 +4340,8 @@
           "Utilities"
         ],
         "summary": "Detect Language Audio",
-        "description": "\"**Detect language**  of media audio file. Max size of file: 100 MB \n\nAt least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get Detect Language Audio status](../open_api.json/paths/~1ai~1detect_language_audio~1{correlation_id}/get)\n\nMethod is returning \n```\n{\n  \\\"status\\\": \\\"CREATED\\\",\n  \\\"correlation_id\\\": \\\"67eda18f52e11\\\"\n}\n```\nStatus possible values: \n```\nCREATED     -> Initial state`\nPENDING     -> procedure is still running\nCOMPLETED   -> remote procedure call is completed and has a result\nERROR       -> procedure resulted in an error and is not running anymore\nTIMEOUT     -> No matching procedure call found before timeout\n```\nUsing `correlation_id` can check status of job using GET\n\"",
-        "operationId": "detect-language-audio",
+        "description": "\u0022**Detect language**  of media audio file. Max size of file: 100 MB \n\nAt least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get Detect Language Audio status](../open_api.json/paths/~1ai~1detect_language_audio~1{correlation_id}/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \\\u0022status\\\u0022: \\\u0022CREATED\\\u0022,\n  \\\u0022correlation_id\\\u0022: \\\u002267eda18f52e11\\\u0022\n}\n\u0060\u0060\u0060\nStatus possible values: \n\u0060\u0060\u0060\nCREATED     -\u003E Initial state\u0060\nPENDING     -\u003E procedure is still running\nCOMPLETED   -\u003E remote procedure call is completed and has a result\nERROR       -\u003E procedure resulted in an error and is not running anymore\nTIMEOUT     -\u003E No matching procedure call found before timeout\n\u0060\u0060\u0060\nUsing \u0060correlation_id\u0060 can check status of job using GET\n\u0022",
+        "operationId": "DetectLanguageAudio",
         "parameters": [
           {
             "name": "api",
@@ -4407,7 +4377,7 @@
             "content": {
               "multipart/form-data": {
                 "schema": {
-                  "type": "object"
+                  "$ref": "#/components/schemas/DetectLanguageAudio200ResponseResponseFormData"
                 }
               }
             }
@@ -4415,31 +4385,29 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           },
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       }
     },
-    "/ai/detect_language_audio/{correlation_id}": {
+    "/ai/detect_language_audio/{correlationId}": {
       "get": {
         "tags": [
           "Utilities"
         ],
         "summary": "Detect Language Audio Status",
-        "description": "Get status of **[Detect Language Audio](../open_api.json/paths/~1ai~1detect_language_audio/post)** job using `correlation_id`\n",
-        "operationId": "detect-language-audio-status",
+        "description": "Get status of **[Detect Language Audio](../open_api.json/paths/~1ai~1detect_language_audio/post)** job using \u0060correlation_id\u0060\n",
+        "operationId": "DetectLanguageAudioStatus",
         "responses": {
           "200": {
             "description": "Default",
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
                 }
               }
             }
@@ -4447,16 +4415,16 @@
         },
         "security": [
           {
-            "Api-Key": [ ]
+            "Api-Key": []
           },
           {
-            "Bearer": [ ]
+            "Bearer": []
           }
         ]
       },
       "parameters": [
         {
-          "name": "correlation_id",
+          "name": "correlationId",
           "in": "path",
           "description": "correlation_id",
           "required": true,
@@ -4656,7 +4624,7 @@
           "related_links": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/SubtitleAttributesRelatedLinksItemProperty"
             }
           },
           "files": {
@@ -4664,23 +4632,7 @@
             "uniqueItems": true,
             "type": "array",
             "items": {
-              "required": [
-                "file_id",
-                "file_name"
-              ],
-              "type": "object",
-              "properties": {
-                "file_id": {
-                  "type": "number"
-                },
-                "cd_number": {
-                  "type": "number"
-                },
-                "file_name": {
-                  "minLength": 1,
-                  "type": "string"
-                }
-              }
+              "$ref": "#/components/schemas/SubtitleAttributesFilesItem"
             }
           }
         }
@@ -4723,7 +4675,7 @@
           "title_aka": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/FeatureTvshowAttributesTitleAkaItemProperty"
             }
           },
           "feature_id": {
@@ -4749,44 +4701,7 @@
             "uniqueItems": true,
             "type": "array",
             "items": {
-              "required": [
-                "season_number"
-              ],
-              "type": "object",
-              "properties": {
-                "season_number": {
-                  "type": "number"
-                },
-                "episodes": {
-                  "minItems": 1,
-                  "uniqueItems": true,
-                  "type": "array",
-                  "items": {
-                    "required": [
-                      "episode_number",
-                      "feature_id",
-                      "feature_imdb_id",
-                      "title"
-                    ],
-                    "type": "object",
-                    "properties": {
-                      "episode_number": {
-                        "type": "number"
-                      },
-                      "title": {
-                        "minLength": 1,
-                        "type": "string"
-                      },
-                      "feature_id": {
-                        "type": "number"
-                      },
-                      "feature_imdb_id": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                }
-              }
+              "$ref": "#/components/schemas/FeatureTvshowAttributesSeasonsItem"
             }
           }
         }
@@ -4814,14 +4729,14 @@
             "type": "string"
           },
           "original_title": {
-            "type": "object"
+            "$ref": "#/components/schemas/FeatureEpisodeAttributesOriginalTitleProperty"
           },
           "year": {
             "minLength": 1,
             "type": "string"
           },
           "parent_imdb_id": {
-            "type": "object"
+            "$ref": "#/components/schemas/FeatureEpisodeAttributesParentImdbIdProperty"
           },
           "parent_title": {
             "minLength": 1,
@@ -4842,7 +4757,7 @@
           "title_aka": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/FeatureEpisodeAttributesTitleAkaItemProperty"
             }
           },
           "feature_id": {
@@ -4913,7 +4828,7 @@
             "type": "number"
           },
           "episode_number": {
-            "type": "object"
+            "$ref": "#/components/schemas/FeatureMovieAttributesEpisodeNumberProperty"
           },
           "imdb_id": {
             "type": "number"
@@ -4922,7 +4837,7 @@
             "type": "number"
           },
           "parent_imdb_id": {
-            "type": "object"
+            "$ref": "#/components/schemas/FeatureMovieAttributesParentImdbIdProperty"
           },
           "feature_id": {
             "minLength": 1,
@@ -4931,7 +4846,7 @@
           "title_aka": {
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/FeatureMovieAttributesTitleAkaItemProperty"
             }
           },
           "feature_type": {
@@ -4997,6 +4912,31 @@
             "type": "number"
           }
         }
+      },
+      "SubtitleAttributesRelatedLinksItem": {
+        "type": "object"
+      },
+      "SubtitleAttributesFilesItem": {
+        "required": [
+          "file_id",
+          "file_name"
+        ],
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "number"
+          },
+          "cd_number": {
+            "type": "number"
+          },
+          "file_name": {
+            "minLength": 1,
+            "type": "string"
+          }
+        }
+      },
+      "FeatureTvshowAttributesTitleAkaItem": {
+        "type": "object"
       },
       "FeatureTvshowAttributesSubtitlesCounts": {
         "required": [
@@ -5156,6 +5096,34 @@
             "type": "number"
           }
         }
+      },
+      "FeatureTvshowAttributesSeasonsItem": {
+        "required": [
+          "season_number"
+        ],
+        "type": "object",
+        "properties": {
+          "season_number": {
+            "type": "number"
+          },
+          "episodes": {
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FeatureTvshowAttributesSeasonsItemEpisodesItem"
+            }
+          }
+        }
+      },
+      "FeatureEpisodeAttributesOriginalTitle": {
+        "type": "object"
+      },
+      "FeatureEpisodeAttributesParentImdbId": {
+        "type": "object"
+      },
+      "FeatureEpisodeAttributesTitleAkaItem": {
+        "type": "object"
       },
       "FeatureEpisodeAttributesSubtitlesCounts": {
         "required": [
@@ -5459,7 +5427,40 @@
           }
         }
       },
-      "Login": {
+      "FeatureMovieAttributesEpisodeNumber": {
+        "type": "object"
+      },
+      "FeatureMovieAttributesParentImdbId": {
+        "type": "object"
+      },
+      "FeatureMovieAttributesTitleAkaItem": {
+        "type": "object"
+      },
+      "FeatureTvshowAttributesSeasonsItemEpisodesItem": {
+        "required": [
+          "episode_number",
+          "feature_id",
+          "feature_imdb_id",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "episode_number": {
+            "type": "number"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "feature_id": {
+            "type": "number"
+          },
+          "feature_imdb_id": {
+            "type": "number"
+          }
+        }
+      },
+      "LoginRequest": {
         "required": [
           "username",
           "password"
@@ -5480,7 +5481,7 @@
           }
         }
       },
-      "Login200": {
+      "Login200Response": {
         "required": [
           "user",
           "base_url",
@@ -5490,48 +5491,10 @@
         "type": "object",
         "properties": {
           "user": {
-            "required": [
-              "allowed_translations",
-              "allowed_downloads",
-              "level",
-              "user_id",
-              "ext_installed",
-              "vip"
-            ],
-            "type": "object",
-            "properties": {
-              "allowed_translations": {
-                "type": "number"
-              },
-              "allowed_downloads": {
-                "type": "number"
-              },
-              "level": {
-                "minLength": 1,
-                "type": "string",
-                "example": "VIP Member"
-              },
-              "user_id": {
-                "type": "number"
-              },
-              "ext_installed": {
-                "type": "boolean"
-              },
-              "vip": {
-                "type": "boolean"
-              }
-            }
+            "$ref": "#/components/schemas/Login200ResponseUser"
           },
           "base_url": {
-            "enum": [
-              "api.opensubtitles.com",
-              "vip-api.opensubtitles.com"
-            ],
-            "type": "string",
-            "additionalProperties": false,
-            "format": "hostname",
-            "default": "api.opensubtitles.com",
-            "example": "api.opensubtitles.com"
+            "$ref": "#/components/schemas/Login200ResponseBaseUrl"
           },
           "token": {
             "minLength": 1,
@@ -5542,28 +5505,17 @@
           }
         }
       },
-      "Logout200": {
+      "Logout200Response": {
         "type": "object"
       },
-      "Formats200": {
+      "Formats200Response": {
         "required": [
           "data"
         ],
         "type": "object",
         "properties": {
           "data": {
-            "required": [
-              "output_formats"
-            ],
-            "type": "object",
-            "properties": {
-              "output_formats": {
-                "type": "array",
-                "items": {
-                  "type": "object"
-                }
-              }
-            }
+            "$ref": "#/components/schemas/Formats200ResponseData"
           }
         },
         "description": "",
@@ -5582,7 +5534,7 @@
           }
         }
       },
-      "Languages200": {
+      "Languages200Response": {
         "required": [
           "data"
         ],
@@ -5593,67 +5545,24 @@
             "uniqueItems": true,
             "type": "array",
             "items": {
-              "required": [
-                "language_code",
-                "language_name"
-              ],
-              "type": "object",
-              "properties": {
-                "language_code": {
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "language_name": {
-                  "minLength": 1,
-                  "type": "string"
-                }
-              }
+              "$ref": "#/components/schemas/Languages200ResponseDataItem"
             }
           }
         },
         "description": ""
       },
-      "Userinfo200": {
+      "Userinfo200Response": {
         "required": [
           "data"
         ],
         "type": "object",
         "properties": {
           "data": {
-            "required": [
-              "allowed_downloads",
-              "level",
-              "user_id",
-              "vip",
-              "downloads_count",
-              "remaining_downloads"
-            ],
-            "type": "object",
-            "properties": {
-              "allowed_downloads": {
-                "type": "number"
-              },
-              "level": {
-                "minLength": 1,
-                "type": "string"
-              },
-              "user_id": {
-                "type": "number"
-              },
-              "vip": {
-                "type": "boolean"
-              },
-              "downloads_count": {
-                "type": "number"
-              },
-              "remaining_downloads": {
-                "type": "number"
-              }
-            }
+            "$ref": "#/components/schemas/Userinfo200ResponseData"
           }
         }
       },
-      "Latest200": {
+      "Latest200Response": {
         "required": [
           "data",
           "page",
@@ -5676,226 +5585,13 @@
             "uniqueItems": true,
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "type"
-              ],
-              "type": "object",
-              "properties": {
-                "id": {
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "type": {
-                  "minLength": 1,
-                  "type": "string"
-                },
-                "attributes": {
-                  "required": [
-                    "ai_translated",
-                    "comments",
-                    "download_count",
-                    "feature_details",
-                    "files",
-                    "foreign_parts_only",
-                    "fps",
-                    "from_trusted",
-                    "hd",
-                    "hearing_impaired",
-                    "language",
-                    "legacy_subtitle_id",
-                    "new_download_count",
-                    "points",
-                    "ratings",
-                    "related_links",
-                    "release",
-                    "subtitle_id",
-                    "upload_date",
-                    "uploader",
-                    "url",
-                    "votes"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "subtitle_id": {
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "language": {
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "download_count": {
-                      "type": "number"
-                    },
-                    "new_download_count": {
-                      "type": "number"
-                    },
-                    "hearing_impaired": {
-                      "type": "boolean"
-                    },
-                    "hd": {
-                      "type": "boolean"
-                    },
-                    "format": {
-                      "type": "object"
-                    },
-                    "fps": {
-                      "type": "number"
-                    },
-                    "votes": {
-                      "type": "number"
-                    },
-                    "points": {
-                      "type": "number"
-                    },
-                    "ratings": {
-                      "type": "number"
-                    },
-                    "from_trusted": {
-                      "type": "boolean"
-                    },
-                    "foreign_parts_only": {
-                      "type": "boolean"
-                    },
-                    "ai_translated": {
-                      "type": "boolean"
-                    },
-                    "machine_translated": {
-                      "type": "object"
-                    },
-                    "upload_date": {
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "release": {
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "comments": {
-                      "type": "string"
-                    },
-                    "legacy_subtitle_id": {
-                      "type": "number"
-                    },
-                    "uploader": {
-                      "required": [
-                        "name",
-                        "rank",
-                        "uploader_id"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "uploader_id": {
-                          "type": "number"
-                        },
-                        "name": {
-                          "minLength": 1,
-                          "type": "string"
-                        },
-                        "rank": {
-                          "minLength": 1,
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "feature_details": {
-                      "required": [
-                        "feature_id",
-                        "feature_type",
-                        "imdb_id",
-                        "movie_name",
-                        "title",
-                        "year"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "feature_id": {
-                          "type": "number"
-                        },
-                        "feature_type": {
-                          "minLength": 1,
-                          "type": "string"
-                        },
-                        "year": {
-                          "type": "number"
-                        },
-                        "title": {
-                          "minLength": 1,
-                          "type": "string"
-                        },
-                        "movie_name": {
-                          "minLength": 1,
-                          "type": "string"
-                        },
-                        "imdb_id": {
-                          "type": "number"
-                        },
-                        "tmdb_id": {
-                          "type": "object"
-                        }
-                      }
-                    },
-                    "url": {
-                      "minLength": 1,
-                      "type": "string"
-                    },
-                    "related_links": {
-                      "required": [
-                        "img_url",
-                        "label",
-                        "url"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "label": {
-                          "minLength": 1,
-                          "type": "string"
-                        },
-                        "url": {
-                          "minLength": 1,
-                          "type": "string"
-                        },
-                        "img_url": {
-                          "minLength": 1,
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "files": {
-                      "minItems": 1,
-                      "uniqueItems": true,
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "cd_number",
-                          "file_id",
-                          "file_name"
-                        ],
-                        "type": "object",
-                        "properties": {
-                          "file_id": {
-                            "type": "number"
-                          },
-                          "cd_number": {
-                            "type": "number"
-                          },
-                          "file_name": {
-                            "minLength": 1,
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
+              "$ref": "#/components/schemas/Latest200ResponseDataItem"
             }
           }
         },
         "description": ""
       },
-      "Features200": {
+      "Features200Response": {
         "type": "object",
         "properties": {
           "movie": {
@@ -5910,7 +5606,7 @@
         },
         "description": ""
       },
-      "Subtitles200": {
+      "Subtitles200Response": {
         "type": "object",
         "properties": {
           "total_pages": {
@@ -5928,175 +5624,7 @@
           "data": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "attributes": {
-                  "type": "object",
-                  "properties": {
-                    "subtitle_id": {
-                      "type": "string"
-                    },
-                    "language": {
-                      "type": "string"
-                    },
-                    "download_count": {
-                      "type": "integer"
-                    },
-                    "new_download_count": {
-                      "type": "integer"
-                    },
-                    "hearing_impaired": {
-                      "type": "boolean"
-                    },
-                    "hd": {
-                      "type": "boolean"
-                    },
-                    "fps": {
-                      "type": "number"
-                    },
-                    "votes": {
-                      "type": "integer"
-                    },
-                    "ratings": {
-                      "type": "integer"
-                    },
-                    "from_trusted": {
-                      "type": "boolean"
-                    },
-                    "foreign_parts_only": {
-                      "type": "boolean"
-                    },
-                    "upload_date": {
-                      "type": "string"
-                    },
-                    "ai_translated": {
-                      "type": "boolean"
-                    },
-                    "nb_cd": {
-                      "type": "integer"
-                    },
-                    "slug": {
-                      "type": "string"
-                    },
-                    "machine_translated": {
-                      "type": "boolean"
-                    },
-                    "release": {
-                      "type": "string"
-                    },
-                    "comments": {
-                      "type": "string"
-                    },
-                    "legacy_subtitle_id": {
-                      "type": "integer"
-                    },
-                    "legacy_uploader_id": {
-                      "type": "integer"
-                    },
-                    "uploader": {
-                      "type": "object",
-                      "properties": {
-                        "uploader_id": {
-                          "type": "integer"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "rank": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "feature_details": {
-                      "type": "object",
-                      "properties": {
-                        "feature_id": {
-                          "type": "integer"
-                        },
-                        "feature_type": {
-                          "type": "string"
-                        },
-                        "year": {
-                          "type": "integer"
-                        },
-                        "title": {
-                          "type": "string"
-                        },
-                        "movie_name": {
-                          "type": "string"
-                        },
-                        "imdb_id": {
-                          "type": "integer"
-                        },
-                        "tmdb_id": {
-                          "type": "integer"
-                        },
-                        "season_number": {
-                          "type": "integer"
-                        },
-                        "episode_number": {
-                          "type": "integer"
-                        },
-                        "parent_imdb_id": {
-                          "type": "integer"
-                        },
-                        "parent_title": {
-                          "type": "string"
-                        },
-                        "parent_tmdb_id": {
-                          "type": "integer"
-                        },
-                        "parent_feature_id": {
-                          "type": "integer"
-                        }
-                      }
-                    },
-                    "url": {
-                      "type": "string"
-                    },
-                    "related_links": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "label": {
-                            "type": "string"
-                          },
-                          "url": {
-                            "type": "string"
-                          },
-                          "img_url": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "files": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "file_id": {
-                            "type": "integer"
-                          },
-                          "cd_number": {
-                            "type": "integer"
-                          },
-                          "file_name": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
+              "$ref": "#/components/schemas/Subtitles200ResponseDataItem"
             }
           }
         },
@@ -6127,7 +5655,7 @@
                   "nb_cd": 1,
                   "slug": "desperate-housewives-s01e05-come-in-stranger-vo-stfr-en-_track4",
                   "machine_translated": false,
-                  "release": "Desperate Housewives S01E05 Come In, Stranger (VO+STFR&EN)_track4",
+                  "release": "Desperate Housewives S01E05 Come In, Stranger (VO\u002BSTFR\u0026EN)_track4",
                   "comments": "Imported from subscene.com/subtitles/desperate-housewives-first-season/french/781305",
                   "legacy_subtitle_id": 10626866,
                   "legacy_uploader_id": 10030650,
@@ -6141,7 +5669,7 @@
                     "feature_type": "Episode",
                     "year": 2004,
                     "title": "Come In, Stranger",
-                    "movie_name": "Beautés désespérées - S01E05  La Peur au ventre",
+                    "movie_name": "Beaut\u00E9s d\u00E9sesp\u00E9r\u00E9es - S01E05  La Peur au ventre",
                     "imdb_id": 558705,
                     "tmdb_id": 38366,
                     "season_number": 1,
@@ -6159,7 +5687,7 @@
                       "img_url": "https://s3.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/fr/features/redirect/805"
                     }
                   ],
@@ -6167,7 +5695,7 @@
                     {
                       "file_id": 9443515,
                       "cd_number": 1,
-                      "file_name": "Desperate Housewives S01E05 Come In_ Stranger (VO+STFR.EN)_track4_fre"
+                      "file_name": "Desperate Housewives S01E05 Come In_ Stranger (VO\u002BSTFR.EN)_track4_fre"
                     }
                   ]
                 }
@@ -6224,7 +5752,7 @@
                       "img_url": "https://s2.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/fr/features/redirect/805"
                     }
                   ],
@@ -6289,7 +5817,7 @@
                       "img_url": "https://s7.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/fr/features/redirect/805"
                     }
                   ],
@@ -6354,7 +5882,7 @@
                       "img_url": "https://s6.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -6419,7 +5947,7 @@
                       "img_url": "https://s4.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -6484,7 +6012,7 @@
                       "img_url": "https://s9.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -6549,7 +6077,7 @@
                       "img_url": "https://s2.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -6614,7 +6142,7 @@
                       "img_url": "https://s5.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -6679,7 +6207,7 @@
                       "img_url": "https://s6.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -6744,7 +6272,7 @@
                       "img_url": "https://s8.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -6809,7 +6337,7 @@
                       "img_url": "https://s8.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -6874,7 +6402,7 @@
                       "img_url": "https://s3.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -6939,7 +6467,7 @@
                       "img_url": "https://s7.opensubtitles.com/features/5/0/8/805.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio come in, stranger",
+                      "label": "All subtitles for Epis\u00F3dio come in, stranger",
                       "url": "https://www.opensubtitles.com/en/features/redirect/805"
                     }
                   ],
@@ -7004,7 +6532,7 @@
                       "img_url": "https://s9.opensubtitles.com/features/7/6/1/702167.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio red tears of the entrance exam crazy moms",
+                      "label": "All subtitles for Epis\u00F3dio red tears of the entrance exam crazy moms",
                       "url": "https://www.opensubtitles.com/en/features/redirect/702167"
                     }
                   ],
@@ -7069,7 +6597,7 @@
                       "img_url": "https://s5.opensubtitles.com/features/7/6/1/702167.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio red tears of the entrance exam crazy moms",
+                      "label": "All subtitles for Epis\u00F3dio red tears of the entrance exam crazy moms",
                       "url": "https://www.opensubtitles.com/en/features/redirect/702167"
                     }
                   ],
@@ -7134,7 +6662,7 @@
                       "img_url": "https://s6.opensubtitles.com/features/3/2/3/230323.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio episode 5",
+                      "label": "All subtitles for Epis\u00F3dio episode 5",
                       "url": "https://www.opensubtitles.com/en/features/redirect/230323"
                     }
                   ],
@@ -7199,7 +6727,7 @@
                       "img_url": "https://s2.opensubtitles.com/features/7/6/1/702167.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio red tears of the entrance exam crazy moms",
+                      "label": "All subtitles for Epis\u00F3dio red tears of the entrance exam crazy moms",
                       "url": "https://www.opensubtitles.com/en/features/redirect/702167"
                     }
                   ],
@@ -7264,7 +6792,7 @@
                       "img_url": "https://s3.opensubtitles.com/features/3/2/3/230323.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio episode 5",
+                      "label": "All subtitles for Epis\u00F3dio episode 5",
                       "url": "https://www.opensubtitles.com/en/features/redirect/230323"
                     }
                   ],
@@ -7311,7 +6839,7 @@
                     "feature_type": "Episode",
                     "year": 2024,
                     "title": "Episode 5",
-                    "movie_name": "Desperate Mrs. Seonju - S01E05  \"Desperate Mrs. Seonju\" Episode #1.5",
+                    "movie_name": "Desperate Mrs. Seonju - S01E05  \u0022Desperate Mrs. Seonju\u0022 Episode #1.5",
                     "imdb_id": 37062001,
                     "tmdb_id": null,
                     "season_number": 1,
@@ -7329,7 +6857,7 @@
                       "img_url": "https://s3.opensubtitles.com/features/0/3/3/2784330.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio episode 5",
+                      "label": "All subtitles for Epis\u00F3dio episode 5",
                       "url": "https://www.opensubtitles.com/en/features/redirect/2784330"
                     }
                   ],
@@ -7394,7 +6922,7 @@
                       "img_url": "https://s9.opensubtitles.com/features/8/8/8/1389888.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio piping tea with a hint of peach",
+                      "label": "All subtitles for Epis\u00F3dio piping tea with a hint of peach",
                       "url": "https://www.opensubtitles.com/en/features/redirect/1389888"
                     }
                   ],
@@ -7459,7 +6987,7 @@
                       "img_url": "https://s2.opensubtitles.com/features/4/3/5/1372534.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio i would never say that",
+                      "label": "All subtitles for Epis\u00F3dio i would never say that",
                       "url": "https://www.opensubtitles.com/en/features/redirect/1372534"
                     }
                   ],
@@ -7524,7 +7052,7 @@
                       "img_url": "https://s4.opensubtitles.com/features/1/4/3/1192341.jpg"
                     },
                     {
-                      "label": "All subtitles for Episódio ladies who lunch",
+                      "label": "All subtitles for Epis\u00F3dio ladies who lunch",
                       "url": "https://www.opensubtitles.com/en/features/redirect/1192341"
                     }
                   ],
@@ -7541,7 +7069,7 @@
           }
         }
       },
-      "Download": {
+      "DownloadRequest": {
         "required": [
           "file_id"
         ],
@@ -7571,11 +7099,11 @@
           },
           "timeshift": {
             "type": "number",
-            "description": "delay to add or remove to the subtitle, + or - value, in seconds, i.e. 2.5s or -1s "
+            "description": "delay to add or remove to the subtitle, \u002B or - value, in seconds, i.e. 2.5s or -1s "
           },
           "force_download": {
             "type": "boolean",
-            "description": "(1/0) set subtitle file headers to \"application/force-download\""
+            "description": "(1/0) set subtitle file headers to \u0022application/force-download\u0022"
           }
         },
         "x-examples": {
@@ -7590,7 +7118,7 @@
           }
         }
       },
-      "Download200": {
+      "Download200Response": {
         "required": [
           "link",
           "file_name",
@@ -7642,7 +7170,7 @@
           }
         }
       },
-      "Guessit200": {
+      "Guessit200Response": {
         "required": [
           "audio_channels",
           "audio_codec",
@@ -7714,16 +7242,11 @@
         },
         "description": ""
       },
-      "GetCredits200": {
+      "GetCredits200Response": {
         "type": "object",
         "properties": {
           "data": {
-            "type": "object",
-            "properties": {
-              "credits": {
-                "type": "integer"
-              }
-            }
+            "$ref": "#/components/schemas/GetCredits200ResponseData"
           }
         },
         "x-examples": {
@@ -7734,27 +7257,13 @@
           }
         }
       },
-      "BuyCredits200": {
+      "BuyCredits200Response": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "value": {
-                  "type": "string"
-                },
-                "discount_percent": {
-                  "type": "integer"
-                },
-                "checkout_url": {
-                  "type": "string"
-                }
-              }
+              "$ref": "#/components/schemas/BuyCredits200ResponseDataItem"
             }
           }
         },
@@ -7789,47 +7298,13 @@
           }
         }
       },
-      "Translation200": {
+      "Translation200Response": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "display_name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "pricing": {
-                  "type": "string"
-                },
-                "reliability": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "languages_supported": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "language_code": {
-                        "type": "string"
-                      },
-                      "language_name": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              }
+              "$ref": "#/components/schemas/Translation200ResponseDataItem"
             }
           }
         },
@@ -8394,50 +7869,16 @@
           }
         }
       },
-      "Translate200": {
+      "Translate200Response": {
         "type": "object"
       },
-      "Transcription200": {
+      "Transcription200Response": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "display_name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "pricing": {
-                  "type": "string"
-                },
-                "reliability": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "languages_supported": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "language_code": {
-                        "type": "string"
-                      },
-                      "language_name": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              }
+              "$ref": "#/components/schemas/Transcription200ResponseDataItem"
             }
           }
         },
@@ -8873,7 +8314,7 @@
               {
                 "name": "salad",
                 "display_name": "Salad Transcribe",
-                "description": "Salad’s Transcription API is based on OpenAI's Whiper model, offering low cost transcription",
+                "description": "Salad\u2019s Transcription API is based on OpenAI\u0027s Whiper model, offering low cost transcription",
                 "pricing": "Pay-per-second",
                 "reliability": "low",
                 "price": 0.0054,
@@ -8995,7 +8436,7 @@
               {
                 "name": "openai",
                 "display_name": "OpenAI Whisper",
-                "description": "OpenAI's Whiper model, run by OpenAI",
+                "description": "OpenAI\u0027s Whiper model, run by OpenAI",
                 "pricing": "Pay-per-second",
                 "reliability": "medium",
                 "price": 0.033,
@@ -9146,7 +8587,7 @@
                   },
                   {
                     "language_code": "mi-NZ",
-                    "language_name": "māori"
+                    "language_name": "m\u0101ori"
                   },
                   {
                     "language_code": "ne-NP",
@@ -9154,7 +8595,7 @@
                   },
                   {
                     "language_code": "nb-NO",
-                    "language_name": "norwegian bokmål (Norway)"
+                    "language_name": "norwegian bokm\u00E5l (Norway)"
                   },
                   {
                     "language_code": "fa-IR",
@@ -9590,7 +9031,7 @@
                   },
                   {
                     "language_code": "mi",
-                    "language_name": "māori"
+                    "language_name": "m\u0101ori"
                   },
                   {
                     "language_code": "mr",
@@ -9638,7 +9079,7 @@
                   },
                   {
                     "language_code": "sa",
-                    "language_name": "sanskrit (saṁskṛta)"
+                    "language_name": "sanskrit (sa\u1E41sk\u1E5Bta)"
                   },
                   {
                     "language_code": "sr",
@@ -9750,42 +9191,14 @@
           }
         }
       },
-      "Transcribe200": {
+      "Transcribe200Response": {
         "type": "object"
       },
-      "DetectLanguageText200": {
+      "DetectLanguageText200Response": {
         "type": "object",
         "properties": {
           "data": {
-            "type": "object",
-            "properties": {
-              "format": {
-                "type": "string"
-              },
-              "type": {
-                "type": "string"
-              },
-              "language": {
-                "type": "object",
-                "properties": {
-                  "W3C": {
-                    "type": "string"
-                  },
-                  "name": {
-                    "type": "string"
-                  },
-                  "native": {
-                    "type": "string"
-                  },
-                  "ISO_639_1": {
-                    "type": "string"
-                  },
-                  "ISO_639_2b": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/schemas/DetectLanguageText200ResponseData"
           }
         },
         "x-examples": {
@@ -9804,12 +9217,781 @@
           }
         }
       },
-      "DetectLanguageAudio200": {
+      "DetectLanguageAudio200Response": {
         "type": "object"
       },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
+      },
+      "Logout200ResponseResponseJson": {
+        "type": "object"
+      },
+      "MostDownloaded200Response": {
+        "required": [
+          "total_pages",
+          "total_count",
+          "page",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "total_pages": {
+            "type": "number"
+          },
+          "total_count": {
+            "type": "number"
+          },
+          "page": {
+            "type": "number"
+          },
+          "data": {
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Subtitle"
+            }
+          }
+        },
+        "description": ""
+      },
+      "Translate200ResponseResponseFormData": {
+        "type": "object"
+      },
+      "DefaultResponse": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "Transcribe200ResponseResponseFormData": {
+        "type": "object"
+      },
+      "DefaultResponseResponseJson": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DetectLanguageAudio200ResponseResponseFormData": {
+        "type": "object"
+      },
+      "DefaultResponseResponseJson2": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "SubtitleAttributesRelatedLinksItemProperty": {
+        "type": "object"
+      },
+      "FeatureTvshowAttributesTitleAkaItemProperty": {
+        "type": "object"
+      },
+      "FeatureEpisodeAttributesOriginalTitleProperty": {
+        "type": "object"
+      },
+      "FeatureEpisodeAttributesParentImdbIdProperty": {
+        "type": "object"
+      },
+      "FeatureEpisodeAttributesTitleAkaItemProperty": {
+        "type": "object"
+      },
+      "FeatureMovieAttributesEpisodeNumberProperty": {
+        "type": "object"
+      },
+      "FeatureMovieAttributesParentImdbIdProperty": {
+        "type": "object"
+      },
+      "FeatureMovieAttributesTitleAkaItemProperty": {
+        "type": "object"
+      },
+      "Login200ResponseUser": {
+        "required": [
+          "allowed_translations",
+          "allowed_downloads",
+          "level",
+          "user_id",
+          "ext_installed",
+          "vip"
+        ],
+        "type": "object",
+        "properties": {
+          "allowed_translations": {
+            "type": "number"
+          },
+          "allowed_downloads": {
+            "type": "number"
+          },
+          "level": {
+            "minLength": 1,
+            "type": "string",
+            "example": "VIP Member"
+          },
+          "user_id": {
+            "type": "number"
+          },
+          "ext_installed": {
+            "type": "boolean"
+          },
+          "vip": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Formats200ResponseData": {
+        "required": [
+          "output_formats"
+        ],
+        "type": "object",
+        "properties": {
+          "output_formats": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Formats200ResponseDataOutputFormatsItem"
+            }
+          }
+        }
+      },
+      "Languages200ResponseDataItem": {
+        "required": [
+          "language_code",
+          "language_name"
+        ],
+        "type": "object",
+        "properties": {
+          "language_code": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "language_name": {
+            "minLength": 1,
+            "type": "string"
+          }
+        }
+      },
+      "Userinfo200ResponseData": {
+        "required": [
+          "allowed_downloads",
+          "level",
+          "user_id",
+          "vip",
+          "downloads_count",
+          "remaining_downloads"
+        ],
+        "type": "object",
+        "properties": {
+          "allowed_downloads": {
+            "type": "number"
+          },
+          "level": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "user_id": {
+            "type": "number"
+          },
+          "vip": {
+            "type": "boolean"
+          },
+          "downloads_count": {
+            "type": "number"
+          },
+          "remaining_downloads": {
+            "type": "number"
+          }
+        }
+      },
+      "Latest200ResponseDataItem": {
+        "required": [
+          "id",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/Latest200ResponseDataItemAttributes"
+          }
+        }
+      },
+      "Subtitles200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/Subtitles200ResponseDataItemAttributes"
+          }
+        }
+      },
+      "GetCredits200ResponseData": {
+        "type": "object",
+        "properties": {
+          "credits": {
+            "type": "integer"
+          }
+        }
+      },
+      "BuyCredits200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "discount_percent": {
+            "type": "integer"
+          },
+          "checkout_url": {
+            "type": "string"
+          }
+        }
+      },
+      "Translation200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "pricing": {
+            "type": "string"
+          },
+          "reliability": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "languages_supported": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Translation200ResponseDataItemLanguagesSupportedItem"
+            }
+          }
+        }
+      },
+      "Transcription200ResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "pricing": {
+            "type": "string"
+          },
+          "reliability": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "languages_supported": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Transcription200ResponseDataItemLanguagesSupportedItem"
+            }
+          }
+        }
+      },
+      "DetectLanguageText200ResponseData": {
+        "type": "object",
+        "properties": {
+          "format": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "language": {
+            "$ref": "#/components/schemas/DetectLanguageText200ResponseDataLanguage"
+          }
+        }
+      },
+      "Formats200ResponseDataOutputFormatsItem": {
+        "type": "object"
+      },
+      "Latest200ResponseDataItemAttributes": {
+        "required": [
+          "ai_translated",
+          "comments",
+          "download_count",
+          "feature_details",
+          "files",
+          "foreign_parts_only",
+          "fps",
+          "from_trusted",
+          "hd",
+          "hearing_impaired",
+          "language",
+          "legacy_subtitle_id",
+          "new_download_count",
+          "points",
+          "ratings",
+          "related_links",
+          "release",
+          "subtitle_id",
+          "upload_date",
+          "uploader",
+          "url",
+          "votes"
+        ],
+        "type": "object",
+        "properties": {
+          "subtitle_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "language": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "download_count": {
+            "type": "number"
+          },
+          "new_download_count": {
+            "type": "number"
+          },
+          "hearing_impaired": {
+            "type": "boolean"
+          },
+          "hd": {
+            "type": "boolean"
+          },
+          "format": {
+            "$ref": "#/components/schemas/Latest200ResponseDataItemAttributesFormat"
+          },
+          "fps": {
+            "type": "number"
+          },
+          "votes": {
+            "type": "number"
+          },
+          "points": {
+            "type": "number"
+          },
+          "ratings": {
+            "type": "number"
+          },
+          "from_trusted": {
+            "type": "boolean"
+          },
+          "foreign_parts_only": {
+            "type": "boolean"
+          },
+          "ai_translated": {
+            "type": "boolean"
+          },
+          "machine_translated": {
+            "$ref": "#/components/schemas/Latest200ResponseDataItemAttributesMachineTranslated"
+          },
+          "upload_date": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "release": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "comments": {
+            "type": "string"
+          },
+          "legacy_subtitle_id": {
+            "type": "number"
+          },
+          "uploader": {
+            "$ref": "#/components/schemas/Latest200ResponseDataItemAttributesUploader"
+          },
+          "feature_details": {
+            "$ref": "#/components/schemas/Latest200ResponseDataItemAttributesFeatureDetails"
+          },
+          "url": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "related_links": {
+            "$ref": "#/components/schemas/Latest200ResponseDataItemAttributesRelatedLinks"
+          },
+          "files": {
+            "minItems": 1,
+            "uniqueItems": true,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Latest200ResponseDataItemAttributesFilesItem"
+            }
+          }
+        }
+      },
+      "Subtitles200ResponseDataItemAttributes": {
+        "type": "object",
+        "properties": {
+          "subtitle_id": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "download_count": {
+            "type": "integer"
+          },
+          "new_download_count": {
+            "type": "integer"
+          },
+          "hearing_impaired": {
+            "type": "boolean"
+          },
+          "hd": {
+            "type": "boolean"
+          },
+          "fps": {
+            "type": "number"
+          },
+          "votes": {
+            "type": "integer"
+          },
+          "ratings": {
+            "type": "integer"
+          },
+          "from_trusted": {
+            "type": "boolean"
+          },
+          "foreign_parts_only": {
+            "type": "boolean"
+          },
+          "upload_date": {
+            "type": "string"
+          },
+          "ai_translated": {
+            "type": "boolean"
+          },
+          "nb_cd": {
+            "type": "integer"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "machine_translated": {
+            "type": "boolean"
+          },
+          "release": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "string"
+          },
+          "legacy_subtitle_id": {
+            "type": "integer"
+          },
+          "legacy_uploader_id": {
+            "type": "integer"
+          },
+          "uploader": {
+            "$ref": "#/components/schemas/Subtitles200ResponseDataItemAttributesUploader"
+          },
+          "feature_details": {
+            "$ref": "#/components/schemas/Subtitles200ResponseDataItemAttributesFeatureDetails"
+          },
+          "url": {
+            "type": "string"
+          },
+          "related_links": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Subtitles200ResponseDataItemAttributesRelatedLinksItem"
+            }
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Subtitles200ResponseDataItemAttributesFilesItem"
+            }
+          }
+        }
+      },
+      "Translation200ResponseDataItemLanguagesSupportedItem": {
+        "type": "object",
+        "properties": {
+          "language_code": {
+            "type": "string"
+          },
+          "language_name": {
+            "type": "string"
+          }
+        }
+      },
+      "Transcription200ResponseDataItemLanguagesSupportedItem": {
+        "type": "object",
+        "properties": {
+          "language_code": {
+            "type": "string"
+          },
+          "language_name": {
+            "type": "string"
+          }
+        }
+      },
+      "DetectLanguageText200ResponseDataLanguage": {
+        "type": "object",
+        "properties": {
+          "W3C": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "native": {
+            "type": "string"
+          },
+          "ISO_639_1": {
+            "type": "string"
+          },
+          "ISO_639_2b": {
+            "type": "string"
+          }
+        }
+      },
+      "Latest200ResponseDataItemAttributesFormat": {
+        "type": "object"
+      },
+      "Latest200ResponseDataItemAttributesMachineTranslated": {
+        "type": "object"
+      },
+      "Latest200ResponseDataItemAttributesUploader": {
+        "required": [
+          "name",
+          "rank",
+          "uploader_id"
+        ],
+        "type": "object",
+        "properties": {
+          "uploader_id": {
+            "type": "number"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "rank": {
+            "minLength": 1,
+            "type": "string"
+          }
+        }
+      },
+      "Latest200ResponseDataItemAttributesFeatureDetails": {
+        "required": [
+          "feature_id",
+          "feature_type",
+          "imdb_id",
+          "movie_name",
+          "title",
+          "year"
+        ],
+        "type": "object",
+        "properties": {
+          "feature_id": {
+            "type": "number"
+          },
+          "feature_type": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "year": {
+            "type": "number"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "movie_name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "imdb_id": {
+            "type": "number"
+          },
+          "tmdb_id": {
+            "$ref": "#/components/schemas/Latest200ResponseDataItemAttributesFeatureDetailsTmdbId"
+          }
+        }
+      },
+      "Latest200ResponseDataItemAttributesRelatedLinks": {
+        "required": [
+          "img_url",
+          "label",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "label": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "url": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "img_url": {
+            "minLength": 1,
+            "type": "string"
+          }
+        }
+      },
+      "Latest200ResponseDataItemAttributesFilesItem": {
+        "required": [
+          "cd_number",
+          "file_id",
+          "file_name"
+        ],
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "number"
+          },
+          "cd_number": {
+            "type": "number"
+          },
+          "file_name": {
+            "minLength": 1,
+            "type": "string"
+          }
+        }
+      },
+      "Subtitles200ResponseDataItemAttributesUploader": {
+        "type": "object",
+        "properties": {
+          "uploader_id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "string"
+          }
+        }
+      },
+      "Subtitles200ResponseDataItemAttributesFeatureDetails": {
+        "type": "object",
+        "properties": {
+          "feature_id": {
+            "type": "integer"
+          },
+          "feature_type": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "movie_name": {
+            "type": "string"
+          },
+          "imdb_id": {
+            "type": "integer"
+          },
+          "tmdb_id": {
+            "type": "integer"
+          },
+          "season_number": {
+            "type": "integer"
+          },
+          "episode_number": {
+            "type": "integer"
+          },
+          "parent_imdb_id": {
+            "type": "integer"
+          },
+          "parent_title": {
+            "type": "string"
+          },
+          "parent_tmdb_id": {
+            "type": "integer"
+          },
+          "parent_feature_id": {
+            "type": "integer"
+          }
+        }
+      },
+      "Subtitles200ResponseDataItemAttributesRelatedLinksItem": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "img_url": {
+            "type": "string"
+          }
+        }
+      },
+      "Subtitles200ResponseDataItemAttributesFilesItem": {
+        "type": "object",
+        "properties": {
+          "file_id": {
+            "type": "integer"
+          },
+          "cd_number": {
+            "type": "integer"
+          },
+          "file_name": {
+            "type": "string"
+          }
+        }
+      },
+      "Latest200ResponseDataItemAttributesFeatureDetailsTmdbId": {
+        "type": "object"
+      },
+      "Login200ResponseBaseUrl": {
+        "enum": [
+          "api.opensubtitles.com",
+          "vip-api.opensubtitles.com"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "format": "hostname",
+        "default": "api.opensubtitles.com",
+        "example": "api.opensubtitles.com",
+        "x-ms-enum": {
+          "name": "Login200ResponseBaseUrl",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "api.opensubtitles.com",
+              "name": "ApiOpensubtitlesCom"
+            },
+            {
+              "value": "vip-api.opensubtitles.com",
+              "name": "VipApiOpensubtitlesCom"
+            }
+          ]
+        }
       }
     },
     "securitySchemes": {
@@ -9835,10 +10017,10 @@
   },
   "security": [
     {
-      "Api-Key": [ ]
+      "Api-Key": []
     },
     {
-      "Bearer": [ ]
+      "Bearer": []
     }
   ],
   "tags": [

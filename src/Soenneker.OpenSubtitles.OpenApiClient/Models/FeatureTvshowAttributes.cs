@@ -43,10 +43,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The seasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_seasons>? Seasons { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItem>? Seasons { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_seasons> Seasons { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItem> Seasons { get; set; }
 #endif
         /// <summary>The subtitles_count property</summary>
         public double? SubtitlesCount { get; set; }
@@ -69,10 +69,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The title_aka property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_title_aka>? TitleAka { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesTitleAkaItemProperty>? TitleAka { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_title_aka> TitleAka { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesTitleAkaItemProperty> TitleAka { get; set; }
 #endif
         /// <summary>The tmdb_id property</summary>
         public double? TmdbId { get; set; }
@@ -121,11 +121,11 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
                 { "imdb_id", n => { ImdbId = n.GetDoubleValue(); } },
                 { "img_url", n => { ImgUrl = n.GetStringValue(); } },
                 { "original_title", n => { OriginalTitle = n.GetStringValue(); } },
-                { "seasons", n => { Seasons = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_seasons>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_seasons.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "seasons", n => { Seasons = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItem>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subtitles_count", n => { SubtitlesCount = n.GetDoubleValue(); } },
                 { "subtitles_counts", n => { SubtitlesCounts = n.GetObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSubtitlesCounts>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSubtitlesCounts.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "title_aka", n => { TitleAka = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_title_aka>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_title_aka.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "title_aka", n => { TitleAka = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesTitleAkaItemProperty>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesTitleAkaItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tmdb_id", n => { TmdbId = n.GetDoubleValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "year", n => { Year = n.GetStringValue(); } },
@@ -142,11 +142,11 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
             writer.WriteDoubleValue("imdb_id", ImdbId);
             writer.WriteStringValue("img_url", ImgUrl);
             writer.WriteStringValue("original_title", OriginalTitle);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_seasons>("seasons", Seasons);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItem>("seasons", Seasons);
             writer.WriteDoubleValue("subtitles_count", SubtitlesCount);
             writer.WriteObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSubtitlesCounts>("subtitles_counts", SubtitlesCounts);
             writer.WriteStringValue("title", Title);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributes_title_aka>("title_aka", TitleAka);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesTitleAkaItemProperty>("title_aka", TitleAka);
             writer.WriteDoubleValue("tmdb_id", TmdbId);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("year", Year);

@@ -17,10 +17,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The episode_number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_episode_number? EpisodeNumber { get; set; }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesEpisodeNumberProperty? EpisodeNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_episode_number EpisodeNumber { get; set; }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesEpisodeNumberProperty EpisodeNumber { get; set; }
 #endif
         /// <summary>The feature_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,10 +59,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The parent_imdb_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_parent_imdb_id? ParentImdbId { get; set; }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesParentImdbIdProperty? ParentImdbId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_parent_imdb_id ParentImdbId { get; set; }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesParentImdbIdProperty ParentImdbId { get; set; }
 #endif
         /// <summary>The parent_title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,10 +97,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The title_aka property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_title_aka>? TitleAka { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesTitleAkaItemProperty>? TitleAka { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_title_aka> TitleAka { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesTitleAkaItemProperty> TitleAka { get; set; }
 #endif
         /// <summary>The tmdb_id property</summary>
         public double? TmdbId { get; set; }
@@ -145,20 +145,20 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "episode_number", n => { EpisodeNumber = n.GetObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_episode_number>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_episode_number.CreateFromDiscriminatorValue); } },
+                { "episode_number", n => { EpisodeNumber = n.GetObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesEpisodeNumberProperty>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesEpisodeNumberProperty.CreateFromDiscriminatorValue); } },
                 { "feature_id", n => { FeatureId = n.GetStringValue(); } },
                 { "feature_type", n => { FeatureType = n.GetStringValue(); } },
                 { "imdb_id", n => { ImdbId = n.GetDoubleValue(); } },
                 { "img_url", n => { ImgUrl = n.GetStringValue(); } },
                 { "original_title", n => { OriginalTitle = n.GetStringValue(); } },
-                { "parent_imdb_id", n => { ParentImdbId = n.GetObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_parent_imdb_id>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_parent_imdb_id.CreateFromDiscriminatorValue); } },
+                { "parent_imdb_id", n => { ParentImdbId = n.GetObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesParentImdbIdProperty>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesParentImdbIdProperty.CreateFromDiscriminatorValue); } },
                 { "parent_title", n => { ParentTitle = n.GetStringValue(); } },
                 { "season_number", n => { SeasonNumber = n.GetDoubleValue(); } },
                 { "seasons_count", n => { SeasonsCount = n.GetDoubleValue(); } },
                 { "subtitles_count", n => { SubtitlesCount = n.GetDoubleValue(); } },
                 { "subtitles_counts", n => { SubtitlesCounts = n.GetObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesSubtitlesCounts>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesSubtitlesCounts.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "title_aka", n => { TitleAka = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_title_aka>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_title_aka.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "title_aka", n => { TitleAka = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesTitleAkaItemProperty>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesTitleAkaItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tmdb_id", n => { TmdbId = n.GetDoubleValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "year", n => { Year = n.GetStringValue(); } },
@@ -171,20 +171,20 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_episode_number>("episode_number", EpisodeNumber);
+            writer.WriteObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesEpisodeNumberProperty>("episode_number", EpisodeNumber);
             writer.WriteStringValue("feature_id", FeatureId);
             writer.WriteStringValue("feature_type", FeatureType);
             writer.WriteDoubleValue("imdb_id", ImdbId);
             writer.WriteStringValue("img_url", ImgUrl);
             writer.WriteStringValue("original_title", OriginalTitle);
-            writer.WriteObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_parent_imdb_id>("parent_imdb_id", ParentImdbId);
+            writer.WriteObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesParentImdbIdProperty>("parent_imdb_id", ParentImdbId);
             writer.WriteStringValue("parent_title", ParentTitle);
             writer.WriteDoubleValue("season_number", SeasonNumber);
             writer.WriteDoubleValue("seasons_count", SeasonsCount);
             writer.WriteDoubleValue("subtitles_count", SubtitlesCount);
             writer.WriteObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesSubtitlesCounts>("subtitles_counts", SubtitlesCounts);
             writer.WriteStringValue("title", Title);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributes_title_aka>("title_aka", TitleAka);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovieAttributesTitleAkaItemProperty>("title_aka", TitleAka);
             writer.WriteDoubleValue("tmdb_id", TmdbId);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("year", Year);

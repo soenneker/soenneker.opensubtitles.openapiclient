@@ -37,10 +37,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The files property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_files>? Files { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesFilesItem>? Files { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_files> Files { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesFilesItem> Files { get; set; }
 #endif
         /// <summary>The foreign_parts_only property</summary>
         public bool? ForeignPartsOnly { get; set; }
@@ -73,10 +73,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The related_links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_related_links>? RelatedLinks { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesRelatedLinksItemProperty>? RelatedLinks { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_related_links> RelatedLinks { get; set; }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesRelatedLinksItemProperty> RelatedLinks { get; set; }
 #endif
         /// <summary>The release property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,7 +149,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "download_count", n => { DownloadCount = n.GetDoubleValue(); } },
                 { "feature_details", n => { FeatureDetails = n.GetObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesFeatureDetails>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesFeatureDetails.CreateFromDiscriminatorValue); } },
-                { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_files>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_files.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesFilesItem>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesFilesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "foreign_parts_only", n => { ForeignPartsOnly = n.GetBoolValue(); } },
                 { "fps", n => { Fps = n.GetDoubleValue(); } },
                 { "from_trusted", n => { FromTrusted = n.GetBoolValue(); } },
@@ -161,7 +161,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
                 { "new_download_count", n => { NewDownloadCount = n.GetDoubleValue(); } },
                 { "points", n => { Points = n.GetDoubleValue(); } },
                 { "ratings", n => { Ratings = n.GetDoubleValue(); } },
-                { "related_links", n => { RelatedLinks = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_related_links>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_related_links.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "related_links", n => { RelatedLinks = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesRelatedLinksItemProperty>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesRelatedLinksItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "release", n => { Release = n.GetStringValue(); } },
                 { "subtitle_id", n => { SubtitleId = n.GetStringValue(); } },
                 { "upload_date", n => { UploadDate = n.GetStringValue(); } },
@@ -181,7 +181,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
             writer.WriteStringValue("comments", Comments);
             writer.WriteDoubleValue("download_count", DownloadCount);
             writer.WriteObjectValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesFeatureDetails>("feature_details", FeatureDetails);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_files>("files", Files);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesFilesItem>("files", Files);
             writer.WriteBoolValue("foreign_parts_only", ForeignPartsOnly);
             writer.WriteDoubleValue("fps", Fps);
             writer.WriteBoolValue("from_trusted", FromTrusted);
@@ -193,7 +193,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
             writer.WriteDoubleValue("new_download_count", NewDownloadCount);
             writer.WriteDoubleValue("points", Points);
             writer.WriteDoubleValue("ratings", Ratings);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributes_related_links>("related_links", RelatedLinks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.SubtitleAttributesRelatedLinksItemProperty>("related_links", RelatedLinks);
             writer.WriteStringValue("release", Release);
             writer.WriteStringValue("subtitle_id", SubtitleId);
             writer.WriteStringValue("upload_date", UploadDate);
