@@ -40,7 +40,6 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         public Login200Response()
         {
             AdditionalData = new Dictionary<string, object>();
-            BaseUrl = global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login200ResponseBaseUrl.ApiOpensubtitlesCom;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
