@@ -119,7 +119,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Logout200ResponseResponseJson"
+                  "$ref": "#/components/schemas/Logout200ResponseSchema"
                 },
                 "example": {
                   "message": "token successfully destroyed",
@@ -4073,7 +4073,7 @@
             "content": {
               "multipart/form-data": {
                 "schema": {
-                  "$ref": "#/components/schemas/Translate200ResponseResponseFormData"
+                  "$ref": "#/components/schemas/Translate200FormDataResponseSchema"
                 }
               }
             }
@@ -4103,7 +4103,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/TranslateStatus200Response"
                 }
               }
             }
@@ -4236,7 +4236,7 @@
             "content": {
               "multipart/form-data": {
                 "schema": {
-                  "$ref": "#/components/schemas/Transcribe200ResponseResponseFormData"
+                  "$ref": "#/components/schemas/Transcribe200FormDataResponseSchema"
                 }
               }
             }
@@ -4266,7 +4266,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/TranscribeStatus200Response"
                 }
               }
             }
@@ -4318,7 +4318,7 @@
             "content": {
               "multipart/form-data": {
                 "schema": {
-                  "$ref": "#/components/schemas/DetectLanguageText200Response"
+                  "$ref": "#/components/schemas/DetectLanguageText200FormDataResponse"
                 }
               }
             }
@@ -4377,7 +4377,7 @@
             "content": {
               "multipart/form-data": {
                 "schema": {
-                  "$ref": "#/components/schemas/DetectLanguageAudio200ResponseResponseFormData"
+                  "$ref": "#/components/schemas/DetectLanguageAudio200FormDataResponseSchema"
                 }
               }
             }
@@ -4407,7 +4407,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/DetectLanguageAudioStatus200Response"
                 }
               }
             }
@@ -7869,7 +7869,7 @@
           }
         }
       },
-      "Translate200Response": {
+      "Translate200FormDataResponse": {
         "type": "object"
       },
       "Transcription200Response": {
@@ -9191,14 +9191,14 @@
           }
         }
       },
-      "Transcribe200Response": {
+      "Transcribe200FormDataResponse": {
         "type": "object"
       },
-      "DetectLanguageText200Response": {
+      "DetectLanguageText200FormDataResponse": {
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/DetectLanguageText200ResponseData"
+            "$ref": "#/components/schemas/DetectLanguageText200FormDataResponseData"
           }
         },
         "x-examples": {
@@ -9217,14 +9217,14 @@
           }
         }
       },
-      "DetectLanguageAudio200Response": {
+      "DetectLanguageAudio200FormDataResponse": {
         "type": "object"
       },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "Logout200ResponseResponseJson": {
+      "Logout200ResponseSchema": {
         "type": "object"
       },
       "MostDownloaded200Response": {
@@ -9256,26 +9256,26 @@
         },
         "description": ""
       },
-      "Translate200ResponseResponseFormData": {
+      "Translate200FormDataResponseSchema": {
         "type": "object"
       },
-      "DefaultResponse": {
+      "TranslateStatus200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "Transcribe200ResponseResponseFormData": {
+      "Transcribe200FormDataResponseSchema": {
         "type": "object"
       },
-      "DefaultResponseResponseJson": {
+      "TranscribeStatus200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DetectLanguageAudio200ResponseResponseFormData": {
+      "DetectLanguageAudio200FormDataResponseSchema": {
         "type": "object"
       },
-      "DefaultResponseResponseJson2": {
+      "DetectLanguageAudioStatus200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -9517,7 +9517,7 @@
           }
         }
       },
-      "DetectLanguageText200ResponseData": {
+      "DetectLanguageText200FormDataResponseData": {
         "type": "object",
         "properties": {
           "format": {
@@ -9527,7 +9527,7 @@
             "type": "string"
           },
           "language": {
-            "$ref": "#/components/schemas/DetectLanguageText200ResponseDataLanguage"
+            "$ref": "#/components/schemas/DetectLanguageText200FormDataResponseDataLanguage"
           }
         }
       },
@@ -9753,7 +9753,7 @@
           }
         }
       },
-      "DetectLanguageText200ResponseDataLanguage": {
+      "DetectLanguageText200FormDataResponseDataLanguage": {
         "type": "object",
         "properties": {
           "W3C": {

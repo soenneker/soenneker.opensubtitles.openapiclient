@@ -49,20 +49,20 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Transcribe
         /// <summary>
         /// &quot;**Transcribe** media (audio, video) file using AI into subtitles. Max size of file: 100 MB Credits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Check following method: [Get AI Transcribe status](../open_api.json/paths/~1ai~1transcribe~1{correlation_id}/get)Method is returning ```{  \&quot;status\&quot;: \&quot;CREATED\&quot;,  \&quot;correlation_id\&quot;: \&quot;67eda18f52e11\&quot;}```Status possible values: ```CREATED     -&gt; Initial state`PENDING     -&gt; procedure is still runningCOMPLETED   -&gt; remote procedure call is completed and has a resultERROR       -&gt; procedure resulted in an error and is not running anymoreTIMEOUT     -&gt; No matching procedure call found before timeout```Using `correlation_id` can check status of job using GET&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200ResponseResponseFormData"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200FormDataResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200ResponseResponseFormData?> PostAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Transcribe.TranscribeRequestBuilder.TranscribeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200FormDataResponseSchema?> PostAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Transcribe.TranscribeRequestBuilder.TranscribeRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200ResponseResponseFormData> PostAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Transcribe.TranscribeRequestBuilder.TranscribeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200FormDataResponseSchema> PostAsync(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Transcribe.TranscribeRequestBuilder.TranscribeRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200ResponseResponseFormData>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200ResponseResponseFormData.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200FormDataResponseSchema>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Transcribe200FormDataResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**Transcribe** media (audio, video) file using AI into subtitles. Max size of file: 100 MB Credits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Check following method: [Get AI Transcribe status](../open_api.json/paths/~1ai~1transcribe~1{correlation_id}/get)Method is returning ```{  \&quot;status\&quot;: \&quot;CREATED\&quot;,  \&quot;correlation_id\&quot;: \&quot;67eda18f52e11\&quot;}```Status possible values: ```CREATED     -&gt; Initial state`PENDING     -&gt; procedure is still runningCOMPLETED   -&gt; remote procedure call is completed and has a resultERROR       -&gt; procedure resulted in an error and is not running anymoreTIMEOUT     -&gt; No matching procedure call found before timeout```Using `correlation_id` can check status of job using GET&quot;
