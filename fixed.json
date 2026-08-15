@@ -1905,7 +1905,7 @@
           "Features"
         ],
         "summary": "Search for features",
-        "description": "\u0022With the \\\u0022query\\\u0022 parameter, search for a Feature from a simple text input. Typically used for a text search or autocomplete.\n\nWith an ID, get basic information and subtitles count for a specific title.\n\nWith the \\\u0022query_match\\\u0022 you can define the matched applied to the query: \n - \\\u0022start\\\u0022 is the default behavior, it will query on the first letter entered to offer suggestions\n - \\\u0022word\\\u0022 will return the match on the word, but not always matching the fulll title, for example searching \\\u0022roma\\\u0022 will return \\\u0022holiday in roma\\\u0022\n - \\\u0022exact\\\u0022 will exactly match the title, so here searching for \\\u0022roma\\\u0022 will only return the movie(s) named \\\u0022roma\\\u0022 \n\nWith the \\\u0022full_search\\\u0022 you can extend the search to the translations of the title, so \\\u0022roma\\\u0022 will also return \\\u0022rome\\\u0022 \n\n\u003C!-- theme: warning --\u003E\n\n\u003E ### Watch Out!\n\u003E\n\u003E If you create an autocomplete, don\u0027t set a too small refresh limit, remember you must not go over 40 requests per 10 seconds!\u0022",
+        "description": "With the \u0022query\u0022 parameter, search for a Feature from a simple text input. Typically used for a text search or autocomplete.\n\nWith an ID, get basic information and subtitles count for a specific title.\n\nWith the \u0022query_match\u0022 you can define the matched applied to the query: \n - \u0022start\u0022 is the default behavior, it will query on the first letter entered to offer suggestions\n - \u0022word\u0022 will return the match on the word, but not always matching the fulll title, for example searching \u0022roma\u0022 will return \u0022holiday in roma\u0022\n - \u0022exact\u0022 will exactly match the title, so here searching for \u0022roma\u0022 will only return the movie(s) named \u0022roma\u0022 \n\nWith the \u0022full_search\u0022 you can extend the search to the translations of the title, so \u0022roma\u0022 will also return \u0022rome\u0022 \n\n\u003C!-- theme: warning --\u003E\n\n\u003E ### Watch Out!\n\u003E\n\u003E If you create an autocomplete, don\u0027t set a too small refresh limit, remember you must not go over 40 requests per 10 seconds!",
         "operationId": "Features",
         "parameters": [
           {
@@ -1968,7 +1968,7 @@
           {
             "name": "query_match",
             "in": "query",
-            "description": "\u0022Type of matching applied to the query: **start** (default), **word**, **exact**  \u0022",
+            "description": "Type of matching applied to the query: **start** (default), **word**, **exact**  ",
             "schema": {
               "type": "string"
             }
@@ -3005,7 +3005,7 @@
           "Subtitles"
         ],
         "summary": "Search for subtitles",
-        "description": "\u0022Find subtitle for a video file. All parameters can be combined following various logics: searching by a specific external id (imdb, tmdb), a file moviehash, or a simple text query.\n\n\u003C!-- theme: warning --\u003E\n\u003E Something wrong? Read about [common mistakes and best practices](docs/2-Best-Practices.md). \n\n\u003E Getting no results? Follow HTTP redirects! \u0060\u0060\u0060curl --location\u0060\u0060\u0060 and use verbose mode\n\n\u003E Use \u0060\u0060\u0060imdb_id for\u0060\u0060\u0060 movie or episode. Use \u0060\u0060\u0060parent_imdb_id\u0060\u0060\u0060 for TV Shows\n\n\n\nImplement the logic that best fits your needs, keeping in mind the following guidelines:\n\n- If you can obtain the moviehash from the file, please send it along.\n- If you possess the ID, whether it\u0027s IMDB or TMDB, send it instead of a query, as an ID provides more precision.\n- When searching for TV show episodes, it is recommended to send the parent ID, along with the episode and season number for optimal results.  If you have the unique ID of an episode, only send this ID, excluding the episode or season number.\n- Include the filename as a query parameter along with the moviehash for improved results. If your filenames are generally irrelevant, such as dynamically generated filenames from a streaming service, there\u0027s no need to include them.\n- Consider treating parameters as filters rather than additional criteria. If you have a specific ID and send a query with conflicting data, like a wrong year, it could result in fewer matches.\n- Explore querying the /features endpoint to gather the exact list of available episodes.\n- Keep in mind that this is a collaborative project where subtitles are submitted by users, filtered by admins, and movie/show results are processed through various APIs. Occasionally, errors may occur, and we depend on user feedback to address and rectify them.\n\n\n\u003E Avoid http redirection by sending request parameters sorted and without default values, and send all queries in lowercase. Remove leading zeroes in ID parameters (IMDB ID, TMDB ID...)\n\n### Moviehash \nIf a \u0060\u0060\u0060moviehash\u0060\u0060\u0060 is sent with a request, a \u0060\u0060\u0060moviehash_match\u0060\u0060\u0060 boolean field will be added to the response.\n\nThe matching subtitles will always come first in the response.\n\n\n### Ordering\n\n\u003C!-- theme: warning --\u003E\n\u003E If possible, don\u0027t order results, because sorting on server is \\\u0022expensive, time consuming operation\\\u0022 and also you have much higher chance to get cached result when not using this function.\n\nYou can order the results using the \u0060\u0060\u0060order_by\u0060\u0060\u0060 parameter. Ordering is possible on the following fields:\n\u0060\u0060\u0060language\u0060\u0060\u0060, \u0060\u0060\u0060download_count\u0060\u0060\u0060, \u0060\u0060\u0060new_download_count\u0060\u0060\u0060, \u0060\u0060\u0060hearing_impaired\u0060\u0060\u0060, \u0060\u0060\u0060hd\u0060\u0060\u0060, \u0060\u0060\u0060fps\u0060\u0060\u0060, \u0060\u0060\u0060votes\u0060\u0060\u0060, \u0060\u0060\u0060points\u0060\u0060\u0060, \u0060\u0060\u0060ratings\u0060\u0060\u0060, \u0060\u0060\u0060from_trusted\u0060\u0060\u0060, \u0060\u0060\u0060foreign_parts_only\u0060\u0060\u0060, \u0060\u0060\u0060ai_translated\u0060\u0060\u0060, \u0060\u0060\u0060machine_translated\u0060\u0060\u0060, \u0060\u0060\u0060upload_date\u0060\u0060\u0060, \u0060\u0060\u0060release\u0060\u0060\u0060, \u0060\u0060\u0060comments\u0060\u0060\u0060\n\nChange the order direction with *order_direction* (asc/desc)\n\n### Final notes\n\u0060\u0060\u0060ai_translated\u0060\u0060\u0060 (default include in search results) subtitles should be much better quality than \u0060\u0060\u0060machine_translated\u0060\u0060\u0060 subtitles (excluded in search results).\u0022",
+        "description": "Find subtitle for a video file. All parameters can be combined following various logics: searching by a specific external id (imdb, tmdb), a file moviehash, or a simple text query.\n\n\u003C!-- theme: warning --\u003E\n\u003E Something wrong? Read about [common mistakes and best practices](docs/2-Best-Practices.md). \n\n\u003E Getting no results? Follow HTTP redirects! \u0060\u0060\u0060curl --location\u0060\u0060\u0060 and use verbose mode\n\n\u003E Use \u0060\u0060\u0060imdb_id for\u0060\u0060\u0060 movie or episode. Use \u0060\u0060\u0060parent_imdb_id\u0060\u0060\u0060 for TV Shows\n\n\n\nImplement the logic that best fits your needs, keeping in mind the following guidelines:\n\n- If you can obtain the moviehash from the file, please send it along.\n- If you possess the ID, whether it\u0027s IMDB or TMDB, send it instead of a query, as an ID provides more precision.\n- When searching for TV show episodes, it is recommended to send the parent ID, along with the episode and season number for optimal results.  If you have the unique ID of an episode, only send this ID, excluding the episode or season number.\n- Include the filename as a query parameter along with the moviehash for improved results. If your filenames are generally irrelevant, such as dynamically generated filenames from a streaming service, there\u0027s no need to include them.\n- Consider treating parameters as filters rather than additional criteria. If you have a specific ID and send a query with conflicting data, like a wrong year, it could result in fewer matches.\n- Explore querying the /features endpoint to gather the exact list of available episodes.\n- Keep in mind that this is a collaborative project where subtitles are submitted by users, filtered by admins, and movie/show results are processed through various APIs. Occasionally, errors may occur, and we depend on user feedback to address and rectify them.\n\n\n\u003E Avoid http redirection by sending request parameters sorted and without default values, and send all queries in lowercase. Remove leading zeroes in ID parameters (IMDB ID, TMDB ID...)\n\n### Moviehash \nIf a \u0060\u0060\u0060moviehash\u0060\u0060\u0060 is sent with a request, a \u0060\u0060\u0060moviehash_match\u0060\u0060\u0060 boolean field will be added to the response.\n\nThe matching subtitles will always come first in the response.\n\n\n### Ordering\n\n\u003C!-- theme: warning --\u003E\n\u003E If possible, don\u0027t order results, because sorting on server is \u0022expensive, time consuming operation\u0022 and also you have much higher chance to get cached result when not using this function.\n\nYou can order the results using the \u0060\u0060\u0060order_by\u0060\u0060\u0060 parameter. Ordering is possible on the following fields:\n\u0060\u0060\u0060language\u0060\u0060\u0060, \u0060\u0060\u0060download_count\u0060\u0060\u0060, \u0060\u0060\u0060new_download_count\u0060\u0060\u0060, \u0060\u0060\u0060hearing_impaired\u0060\u0060\u0060, \u0060\u0060\u0060hd\u0060\u0060\u0060, \u0060\u0060\u0060fps\u0060\u0060\u0060, \u0060\u0060\u0060votes\u0060\u0060\u0060, \u0060\u0060\u0060points\u0060\u0060\u0060, \u0060\u0060\u0060ratings\u0060\u0060\u0060, \u0060\u0060\u0060from_trusted\u0060\u0060\u0060, \u0060\u0060\u0060foreign_parts_only\u0060\u0060\u0060, \u0060\u0060\u0060ai_translated\u0060\u0060\u0060, \u0060\u0060\u0060machine_translated\u0060\u0060\u0060, \u0060\u0060\u0060upload_date\u0060\u0060\u0060, \u0060\u0060\u0060release\u0060\u0060\u0060, \u0060\u0060\u0060comments\u0060\u0060\u0060\n\nChange the order direction with *order_direction* (asc/desc)\n\n### Final notes\n\u0060\u0060\u0060ai_translated\u0060\u0060\u0060 (default include in search results) subtitles should be much better quality than \u0060\u0060\u0060machine_translated\u0060\u0060\u0060 subtitles (excluded in search results).",
         "operationId": "Subtitles",
         "parameters": [
           {
@@ -3035,7 +3035,7 @@
           {
             "name": "type",
             "in": "query",
-            "description": "\u0022movie, episode or all, (default: all) \u0022",
+            "description": "movie, episode or all, (default: all) ",
             "schema": {
               "type": "string"
             }
@@ -3078,7 +3078,7 @@
           {
             "name": "hearing_impaired",
             "in": "query",
-            "description": "\u0022include, exclude, only. (default: include)\u0022",
+            "description": "include, exclude, only. (default: include)",
             "schema": {
               "type": "string"
             }
@@ -3086,7 +3086,7 @@
           {
             "name": "foreign_parts_only",
             "in": "query",
-            "description": "\u0022exclude, include, only (default: include)\u0022",
+            "description": "exclude, include, only (default: include)",
             "schema": {
               "type": "string"
             }
@@ -3094,7 +3094,7 @@
           {
             "name": "trusted_sources",
             "in": "query",
-            "description": "\u0022include, only (default: include)\u0022",
+            "description": "include, only (default: include)",
             "schema": {
               "type": "string"
             }
@@ -3102,7 +3102,7 @@
           {
             "name": "machine_translated",
             "in": "query",
-            "description": "\u0022exclude, include  (default: exclude)\u0022",
+            "description": "exclude, include  (default: exclude)",
             "schema": {
               "type": "string"
             }
@@ -3110,7 +3110,7 @@
           {
             "name": "ai_translated",
             "in": "query",
-            "description": "\u0022exclude, include  (default: include)\u0022",
+            "description": "exclude, include  (default: include)",
             "schema": {
               "type": "string"
             }
@@ -3182,7 +3182,7 @@
           {
             "name": "moviehash_match",
             "in": "query",
-            "description": "\u0022include, only (default: include)\u0022",
+            "description": "include, only (default: include)",
             "schema": {
               "type": "string"
             }
@@ -3229,7 +3229,7 @@
           "Download"
         ],
         "summary": "Download",
-        "description": "\u0022Request a download url for a subtitle. Subtitle file in temporary URL will be always in UTF-8 encoding.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E VERY IMPORTANT: In HTTP request must be both headers: \u0060\u0060\u0060Api-Key\u0060\u0060\u0060 and \u0060\u0060\u0060Authorization\u0060\u0060\u0060 stoplight.io doesn\u0027t allow to use in shown example both headers\n\n\n\u003E The download count is calculated on this action, not the file download itself\n\n\u003E IN and OUT FPS must be indicated for subtitle conversions, we want to make sure you know what you are doing, and therefore collected the current FPS from the subtitle search result, or calculated it somehow.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E The download URL is temporary, and cannot be used more than 3 hours, so do not cache it, but you can download the file more than once if needed.\u0022",
+        "description": "Request a download url for a subtitle. Subtitle file in temporary URL will be always in UTF-8 encoding.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E VERY IMPORTANT: In HTTP request must be both headers: \u0060\u0060\u0060Api-Key\u0060\u0060\u0060 and \u0060\u0060\u0060Authorization\u0060\u0060\u0060 stoplight.io doesn\u0027t allow to use in shown example both headers\n\n\n\u003E The download count is calculated on this action, not the file download itself\n\n\u003E IN and OUT FPS must be indicated for subtitle conversions, we want to make sure you know what you are doing, and therefore collected the current FPS from the subtitle search result, or calculated it somehow.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E The download URL is temporary, and cannot be used more than 3 hours, so do not cache it, but you can download the file more than once if needed.",
         "operationId": "Download",
         "parameters": [
           {
@@ -3354,6 +3354,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer \u003C\u003C{{token}}\u003E\u003E",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3371,8 +3379,7 @@
         "security": [
           {
             "Api-Key": []
-          },
-          {}
+          }
         ]
       }
     },
@@ -3389,6 +3396,14 @@
             "name": "User-Agent",
             "in": "header",
             "description": "\u003C\u003C{{APP_NAME}} v{{APP_VERSION}}\u003E\u003E",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Bearer \u003C\u003C{{token}}\u003E\u003E",
             "schema": {
               "type": "string"
             }
@@ -3409,8 +3424,7 @@
         "security": [
           {
             "Api-Key": []
-          },
-          {}
+          }
         ]
       }
     },
@@ -4019,7 +4033,7 @@
           "AI Translate"
         ],
         "summary": "AI Translate",
-        "description": "\u0022**Translate** subtitles using AI from one language to another language. \n\nCredits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get AI Translate status](../open_api.json/paths/~1ai~1translate~1{correlation_id}/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \\\u0022status\\\u0022: \\\u0022CREATED\\\u0022,\n  \\\u0022correlation_id\\\u0022: \\\u002267eda18f52e11\\\u0022\n}\n\u0060\u0060\u0060\nStatus possible values: \n\u0060\u0060\u0060\nCREATED     -\u003E Initial state\u0060\nPENDING     -\u003E procedure is still running\nCOMPLETED   -\u003E remote procedure call is completed and has a result\nERROR       -\u003E procedure resulted in an error and is not running anymore\nTIMEOUT     -\u003E No matching procedure call found before timeout\n\u0060\u0060\u0060\nUsing \u0060correlation_id\u0060 can check status of job using GET\n\u0022",
+        "description": "**Translate** subtitles using AI from one language to another language. \n\nCredits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get AI Translate status](../open_api.json/paths/~1ai~1translate~1{correlation_id}/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \u0022status\u0022: \u0022CREATED\u0022,\n  \u0022correlation_id\u0022: \u002267eda18f52e11\u0022\n}\n\u0060\u0060\u0060\nStatus possible values: \n\u0060\u0060\u0060\nCREATED     -\u003E Initial state\u0060\nPENDING     -\u003E procedure is still running\nCOMPLETED   -\u003E remote procedure call is completed and has a result\nERROR       -\u003E procedure resulted in an error and is not running anymore\nTIMEOUT     -\u003E No matching procedure call found before timeout\n\u0060\u0060\u0060\nUsing \u0060correlation_id\u0060 can check status of job using GET\n",
         "operationId": "Translate",
         "parameters": [
           {
@@ -4099,14 +4113,7 @@
         "operationId": "TranslateStatus",
         "responses": {
           "200": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TranslateStatus200Response"
-                }
-              }
-            }
+            "description": "OK"
           }
         },
         "security": [
@@ -4199,7 +4206,7 @@
           "AI Transcribe"
         ],
         "summary": "AI Transcribe",
-        "description": "\u0022**Transcribe** media (audio, video) file using AI into subtitles. Max size of file: 100 MB \n\nCredits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get AI Transcribe status](../open_api.json/paths/~1ai~1transcribe~1{correlation_id}/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \\\u0022status\\\u0022: \\\u0022CREATED\\\u0022,\n  \\\u0022correlation_id\\\u0022: \\\u002267eda18f52e11\\\u0022\n}\n\u0060\u0060\u0060\nStatus possible values: \n\u0060\u0060\u0060\nCREATED     -\u003E Initial state\u0060\nPENDING     -\u003E procedure is still running\nCOMPLETED   -\u003E remote procedure call is completed and has a result\nERROR       -\u003E procedure resulted in an error and is not running anymore\nTIMEOUT     -\u003E No matching procedure call found before timeout\n\u0060\u0060\u0060\nUsing \u0060correlation_id\u0060 can check status of job using GET\n\u0022",
+        "description": "**Transcribe** media (audio, video) file using AI into subtitles. Max size of file: 100 MB \n\nCredits on user account are needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get AI Transcribe status](../open_api.json/paths/~1ai~1transcribe~1{correlation_id}/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \u0022status\u0022: \u0022CREATED\u0022,\n  \u0022correlation_id\u0022: \u002267eda18f52e11\u0022\n}\n\u0060\u0060\u0060\nStatus possible values: \n\u0060\u0060\u0060\nCREATED     -\u003E Initial state\u0060\nPENDING     -\u003E procedure is still running\nCOMPLETED   -\u003E remote procedure call is completed and has a result\nERROR       -\u003E procedure resulted in an error and is not running anymore\nTIMEOUT     -\u003E No matching procedure call found before timeout\n\u0060\u0060\u0060\nUsing \u0060correlation_id\u0060 can check status of job using GET\n",
         "operationId": "Transcribe",
         "parameters": [
           {
@@ -4262,14 +4269,7 @@
         "operationId": "TranscribeStatus",
         "responses": {
           "200": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/TranscribeStatus200Response"
-                }
-              }
-            }
+            "description": "OK"
           }
         },
         "security": [
@@ -4299,7 +4299,7 @@
           "Utilities"
         ],
         "summary": "Detect Language Text",
-        "description": "\u0022**Detect language** of subtitle file.\n\nAt least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \\\u0022data\\\u0022: {\n    \\\u0022format\\\u0022: \\\u0022SubRip\\\u0022,\n    \\\u0022type\\\u0022: \\\u0022text\\\u0022,\n    \\\u0022language\\\u0022: {\n      \\\u0022W3C\\\u0022: \\\u0022en\\\u0022,\n      \\\u0022name\\\u0022: \\\u0022english\\\u0022,\n      \\\u0022native\\\u0022: \\\u0022english\\\u0022,\n      \\\u0022ISO_639_1\\\u0022: \\\u0022en\\\u0022,\n      \\\u0022ISO_639_2b\\\u0022: \\\u0022eng\\\u0022\n    }\n  }\n}\n\u0060\u0060\u0060\u0022",
+        "description": "**Detect language** of subtitle file.\n\nAt least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \u0022data\u0022: {\n    \u0022format\u0022: \u0022SubRip\u0022,\n    \u0022type\u0022: \u0022text\u0022,\n    \u0022language\u0022: {\n      \u0022W3C\u0022: \u0022en\u0022,\n      \u0022name\u0022: \u0022english\u0022,\n      \u0022native\u0022: \u0022english\u0022,\n      \u0022ISO_639_1\u0022: \u0022en\u0022,\n      \u0022ISO_639_2b\u0022: \u0022eng\u0022\n    }\n  }\n}\n\u0060\u0060\u0060",
         "operationId": "DetectLanguageText",
         "parameters": [
           {
@@ -4340,7 +4340,7 @@
           "Utilities"
         ],
         "summary": "Detect Language Audio",
-        "description": "\u0022**Detect language**  of media audio file. Max size of file: 100 MB \n\nAt least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get Detect Language Audio status](../open_api.json/paths/~1ai~1detect_language_audio~1{correlation_id}/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \\\u0022status\\\u0022: \\\u0022CREATED\\\u0022,\n  \\\u0022correlation_id\\\u0022: \\\u002267eda18f52e11\\\u0022\n}\n\u0060\u0060\u0060\nStatus possible values: \n\u0060\u0060\u0060\nCREATED     -\u003E Initial state\u0060\nPENDING     -\u003E procedure is still running\nCOMPLETED   -\u003E remote procedure call is completed and has a result\nERROR       -\u003E procedure resulted in an error and is not running anymore\nTIMEOUT     -\u003E No matching procedure call found before timeout\n\u0060\u0060\u0060\nUsing \u0060correlation_id\u0060 can check status of job using GET\n\u0022",
+        "description": "**Detect language**  of media audio file. Max size of file: 100 MB \n\nAt least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)\n\nCheck following method: [Get Detect Language Audio status](../open_api.json/paths/~1ai~1detect_language_audio~1{correlation_id}/get)\n\nMethod is returning \n\u0060\u0060\u0060\n{\n  \u0022status\u0022: \u0022CREATED\u0022,\n  \u0022correlation_id\u0022: \u002267eda18f52e11\u0022\n}\n\u0060\u0060\u0060\nStatus possible values: \n\u0060\u0060\u0060\nCREATED     -\u003E Initial state\u0060\nPENDING     -\u003E procedure is still running\nCOMPLETED   -\u003E remote procedure call is completed and has a result\nERROR       -\u003E procedure resulted in an error and is not running anymore\nTIMEOUT     -\u003E No matching procedure call found before timeout\n\u0060\u0060\u0060\nUsing \u0060correlation_id\u0060 can check status of job using GET\n",
         "operationId": "DetectLanguageAudio",
         "parameters": [
           {
@@ -4403,14 +4403,7 @@
         "operationId": "DetectLanguageAudioStatus",
         "responses": {
           "200": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DetectLanguageAudioStatus200Response"
-                }
-              }
-            }
+            "description": "OK"
           }
         },
         "security": [
@@ -9259,26 +9252,11 @@
       "Translate200FormDataResponseSchema": {
         "type": "object"
       },
-      "TranslateStatus200Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "Transcribe200FormDataResponseSchema": {
         "type": "object"
       },
-      "TranscribeStatus200Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "DetectLanguageAudio200FormDataResponseSchema": {
         "type": "object"
-      },
-      "DetectLanguageAudioStatus200Response": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
       },
       "SubtitleAttributesRelatedLinksItemProperty": {
         "type": "object"
@@ -10003,12 +9981,6 @@
       "Bearer": {
         "type": "http",
         "description": "User token created in the login endpoint to authorise opensubtitles.com **user**",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
-      },
-      "assets_jwt": {
-        "type": "http",
-        "description": "JWT used for assets upload",
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }

@@ -34,7 +34,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text
         {
         }
         /// <summary>
-        /// &quot;**Detect language** of subtitle file.At least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Method is returning ```{  \&quot;data\&quot;: {    \&quot;format\&quot;: \&quot;SubRip\&quot;,    \&quot;type\&quot;: \&quot;text\&quot;,    \&quot;language\&quot;: {      \&quot;W3C\&quot;: \&quot;en\&quot;,      \&quot;name\&quot;: \&quot;english\&quot;,      \&quot;native\&quot;: \&quot;english\&quot;,      \&quot;ISO_639_1\&quot;: \&quot;en\&quot;,      \&quot;ISO_639_2b\&quot;: \&quot;eng\&quot;    }  }}```&quot;
+        /// **Detect language** of subtitle file.At least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Method is returning ```{  &quot;data&quot;: {    &quot;format&quot;: &quot;SubRip&quot;,    &quot;type&quot;: &quot;text&quot;,    &quot;language&quot;: {      &quot;W3C&quot;: &quot;en&quot;,      &quot;name&quot;: &quot;english&quot;,      &quot;native&quot;: &quot;english&quot;,      &quot;ISO_639_1&quot;: &quot;en&quot;,      &quot;ISO_639_2b&quot;: &quot;eng&quot;    }  }}```
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text
             return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponse>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**Detect language** of subtitle file.At least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Method is returning ```{  \&quot;data\&quot;: {    \&quot;format\&quot;: \&quot;SubRip\&quot;,    \&quot;type\&quot;: \&quot;text\&quot;,    \&quot;language\&quot;: {      \&quot;W3C\&quot;: \&quot;en\&quot;,      \&quot;name\&quot;: \&quot;english\&quot;,      \&quot;native\&quot;: \&quot;english\&quot;,      \&quot;ISO_639_1\&quot;: \&quot;en\&quot;,      \&quot;ISO_639_2b\&quot;: \&quot;eng\&quot;    }  }}```&quot;
+        /// **Detect language** of subtitle file.At least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Method is returning ```{  &quot;data&quot;: {    &quot;format&quot;: &quot;SubRip&quot;,    &quot;type&quot;: &quot;text&quot;,    &quot;language&quot;: {      &quot;W3C&quot;: &quot;en&quot;,      &quot;name&quot;: &quot;english&quot;,      &quot;native&quot;: &quot;english&quot;,      &quot;ISO_639_1&quot;: &quot;en&quot;,      &quot;ISO_639_2b&quot;: &quot;eng&quot;    }  }}```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text
             return new global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text.Detect_language_textRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;**Detect language** of subtitle file.At least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Method is returning ```{  \&quot;data\&quot;: {    \&quot;format\&quot;: \&quot;SubRip\&quot;,    \&quot;type\&quot;: \&quot;text\&quot;,    \&quot;language\&quot;: {      \&quot;W3C\&quot;: \&quot;en\&quot;,      \&quot;name\&quot;: \&quot;english\&quot;,      \&quot;native\&quot;: \&quot;english\&quot;,      \&quot;ISO_639_1\&quot;: \&quot;en\&quot;,      \&quot;ISO_639_2b\&quot;: \&quot;eng\&quot;    }  }}```&quot;
+        /// **Detect language** of subtitle file.At least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Method is returning ```{  &quot;data&quot;: {    &quot;format&quot;: &quot;SubRip&quot;,    &quot;type&quot;: &quot;text&quot;,    &quot;language&quot;: {      &quot;W3C&quot;: &quot;en&quot;,      &quot;name&quot;: &quot;english&quot;,      &quot;native&quot;: &quot;english&quot;,      &quot;ISO_639_1&quot;: &quot;en&quot;,      &quot;ISO_639_2b&quot;: &quot;eng&quot;    }  }}```
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Detect_language_textRequestBuilderPostQueryParameters 
