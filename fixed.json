@@ -3290,7 +3290,8 @@
           {
             "Api-Key": []
           }
-        ]
+        ],
+        "x-codegen-request-body-name": "body"
       }
     },
     "/utilities/guessit": {
@@ -3380,7 +3381,11 @@
           {
             "Api-Key": []
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "hhxx9oion0rdo"
+        },
+        "x-internal": false
       }
     },
     "/ai/credits/buy": {
@@ -3425,7 +3430,11 @@
           {
             "Api-Key": []
           }
-        ]
+        ],
+        "x-internal": false,
+        "x-stoplight": {
+          "id": "0tuklm9ob00a3"
+        }
       }
     },
     "/ai/info/translation": {
@@ -4024,7 +4033,11 @@
           {
             "Api-Key": []
           }
-        ]
+        ],
+        "x-internal": false,
+        "x-stoplight": {
+          "id": "5lfbmcs2cnuk9"
+        }
       }
     },
     "/ai/translate": {
@@ -4100,7 +4113,10 @@
           {
             "Bearer": []
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "jeeb1raxhoz3r"
+        }
       }
     },
     "/ai/translate/{correlationId}": {
@@ -4123,7 +4139,10 @@
           {
             "Bearer": []
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "wxehdpdtbozcf"
+        }
       },
       "parameters": [
         {
@@ -4197,7 +4216,11 @@
           {
             "Api-Key": []
           }
-        ]
+        ],
+        "x-internal": false,
+        "x-stoplight": {
+          "id": "ms3u3hhl9phcu"
+        }
       }
     },
     "/ai/transcribe": {
@@ -4256,7 +4279,10 @@
           {
             "Bearer": []
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "2chhfrkbc30af"
+        }
       }
     },
     "/ai/transcribe/{correlationId}": {
@@ -4279,7 +4305,10 @@
           {
             "Bearer": []
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "83cczlencci90"
+        }
       },
       "parameters": [
         {
@@ -4331,7 +4360,11 @@
           {
             "Bearer": []
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "68wq42ph4db5n"
+        },
+        "x-internal": false
       }
     },
     "/ai/detect_language_audio": {
@@ -4390,7 +4423,10 @@
           {
             "Bearer": []
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "ps8b79w4p8i6k"
+        }
       }
     },
     "/ai/detect_language_audio/{correlationId}": {
@@ -4413,7 +4449,10 @@
           {
             "Bearer": []
           }
-        ]
+        ],
+        "x-stoplight": {
+          "id": "3fx0lqbfkrjkb"
+        }
       },
       "parameters": [
         {
