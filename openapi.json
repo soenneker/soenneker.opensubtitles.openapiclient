@@ -44,7 +44,7 @@
         },
         {
             "name": "Authentication",
-            "description": "Authentification of user"
+            "description": "Authentication of user"
         },
         {
             "name": "Discover",
@@ -82,7 +82,7 @@
                     "Authentication"
                 ],
                 "summary": "Login",
-                "description": "Create a token to authenticate a user. If response code is ```401 Unathorized``` stop sending further requests with the same credentials, login is \"expensive\" operation.\n\nRequest rate limit is 1 request per 1 second, 10 requests per minute and 30 requests per hour because some clients just endlessly sending wrong credentials in loop.\n\nFurther API requests must continue on returned ```base_url``` host, which can have different cache time for search results and different request rate limits. If ```base_url``` equals ```vip-api.opensubtitles.com``` make sure you always send with every request JWT token (if available), otherwise request might fail with 4xx code.",
+                "description": "Create a token to authenticate a user. If response code is ```401 Unauthorized``` stop sending further requests with the same credentials, login is \"expensive\" operation.\n\nRequest rate limit is 1 request per 1 second, 10 requests per minute and 30 requests per hour because some clients just endlessly sending wrong credentials in loop.\n\nFurther API requests must continue on returned ```base_url``` host, which can have different cache time for search results and different request rate limits. If ```base_url``` equals ```vip-api.opensubtitles.com``` make sure you always send with every request JWT token (if available), otherwise request might fail with 4xx code.",
                 "operationId": "login",
                 "parameters": [
                     {
@@ -7082,7 +7082,7 @@
                         },
                         "in": "query",
                         "name": "translate_to",
-                        "description": "language ISO639 translate_from",
+                        "description": "language ISO639 translate_to",
                         "required": true
                     },
                     {
@@ -7120,7 +7120,7 @@
                         "Bearer": []
                     }
                 ],
-                "description": "Get status of **[translate](..open_api.json/paths/~1ai~1translate/post)** job using `correlation_id`\n",
+                "description": "Get status of **[translate](../open_api.json/paths/~1ai~1translate/post)** job using `correlation_id`\n",
                 "tags": [
                     "AI Translate"
                 ]

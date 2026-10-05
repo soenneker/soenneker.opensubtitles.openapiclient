@@ -131,7 +131,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Translate
             [QueryParameter("translate_from")]
             public string TranslateFrom { get; set; }
 #endif
-            /// <summary>language ISO639 translate_from</summary>
+            /// <summary>language ISO639 translate_to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("translate_to")]

@@ -32,7 +32,7 @@
           "Authentication"
         ],
         "summary": "Login",
-        "description": "Create a token to authenticate a user. If response code is \u0060\u0060\u0060401 Unathorized\u0060\u0060\u0060 stop sending further requests with the same credentials, login is \u0022expensive\u0022 operation.\n\nRequest rate limit is 1 request per 1 second, 10 requests per minute and 30 requests per hour because some clients just endlessly sending wrong credentials in loop.\n\nFurther API requests must continue on returned \u0060\u0060\u0060base_url\u0060\u0060\u0060 host, which can have different cache time for search results and different request rate limits. If \u0060\u0060\u0060base_url\u0060\u0060\u0060 equals \u0060\u0060\u0060vip-api.opensubtitles.com\u0060\u0060\u0060 make sure you always send with every request JWT token (if available), otherwise request might fail with 4xx code.",
+        "description": "Create a token to authenticate a user. If response code is \u0060\u0060\u0060401 Unauthorized\u0060\u0060\u0060 stop sending further requests with the same credentials, login is \u0022expensive\u0022 operation.\n\nRequest rate limit is 1 request per 1 second, 10 requests per minute and 30 requests per hour because some clients just endlessly sending wrong credentials in loop.\n\nFurther API requests must continue on returned \u0060\u0060\u0060base_url\u0060\u0060\u0060 host, which can have different cache time for search results and different request rate limits. If \u0060\u0060\u0060base_url\u0060\u0060\u0060 equals \u0060\u0060\u0060vip-api.opensubtitles.com\u0060\u0060\u0060 make sure you always send with every request JWT token (if available), otherwise request might fail with 4xx code.",
         "operationId": "Login",
         "parameters": [
           {
@@ -4079,7 +4079,7 @@
           {
             "name": "translate_to",
             "in": "query",
-            "description": "language ISO639 translate_from",
+            "description": "language ISO639 translate_to",
             "required": true,
             "schema": {
               "type": "string"
@@ -4125,7 +4125,7 @@
           "AI Translate"
         ],
         "summary": "AI Translate status",
-        "description": "Get status of **[translate](..open_api.json/paths/~1ai~1translate/post)** job using \u0060correlation_id\u0060\n",
+        "description": "Get status of **[translate](../open_api.json/paths/~1ai~1translate/post)** job using \u0060correlation_id\u0060\n",
         "operationId": "TranslateStatus",
         "responses": {
           "200": {
@@ -10052,7 +10052,7 @@
     },
     {
       "name": "Authentication",
-      "description": "Authentification of user"
+      "description": "Authentication of user"
     },
     {
       "name": "Discover",

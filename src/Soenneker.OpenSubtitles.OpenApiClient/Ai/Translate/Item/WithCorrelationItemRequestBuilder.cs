@@ -33,7 +33,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Translate.Item
         {
         }
         /// <summary>
-        /// Get status of **[translate](..open_api.json/paths/~1ai~1translate/post)** job using `correlation_id`
+        /// Get status of **[translate](../open_api.json/paths/~1ai~1translate/post)** job using `correlation_id`
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Translate.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get status of **[translate](..open_api.json/paths/~1ai~1translate/post)** job using `correlation_id`
+        /// Get status of **[translate](../open_api.json/paths/~1ai~1translate/post)** job using `correlation_id`
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
