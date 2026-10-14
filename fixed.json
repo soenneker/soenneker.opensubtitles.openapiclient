@@ -10,8 +10,8 @@
       "email": "support@opensubtitles.org"
     },
     "license": {
-      "name": "MIT",
-      "url": "https://opensource.org/licenses/MIT"
+      "name": "All rights reserved - use governed by the Terms of Service",
+      "url": "https://www.opensubtitles.com/en/tos"
     },
     "version": "1.0.1"
   },
@@ -3229,7 +3229,7 @@
           "Download"
         ],
         "summary": "Download",
-        "description": "Request a download url for a subtitle. Subtitle file in temporary URL will be always in UTF-8 encoding.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E VERY IMPORTANT: In HTTP request must be both headers: \u0060\u0060\u0060Api-Key\u0060\u0060\u0060 and \u0060\u0060\u0060Authorization\u0060\u0060\u0060 stoplight.io doesn\u0027t allow to use in shown example both headers\n\n\n\u003E The download count is calculated on this action, not the file download itself\n\n\u003E IN and OUT FPS must be indicated for subtitle conversions, we want to make sure you know what you are doing, and therefore collected the current FPS from the subtitle search result, or calculated it somehow.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E The download URL is temporary, and cannot be used more than 3 hours, so do not cache it, but you can download the file more than once if needed.",
+        "description": "Request a download url for a subtitle. Subtitle file in temporary URL will be always in UTF-8 encoding.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E The \u0060\u0060\u0060Api-Key\u0060\u0060\u0060 header is always required. The \u0060\u0060\u0060Authorization\u0060\u0060\u0060 header identifies the user whose quota is used: send both for a signed-in user. It is not needed when your key is on a paid plan, or within the 5 downloads per IP per 24 hours a free key allows without login. stoplight.io doesn\u0027t allow to use both headers in the shown example\n\n\n\u003E The download count is calculated on this action, not the file download itself\n\n\u003E IN and OUT FPS must be indicated for subtitle conversions, we want to make sure you know what you are doing, and therefore collected the current FPS from the subtitle search result, or calculated it somehow.\n\n\u003C!-- theme: warning --\u003E\n\n\u003E The download URL is temporary, and cannot be used more than 3 hours, so do not cache it, but you can download the file more than once if needed.",
         "operationId": "Download",
         "parameters": [
           {
