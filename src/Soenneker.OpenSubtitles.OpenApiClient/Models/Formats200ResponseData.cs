@@ -17,10 +17,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The output_formats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Formats200ResponseDataOutputFormatsItem>? OutputFormats { get; set; }
+        public UntypedNode? OutputFormats { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Formats200ResponseDataOutputFormatsItem> OutputFormats { get; set; }
+        public UntypedNode OutputFormats { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Formats200ResponseData"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "output_formats", n => { OutputFormats = n.GetCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Formats200ResponseDataOutputFormatsItem>(global::Soenneker.OpenSubtitles.OpenApiClient.Models.Formats200ResponseDataOutputFormatsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "output_formats", n => { OutputFormats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Formats200ResponseDataOutputFormatsItem>("output_formats", OutputFormats);
+            writer.WriteObjectValue<UntypedNode>("output_formats", OutputFormats);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

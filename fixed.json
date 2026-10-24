@@ -9362,9 +9362,7 @@
         "properties": {
           "output_formats": {
             "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Formats200ResponseDataOutputFormatsItem"
-            }
+            "items": {}
           }
         }
       },
@@ -9547,9 +9545,6 @@
             "$ref": "#/components/schemas/DetectLanguageText200FormDataResponseDataLanguage"
           }
         }
-      },
-      "Formats200ResponseDataOutputFormatsItem": {
-        "type": "object"
       },
       "Latest200ResponseDataItemAttributes": {
         "required": [
@@ -9991,7 +9986,6 @@
           "vip-api.opensubtitles.com"
         ],
         "type": "string",
-        "additionalProperties": false,
         "format": "hostname",
         "example": "api.opensubtitles.com",
         "x-ms-enum": {
