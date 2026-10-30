@@ -11,65 +11,128 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FeatureEpisodeAttributesSubtitlesCounts : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ar") is { } nullNodeAr && nullNodeAr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ar = null;
+            if (parseNode.GetChildNode("bg") is { } nullNodeBg && nullNodeBg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bg = null;
+            if (parseNode.GetChildNode("bs") is { } nullNodeBs && nullNodeBs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bs = null;
+            if (parseNode.GetChildNode("cs") is { } nullNodeCs && nullNodeCs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cs = null;
+            if (parseNode.GetChildNode("da") is { } nullNodeDa && nullNodeDa.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Da = null;
+            if (parseNode.GetChildNode("de") is { } nullNodeDe && nullNodeDe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) De = null;
+            if (parseNode.GetChildNode("el") is { } nullNodeEl && nullNodeEl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) El = null;
+            if (parseNode.GetChildNode("en") is { } nullNodeEn && nullNodeEn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) En = null;
+            if (parseNode.GetChildNode("es") is { } nullNodeEs && nullNodeEs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Es = null;
+            if (parseNode.GetChildNode("et") is { } nullNodeEt && nullNodeEt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Et = null;
+            if (parseNode.GetChildNode("fi") is { } nullNodeFi && nullNodeFi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fi = null;
+            if (parseNode.GetChildNode("fr") is { } nullNodeFr && nullNodeFr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fr = null;
+            if (parseNode.GetChildNode("he") is { } nullNodeHe && nullNodeHe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) He = null;
+            if (parseNode.GetChildNode("hr") is { } nullNodeHr && nullNodeHr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hr = null;
+            if (parseNode.GetChildNode("hu") is { } nullNodeHu && nullNodeHu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hu = null;
+            if (parseNode.GetChildNode("mk") is { } nullNodeMk && nullNodeMk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mk = null;
+            if (parseNode.GetChildNode("nl") is { } nullNodeNl && nullNodeNl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nl = null;
+            if (parseNode.GetChildNode("no") is { } nullNodeNo && nullNodeNo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) No = null;
+            if (parseNode.GetChildNode("pl") is { } nullNodePl && nullNodePl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pl = null;
+            if (parseNode.GetChildNode("pt-BR") is { } nullNodePtBR && nullNodePtBR.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PtBR = null;
+            if (parseNode.GetChildNode("pt-PT") is { } nullNodePtPT && nullNodePtPT.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PtPT = null;
+            if (parseNode.GetChildNode("ro") is { } nullNodeRo && nullNodeRo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ro = null;
+            if (parseNode.GetChildNode("ru") is { } nullNodeRu && nullNodeRu.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ru = null;
+            if (parseNode.GetChildNode("sl") is { } nullNodeSl && nullNodeSl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sl = null;
+            if (parseNode.GetChildNode("sr") is { } nullNodeSr && nullNodeSr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sr = null;
+            if (parseNode.GetChildNode("sv") is { } nullNodeSv && nullNodeSv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sv = null;
+            if (parseNode.GetChildNode("th") is { } nullNodeTh && nullNodeTh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Th = null;
+            if (parseNode.GetChildNode("tr") is { } nullNodeTr && nullNodeTr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tr = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ar property</summary>
-        public double? Ar { get; set; }
+        public double? Ar { get => _explicitNullValueAr; set { _explicitNullValueAr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ar"); else _explicitNullProperties?.Remove("ar"); } }
+        private double? _explicitNullValueAr = default!;
         /// <summary>The bg property</summary>
-        public double? Bg { get; set; }
+        public double? Bg { get => _explicitNullValueBg; set { _explicitNullValueBg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bg"); else _explicitNullProperties?.Remove("bg"); } }
+        private double? _explicitNullValueBg = default!;
         /// <summary>The bs property</summary>
-        public double? Bs { get; set; }
+        public double? Bs { get => _explicitNullValueBs; set { _explicitNullValueBs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bs"); else _explicitNullProperties?.Remove("bs"); } }
+        private double? _explicitNullValueBs = default!;
         /// <summary>The cs property</summary>
-        public double? Cs { get; set; }
+        public double? Cs { get => _explicitNullValueCs; set { _explicitNullValueCs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cs"); else _explicitNullProperties?.Remove("cs"); } }
+        private double? _explicitNullValueCs = default!;
         /// <summary>The da property</summary>
-        public double? Da { get; set; }
+        public double? Da { get => _explicitNullValueDa; set { _explicitNullValueDa = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("da"); else _explicitNullProperties?.Remove("da"); } }
+        private double? _explicitNullValueDa = default!;
         /// <summary>The de property</summary>
-        public double? De { get; set; }
+        public double? De { get => _explicitNullValueDe; set { _explicitNullValueDe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("de"); else _explicitNullProperties?.Remove("de"); } }
+        private double? _explicitNullValueDe = default!;
         /// <summary>The el property</summary>
-        public double? El { get; set; }
+        public double? El { get => _explicitNullValueEl; set { _explicitNullValueEl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("el"); else _explicitNullProperties?.Remove("el"); } }
+        private double? _explicitNullValueEl = default!;
         /// <summary>The en property</summary>
-        public double? En { get; set; }
+        public double? En { get => _explicitNullValueEn; set { _explicitNullValueEn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("en"); else _explicitNullProperties?.Remove("en"); } }
+        private double? _explicitNullValueEn = default!;
         /// <summary>The es property</summary>
-        public double? Es { get; set; }
+        public double? Es { get => _explicitNullValueEs; set { _explicitNullValueEs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("es"); else _explicitNullProperties?.Remove("es"); } }
+        private double? _explicitNullValueEs = default!;
         /// <summary>The et property</summary>
-        public double? Et { get; set; }
+        public double? Et { get => _explicitNullValueEt; set { _explicitNullValueEt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("et"); else _explicitNullProperties?.Remove("et"); } }
+        private double? _explicitNullValueEt = default!;
         /// <summary>The fi property</summary>
-        public double? Fi { get; set; }
+        public double? Fi { get => _explicitNullValueFi; set { _explicitNullValueFi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fi"); else _explicitNullProperties?.Remove("fi"); } }
+        private double? _explicitNullValueFi = default!;
         /// <summary>The fr property</summary>
-        public double? Fr { get; set; }
+        public double? Fr { get => _explicitNullValueFr; set { _explicitNullValueFr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fr"); else _explicitNullProperties?.Remove("fr"); } }
+        private double? _explicitNullValueFr = default!;
         /// <summary>The he property</summary>
-        public double? He { get; set; }
+        public double? He { get => _explicitNullValueHe; set { _explicitNullValueHe = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("he"); else _explicitNullProperties?.Remove("he"); } }
+        private double? _explicitNullValueHe = default!;
         /// <summary>The hr property</summary>
-        public double? Hr { get; set; }
+        public double? Hr { get => _explicitNullValueHr; set { _explicitNullValueHr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hr"); else _explicitNullProperties?.Remove("hr"); } }
+        private double? _explicitNullValueHr = default!;
         /// <summary>The hu property</summary>
-        public double? Hu { get; set; }
+        public double? Hu { get => _explicitNullValueHu; set { _explicitNullValueHu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hu"); else _explicitNullProperties?.Remove("hu"); } }
+        private double? _explicitNullValueHu = default!;
         /// <summary>The mk property</summary>
-        public double? Mk { get; set; }
+        public double? Mk { get => _explicitNullValueMk; set { _explicitNullValueMk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mk"); else _explicitNullProperties?.Remove("mk"); } }
+        private double? _explicitNullValueMk = default!;
         /// <summary>The nl property</summary>
-        public double? Nl { get; set; }
+        public double? Nl { get => _explicitNullValueNl; set { _explicitNullValueNl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nl"); else _explicitNullProperties?.Remove("nl"); } }
+        private double? _explicitNullValueNl = default!;
         /// <summary>The no property</summary>
-        public double? No { get; set; }
+        public double? No { get => _explicitNullValueNo; set { _explicitNullValueNo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no"); else _explicitNullProperties?.Remove("no"); } }
+        private double? _explicitNullValueNo = default!;
         /// <summary>The pl property</summary>
-        public double? Pl { get; set; }
+        public double? Pl { get => _explicitNullValuePl; set { _explicitNullValuePl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pl"); else _explicitNullProperties?.Remove("pl"); } }
+        private double? _explicitNullValuePl = default!;
         /// <summary>The ptBR property</summary>
-        public double? PtBR { get; set; }
+        public double? PtBR { get => _explicitNullValuePtBR; set { _explicitNullValuePtBR = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pt-BR"); else _explicitNullProperties?.Remove("pt-BR"); } }
+        private double? _explicitNullValuePtBR = default!;
         /// <summary>The ptPT property</summary>
-        public double? PtPT { get; set; }
+        public double? PtPT { get => _explicitNullValuePtPT; set { _explicitNullValuePtPT = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pt-PT"); else _explicitNullProperties?.Remove("pt-PT"); } }
+        private double? _explicitNullValuePtPT = default!;
         /// <summary>The ro property</summary>
-        public double? Ro { get; set; }
+        public double? Ro { get => _explicitNullValueRo; set { _explicitNullValueRo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ro"); else _explicitNullProperties?.Remove("ro"); } }
+        private double? _explicitNullValueRo = default!;
         /// <summary>The ru property</summary>
-        public double? Ru { get; set; }
+        public double? Ru { get => _explicitNullValueRu; set { _explicitNullValueRu = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ru"); else _explicitNullProperties?.Remove("ru"); } }
+        private double? _explicitNullValueRu = default!;
         /// <summary>The sl property</summary>
-        public double? Sl { get; set; }
+        public double? Sl { get => _explicitNullValueSl; set { _explicitNullValueSl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sl"); else _explicitNullProperties?.Remove("sl"); } }
+        private double? _explicitNullValueSl = default!;
         /// <summary>The sr property</summary>
-        public double? Sr { get; set; }
+        public double? Sr { get => _explicitNullValueSr; set { _explicitNullValueSr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sr"); else _explicitNullProperties?.Remove("sr"); } }
+        private double? _explicitNullValueSr = default!;
         /// <summary>The sv property</summary>
-        public double? Sv { get; set; }
+        public double? Sv { get => _explicitNullValueSv; set { _explicitNullValueSv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sv"); else _explicitNullProperties?.Remove("sv"); } }
+        private double? _explicitNullValueSv = default!;
         /// <summary>The th property</summary>
-        public double? Th { get; set; }
+        public double? Th { get => _explicitNullValueTh; set { _explicitNullValueTh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("th"); else _explicitNullProperties?.Remove("th"); } }
+        private double? _explicitNullValueTh = default!;
         /// <summary>The tr property</summary>
-        public double? Tr { get; set; }
+        public double? Tr { get => _explicitNullValueTr; set { _explicitNullValueTr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tr"); else _explicitNullProperties?.Remove("tr"); } }
+        private double? _explicitNullValueTr = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisodeAttributesSubtitlesCounts"/> and sets the default values.
         /// </summary>
@@ -85,7 +148,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         public static global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisodeAttributesSubtitlesCounts CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisodeAttributesSubtitlesCounts();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisodeAttributesSubtitlesCounts(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -160,6 +223,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
             writer.WriteDoubleValue("sv", Sv);
             writer.WriteDoubleValue("th", Th);
             writer.WriteDoubleValue("tr", Tr);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

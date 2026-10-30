@@ -49,7 +49,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Discover.Most_downloaded
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.MostDownloaded200Response>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.MostDownloaded200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.MostDownloaded200Response>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.MostDownloaded200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Discover popular subtitles, according to last 30 days downloads on opensubtitles.com. This list can be filtered by language code or feature type (movie, episode)

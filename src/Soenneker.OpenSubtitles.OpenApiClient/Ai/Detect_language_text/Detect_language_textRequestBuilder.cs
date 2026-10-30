@@ -49,7 +49,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_text
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponse>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponse>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Detect language** of subtitle file.At least 1 credits on user account is needed. [Buy Credits](../open_api.json/paths/~1ai~1credits~1buy/get)Method is returning ```{  &quot;data&quot;: {    &quot;format&quot;: &quot;SubRip&quot;,    &quot;type&quot;: &quot;text&quot;,    &quot;language&quot;: {      &quot;W3C&quot;: &quot;en&quot;,      &quot;name&quot;: &quot;english&quot;,      &quot;native&quot;: &quot;english&quot;,      &quot;ISO_639_1&quot;: &quot;en&quot;,      &quot;ISO_639_2b&quot;: &quot;eng&quot;    }  }}```

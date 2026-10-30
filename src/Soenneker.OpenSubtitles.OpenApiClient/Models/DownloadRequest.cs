@@ -11,35 +11,58 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DownloadRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("file_id") is { } nullNodeFileId && nullNodeFileId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileId = null;
+            if (parseNode.GetChildNode("file_name") is { } nullNodeFileName && nullNodeFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileName = null;
+            if (parseNode.GetChildNode("force_download") is { } nullNodeForceDownload && nullNodeForceDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceDownload = null;
+            if (parseNode.GetChildNode("in_fps") is { } nullNodeInFps && nullNodeInFps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InFps = null;
+            if (parseNode.GetChildNode("out_fps") is { } nullNodeOutFps && nullNodeOutFps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutFps = null;
+            if (parseNode.GetChildNode("sub_format") is { } nullNodeSubFormat && nullNodeSubFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubFormat = null;
+            if (parseNode.GetChildNode("timeshift") is { } nullNodeTimeshift && nullNodeTimeshift.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeshift = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>file_id from /subtitles search results</summary>
-        public int? FileId { get; set; }
+        public int? FileId { get => _explicitNullValueFileId; set { _explicitNullValueFileId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_id"); else _explicitNullProperties?.Remove("file_id"); } }
+        private int? _explicitNullValueFileId = default!;
         /// <summary>desired file name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName { get; set; }
+        public string? FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        private string? _explicitNullValueFileName = default!;
 #nullable restore
 #else
-        public string FileName { get; set; }
+        public string FileName { get => _explicitNullValueFileName; set { _explicitNullValueFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("file_name"); else _explicitNullProperties?.Remove("file_name"); } }
+        private string _explicitNullValueFileName = default!;
 #endif
         /// <summary>(1/0) set subtitle file headers to &quot;application/force-download&quot;</summary>
-        public bool? ForceDownload { get; set; }
+        public bool? ForceDownload { get => _explicitNullValueForceDownload; set { _explicitNullValueForceDownload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_download"); else _explicitNullProperties?.Remove("force_download"); } }
+        private bool? _explicitNullValueForceDownload = default!;
         /// <summary>used for conversions, in_fps and out_fps must then be indicated</summary>
-        public double? InFps { get; set; }
+        public double? InFps { get => _explicitNullValueInFps; set { _explicitNullValueInFps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_fps"); else _explicitNullProperties?.Remove("in_fps"); } }
+        private double? _explicitNullValueInFps = default!;
         /// <summary>used for conversions, in_fps and out_fps must then be indicated</summary>
-        public double? OutFps { get; set; }
+        public double? OutFps { get => _explicitNullValueOutFps; set { _explicitNullValueOutFps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("out_fps"); else _explicitNullProperties?.Remove("out_fps"); } }
+        private double? _explicitNullValueOutFps = default!;
         /// <summary>from /infos/formats</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubFormat { get; set; }
+        public string? SubFormat { get => _explicitNullValueSubFormat; set { _explicitNullValueSubFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_format"); else _explicitNullProperties?.Remove("sub_format"); } }
+        private string? _explicitNullValueSubFormat = default!;
 #nullable restore
 #else
-        public string SubFormat { get; set; }
+        public string SubFormat { get => _explicitNullValueSubFormat; set { _explicitNullValueSubFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sub_format"); else _explicitNullProperties?.Remove("sub_format"); } }
+        private string _explicitNullValueSubFormat = default!;
 #endif
         /// <summary>delay to add or remove to the subtitle, + or - value, in seconds, i.e. 2.5s or -1s </summary>
-        public double? Timeshift { get; set; }
+        public double? Timeshift { get => _explicitNullValueTimeshift; set { _explicitNullValueTimeshift = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeshift"); else _explicitNullProperties?.Remove("timeshift"); } }
+        private double? _explicitNullValueTimeshift = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.DownloadRequest"/> and sets the default values.
         /// </summary>
@@ -55,7 +78,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         public static global::Soenneker.OpenSubtitles.OpenApiClient.Models.DownloadRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenSubtitles.OpenApiClient.Models.DownloadRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenSubtitles.OpenApiClient.Models.DownloadRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
             writer.WriteDoubleValue("out_fps", OutFps);
             writer.WriteStringValue("sub_format", SubFormat);
             writer.WriteDoubleValue("timeshift", Timeshift);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

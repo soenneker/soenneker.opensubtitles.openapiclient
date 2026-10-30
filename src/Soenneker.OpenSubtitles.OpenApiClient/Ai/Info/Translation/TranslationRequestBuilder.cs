@@ -49,7 +49,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Info.Translation
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Translation200Response>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Translation200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Translation200Response>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Translation200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Available translation APIs and Languages. User doesn&apos;t need to be authentificated.

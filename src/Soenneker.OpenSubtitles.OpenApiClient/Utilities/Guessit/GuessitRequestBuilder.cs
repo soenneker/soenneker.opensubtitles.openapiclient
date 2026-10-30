@@ -49,7 +49,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Utilities.Guessit
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit200Response>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit200Response>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Guessit200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Extracts as much information as possible from a video filename.It has a very powerful matcher that allows to guess properties from a video using its filename only. This matcher works with both movies and tv shows episodes.This is a simple implementation of the python guessit library.https://guessit-io.github.io/guessit/Find examples of the returned data.https://guessit-io.github.io/guessit/properties/

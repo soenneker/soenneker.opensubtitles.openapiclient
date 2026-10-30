@@ -49,7 +49,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Logout
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Logout200ResponseSchema>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Logout200ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Logout200ResponseSchema>(requestInfo, global::Soenneker.OpenSubtitles.OpenApiClient.Models.Logout200ResponseSchema.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Destroy a user token to end a session. Bearer token is required for this endpoint.

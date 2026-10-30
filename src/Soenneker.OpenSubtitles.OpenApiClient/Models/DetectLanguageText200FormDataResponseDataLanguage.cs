@@ -11,48 +11,70 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DetectLanguageText200FormDataResponseDataLanguage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ISO_639_1") is { } nullNodeISO6391 && nullNodeISO6391.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ISO6391 = null;
+            if (parseNode.GetChildNode("ISO_639_2b") is { } nullNodeISO6392b && nullNodeISO6392b.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ISO6392b = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("native") is { } nullNodeNative && nullNodeNative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Native = null;
+            if (parseNode.GetChildNode("W3C") is { } nullNodeW3C && nullNodeW3C.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) W3C = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ISO_639_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ISO6391 { get; set; }
+        public string? ISO6391 { get => _explicitNullValueISO6391; set { _explicitNullValueISO6391 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_1"); else _explicitNullProperties?.Remove("ISO_639_1"); } }
+        private string? _explicitNullValueISO6391 = default!;
 #nullable restore
 #else
-        public string ISO6391 { get; set; }
+        public string ISO6391 { get => _explicitNullValueISO6391; set { _explicitNullValueISO6391 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_1"); else _explicitNullProperties?.Remove("ISO_639_1"); } }
+        private string _explicitNullValueISO6391 = default!;
 #endif
         /// <summary>The ISO_639_2b property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ISO6392b { get; set; }
+        public string? ISO6392b { get => _explicitNullValueISO6392b; set { _explicitNullValueISO6392b = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_2b"); else _explicitNullProperties?.Remove("ISO_639_2b"); } }
+        private string? _explicitNullValueISO6392b = default!;
 #nullable restore
 #else
-        public string ISO6392b { get; set; }
+        public string ISO6392b { get => _explicitNullValueISO6392b; set { _explicitNullValueISO6392b = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_2b"); else _explicitNullProperties?.Remove("ISO_639_2b"); } }
+        private string _explicitNullValueISO6392b = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The native property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Native { get; set; }
+        public string? Native { get => _explicitNullValueNative; set { _explicitNullValueNative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native"); else _explicitNullProperties?.Remove("native"); } }
+        private string? _explicitNullValueNative = default!;
 #nullable restore
 #else
-        public string Native { get; set; }
+        public string Native { get => _explicitNullValueNative; set { _explicitNullValueNative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native"); else _explicitNullProperties?.Remove("native"); } }
+        private string _explicitNullValueNative = default!;
 #endif
         /// <summary>The W3C property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? W3C { get; set; }
+        public string? W3C { get => _explicitNullValueW3C; set { _explicitNullValueW3C = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("W3C"); else _explicitNullProperties?.Remove("W3C"); } }
+        private string? _explicitNullValueW3C = default!;
 #nullable restore
 #else
-        public string W3C { get; set; }
+        public string W3C { get => _explicitNullValueW3C; set { _explicitNullValueW3C = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("W3C"); else _explicitNullProperties?.Remove("W3C"); } }
+        private string _explicitNullValueW3C = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponseDataLanguage"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         public static global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponseDataLanguage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponseDataLanguage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenSubtitles.OpenApiClient.Models.DetectLanguageText200FormDataResponseDataLanguage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("native", Native);
             writer.WriteStringValue("W3C", W3C);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
