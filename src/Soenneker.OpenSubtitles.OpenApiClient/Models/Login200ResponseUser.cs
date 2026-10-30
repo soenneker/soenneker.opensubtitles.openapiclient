@@ -17,40 +17,46 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allowed_downloads") is { } nullNodeAllowedDownloads && nullNodeAllowedDownloads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDownloads = null;
-            if (parseNode.GetChildNode("allowed_translations") is { } nullNodeAllowedTranslations && nullNodeAllowedTranslations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedTranslations = null;
-            if (parseNode.GetChildNode("ext_installed") is { } nullNodeExtInstalled && nullNodeExtInstalled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtInstalled = null;
-            if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
-            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
-            if (parseNode.GetChildNode("vip") is { } nullNodeVip && nullNodeVip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vip = null;
+            if (parseNode.GetChildNode("allowed_downloads") is null) { _explicitNullValueAllowedDownloads = default!; _explicitNullProperties?.Remove("allowed_downloads"); }
+            else if (parseNode.GetChildNode("allowed_downloads") is { } nullNodeAllowedDownloads && nullNodeAllowedDownloads.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDownloads = null;
+            if (parseNode.GetChildNode("allowed_translations") is null) { _explicitNullValueAllowedTranslations = default!; _explicitNullProperties?.Remove("allowed_translations"); }
+            else if (parseNode.GetChildNode("allowed_translations") is { } nullNodeAllowedTranslations && nullNodeAllowedTranslations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedTranslations = null;
+            if (parseNode.GetChildNode("ext_installed") is null) { _explicitNullValueExtInstalled = default!; _explicitNullProperties?.Remove("ext_installed"); }
+            else if (parseNode.GetChildNode("ext_installed") is { } nullNodeExtInstalled && nullNodeExtInstalled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtInstalled = null;
+            if (parseNode.GetChildNode("level") is null) { _explicitNullValueLevel = default!; _explicitNullProperties?.Remove("level"); }
+            else if (parseNode.GetChildNode("level") is { } nullNodeLevel && nullNodeLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Level = null;
+            if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
+            else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("vip") is null) { _explicitNullValueVip = default!; _explicitNullProperties?.Remove("vip"); }
+            else if (parseNode.GetChildNode("vip") is { } nullNodeVip && nullNodeVip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vip = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allowed_downloads property</summary>
-        public double? AllowedDownloads { get => _explicitNullValueAllowedDownloads; set { _explicitNullValueAllowedDownloads = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_downloads"); else _explicitNullProperties?.Remove("allowed_downloads"); } }
+        public double? AllowedDownloads { get => _explicitNullValueAllowedDownloads; set { _explicitNullValueAllowedDownloads = value; AdditionalData?.Remove("allowed_downloads"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_downloads"); else _explicitNullProperties?.Remove("allowed_downloads"); } }
         private double? _explicitNullValueAllowedDownloads = default!;
         /// <summary>The allowed_translations property</summary>
-        public double? AllowedTranslations { get => _explicitNullValueAllowedTranslations; set { _explicitNullValueAllowedTranslations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_translations"); else _explicitNullProperties?.Remove("allowed_translations"); } }
+        public double? AllowedTranslations { get => _explicitNullValueAllowedTranslations; set { _explicitNullValueAllowedTranslations = value; AdditionalData?.Remove("allowed_translations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_translations"); else _explicitNullProperties?.Remove("allowed_translations"); } }
         private double? _explicitNullValueAllowedTranslations = default!;
         /// <summary>The ext_installed property</summary>
-        public bool? ExtInstalled { get => _explicitNullValueExtInstalled; set { _explicitNullValueExtInstalled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ext_installed"); else _explicitNullProperties?.Remove("ext_installed"); } }
+        public bool? ExtInstalled { get => _explicitNullValueExtInstalled; set { _explicitNullValueExtInstalled = value; AdditionalData?.Remove("ext_installed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ext_installed"); else _explicitNullProperties?.Remove("ext_installed"); } }
         private bool? _explicitNullValueExtInstalled = default!;
         /// <summary>The level property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
+        public string? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; AdditionalData?.Remove("level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
         private string? _explicitNullValueLevel = default!;
 #nullable restore
 #else
-        public string Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
+        public string Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; AdditionalData?.Remove("level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
         private string _explicitNullValueLevel = default!;
 #endif
         /// <summary>The user_id property</summary>
-        public double? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        public double? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
         private double? _explicitNullValueUserId = default!;
         /// <summary>The vip property</summary>
-        public bool? Vip { get => _explicitNullValueVip; set { _explicitNullValueVip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vip"); else _explicitNullProperties?.Remove("vip"); } }
+        public bool? Vip { get => _explicitNullValueVip; set { _explicitNullValueVip = value; AdditionalData?.Remove("vip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vip"); else _explicitNullProperties?.Remove("vip"); } }
         private bool? _explicitNullValueVip = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login200ResponseUser"/> and sets the default values.

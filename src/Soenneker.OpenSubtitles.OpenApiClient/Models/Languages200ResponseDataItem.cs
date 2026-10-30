@@ -17,8 +17,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("language_code") is { } nullNodeLanguageCode && nullNodeLanguageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageCode = null;
-            if (parseNode.GetChildNode("language_name") is { } nullNodeLanguageName && nullNodeLanguageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageName = null;
+            if (parseNode.GetChildNode("language_code") is null) { _explicitNullValueLanguageCode = default!; _explicitNullProperties?.Remove("language_code"); }
+            else if (parseNode.GetChildNode("language_code") is { } nullNodeLanguageCode && nullNodeLanguageCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageCode = null;
+            if (parseNode.GetChildNode("language_name") is null) { _explicitNullValueLanguageName = default!; _explicitNullProperties?.Remove("language_name"); }
+            else if (parseNode.GetChildNode("language_name") is { } nullNodeLanguageName && nullNodeLanguageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LanguageName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The language_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
+        public string? LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; AdditionalData?.Remove("language_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
         private string? _explicitNullValueLanguageCode = default!;
 #nullable restore
 #else
-        public string LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
+        public string LanguageCode { get => _explicitNullValueLanguageCode; set { _explicitNullValueLanguageCode = value; AdditionalData?.Remove("language_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_code"); else _explicitNullProperties?.Remove("language_code"); } }
         private string _explicitNullValueLanguageCode = default!;
 #endif
         /// <summary>The language_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageName { get => _explicitNullValueLanguageName; set { _explicitNullValueLanguageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_name"); else _explicitNullProperties?.Remove("language_name"); } }
+        public string? LanguageName { get => _explicitNullValueLanguageName; set { _explicitNullValueLanguageName = value; AdditionalData?.Remove("language_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_name"); else _explicitNullProperties?.Remove("language_name"); } }
         private string? _explicitNullValueLanguageName = default!;
 #nullable restore
 #else
-        public string LanguageName { get => _explicitNullValueLanguageName; set { _explicitNullValueLanguageName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_name"); else _explicitNullProperties?.Remove("language_name"); } }
+        public string LanguageName { get => _explicitNullValueLanguageName; set { _explicitNullValueLanguageName = value; AdditionalData?.Remove("language_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language_name"); else _explicitNullProperties?.Remove("language_name"); } }
         private string _explicitNullValueLanguageName = default!;
 #endif
         /// <summary>

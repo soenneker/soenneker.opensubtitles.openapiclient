@@ -78,7 +78,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_audio
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Detect_language_audio.Detect_language_audioRequestBuilder.Detect_language_audioRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.opensubtitles.com/api/v1", "/ai/detect_language_audio", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "multipart/form-data;q=0.1");
             return requestInfo;

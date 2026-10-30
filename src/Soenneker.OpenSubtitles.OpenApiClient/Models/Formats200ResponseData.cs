@@ -17,7 +17,8 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("output_formats") is { } nullNodeOutputFormats && nullNodeOutputFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormats = null;
+            if (parseNode.GetChildNode("output_formats") is null) { _explicitNullValueOutputFormats = default!; _explicitNullProperties?.Remove("output_formats"); }
+            else if (parseNode.GetChildNode("output_formats") is { } nullNodeOutputFormats && nullNodeOutputFormats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFormats = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The output_formats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? OutputFormats { get => _explicitNullValueOutputFormats; set { _explicitNullValueOutputFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_formats"); else _explicitNullProperties?.Remove("output_formats"); } }
+        public UntypedNode? OutputFormats { get => _explicitNullValueOutputFormats; set { _explicitNullValueOutputFormats = value; AdditionalData?.Remove("output_formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_formats"); else _explicitNullProperties?.Remove("output_formats"); } }
         private UntypedNode? _explicitNullValueOutputFormats = default!;
 #nullable restore
 #else
-        public UntypedNode OutputFormats { get => _explicitNullValueOutputFormats; set { _explicitNullValueOutputFormats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_formats"); else _explicitNullProperties?.Remove("output_formats"); } }
+        public UntypedNode OutputFormats { get => _explicitNullValueOutputFormats; set { _explicitNullValueOutputFormats = value; AdditionalData?.Remove("output_formats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_formats"); else _explicitNullProperties?.Remove("output_formats"); } }
         private UntypedNode _explicitNullValueOutputFormats = default!;
 #endif
         /// <summary>

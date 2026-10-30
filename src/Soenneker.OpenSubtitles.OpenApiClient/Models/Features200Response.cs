@@ -17,9 +17,12 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("episode") is { } nullNodeEpisode && nullNodeEpisode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Episode = null;
-            if (parseNode.GetChildNode("movie") is { } nullNodeMovie && nullNodeMovie.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Movie = null;
-            if (parseNode.GetChildNode("tv") is { } nullNodeTv && nullNodeTv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tv = null;
+            if (parseNode.GetChildNode("episode") is null) { _explicitNullValueEpisode = default!; _explicitNullProperties?.Remove("episode"); }
+            else if (parseNode.GetChildNode("episode") is { } nullNodeEpisode && nullNodeEpisode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Episode = null;
+            if (parseNode.GetChildNode("movie") is null) { _explicitNullValueMovie = default!; _explicitNullProperties?.Remove("movie"); }
+            else if (parseNode.GetChildNode("movie") is { } nullNodeMovie && nullNodeMovie.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Movie = null;
+            if (parseNode.GetChildNode("tv") is null) { _explicitNullValueTv = default!; _explicitNullProperties?.Remove("tv"); }
+            else if (parseNode.GetChildNode("tv") is { } nullNodeTv && nullNodeTv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tv = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The episode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisode? Episode { get => _explicitNullValueEpisode; set { _explicitNullValueEpisode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode"); else _explicitNullProperties?.Remove("episode"); } }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisode? Episode { get => _explicitNullValueEpisode; set { _explicitNullValueEpisode = value; AdditionalData?.Remove("episode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode"); else _explicitNullProperties?.Remove("episode"); } }
         private global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisode? _explicitNullValueEpisode = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisode Episode { get => _explicitNullValueEpisode; set { _explicitNullValueEpisode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode"); else _explicitNullProperties?.Remove("episode"); } }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisode Episode { get => _explicitNullValueEpisode; set { _explicitNullValueEpisode = value; AdditionalData?.Remove("episode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode"); else _explicitNullProperties?.Remove("episode"); } }
         private global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureEpisode _explicitNullValueEpisode = default!;
 #endif
         /// <summary>The movie property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovie? Movie { get => _explicitNullValueMovie; set { _explicitNullValueMovie = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("movie"); else _explicitNullProperties?.Remove("movie"); } }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovie? Movie { get => _explicitNullValueMovie; set { _explicitNullValueMovie = value; AdditionalData?.Remove("movie"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("movie"); else _explicitNullProperties?.Remove("movie"); } }
         private global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovie? _explicitNullValueMovie = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovie Movie { get => _explicitNullValueMovie; set { _explicitNullValueMovie = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("movie"); else _explicitNullProperties?.Remove("movie"); } }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovie Movie { get => _explicitNullValueMovie; set { _explicitNullValueMovie = value; AdditionalData?.Remove("movie"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("movie"); else _explicitNullProperties?.Remove("movie"); } }
         private global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureMovie _explicitNullValueMovie = default!;
 #endif
         /// <summary>The tv property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshow? Tv { get => _explicitNullValueTv; set { _explicitNullValueTv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tv"); else _explicitNullProperties?.Remove("tv"); } }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshow? Tv { get => _explicitNullValueTv; set { _explicitNullValueTv = value; AdditionalData?.Remove("tv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tv"); else _explicitNullProperties?.Remove("tv"); } }
         private global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshow? _explicitNullValueTv = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshow Tv { get => _explicitNullValueTv; set { _explicitNullValueTv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tv"); else _explicitNullProperties?.Remove("tv"); } }
+        public global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshow Tv { get => _explicitNullValueTv; set { _explicitNullValueTv = value; AdditionalData?.Remove("tv"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tv"); else _explicitNullProperties?.Remove("tv"); } }
         private global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshow _explicitNullValueTv = default!;
 #endif
         /// <summary>

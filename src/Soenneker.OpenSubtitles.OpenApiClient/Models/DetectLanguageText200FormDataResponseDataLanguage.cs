@@ -17,11 +17,16 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ISO_639_1") is { } nullNodeISO6391 && nullNodeISO6391.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ISO6391 = null;
-            if (parseNode.GetChildNode("ISO_639_2b") is { } nullNodeISO6392b && nullNodeISO6392b.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ISO6392b = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("native") is { } nullNodeNative && nullNodeNative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Native = null;
-            if (parseNode.GetChildNode("W3C") is { } nullNodeW3C && nullNodeW3C.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) W3C = null;
+            if (parseNode.GetChildNode("ISO_639_1") is null) { _explicitNullValueISO6391 = default!; _explicitNullProperties?.Remove("ISO_639_1"); }
+            else if (parseNode.GetChildNode("ISO_639_1") is { } nullNodeISO6391 && nullNodeISO6391.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ISO6391 = null;
+            if (parseNode.GetChildNode("ISO_639_2b") is null) { _explicitNullValueISO6392b = default!; _explicitNullProperties?.Remove("ISO_639_2b"); }
+            else if (parseNode.GetChildNode("ISO_639_2b") is { } nullNodeISO6392b && nullNodeISO6392b.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ISO6392b = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("native") is null) { _explicitNullValueNative = default!; _explicitNullProperties?.Remove("native"); }
+            else if (parseNode.GetChildNode("native") is { } nullNodeNative && nullNodeNative.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Native = null;
+            if (parseNode.GetChildNode("W3C") is null) { _explicitNullValueW3C = default!; _explicitNullProperties?.Remove("W3C"); }
+            else if (parseNode.GetChildNode("W3C") is { } nullNodeW3C && nullNodeW3C.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) W3C = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The ISO_639_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ISO6391 { get => _explicitNullValueISO6391; set { _explicitNullValueISO6391 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_1"); else _explicitNullProperties?.Remove("ISO_639_1"); } }
+        public string? ISO6391 { get => _explicitNullValueISO6391; set { _explicitNullValueISO6391 = value; AdditionalData?.Remove("ISO_639_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_1"); else _explicitNullProperties?.Remove("ISO_639_1"); } }
         private string? _explicitNullValueISO6391 = default!;
 #nullable restore
 #else
-        public string ISO6391 { get => _explicitNullValueISO6391; set { _explicitNullValueISO6391 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_1"); else _explicitNullProperties?.Remove("ISO_639_1"); } }
+        public string ISO6391 { get => _explicitNullValueISO6391; set { _explicitNullValueISO6391 = value; AdditionalData?.Remove("ISO_639_1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_1"); else _explicitNullProperties?.Remove("ISO_639_1"); } }
         private string _explicitNullValueISO6391 = default!;
 #endif
         /// <summary>The ISO_639_2b property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ISO6392b { get => _explicitNullValueISO6392b; set { _explicitNullValueISO6392b = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_2b"); else _explicitNullProperties?.Remove("ISO_639_2b"); } }
+        public string? ISO6392b { get => _explicitNullValueISO6392b; set { _explicitNullValueISO6392b = value; AdditionalData?.Remove("ISO_639_2b"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_2b"); else _explicitNullProperties?.Remove("ISO_639_2b"); } }
         private string? _explicitNullValueISO6392b = default!;
 #nullable restore
 #else
-        public string ISO6392b { get => _explicitNullValueISO6392b; set { _explicitNullValueISO6392b = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_2b"); else _explicitNullProperties?.Remove("ISO_639_2b"); } }
+        public string ISO6392b { get => _explicitNullValueISO6392b; set { _explicitNullValueISO6392b = value; AdditionalData?.Remove("ISO_639_2b"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ISO_639_2b"); else _explicitNullProperties?.Remove("ISO_639_2b"); } }
         private string _explicitNullValueISO6392b = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The native property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Native { get => _explicitNullValueNative; set { _explicitNullValueNative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native"); else _explicitNullProperties?.Remove("native"); } }
+        public string? Native { get => _explicitNullValueNative; set { _explicitNullValueNative = value; AdditionalData?.Remove("native"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native"); else _explicitNullProperties?.Remove("native"); } }
         private string? _explicitNullValueNative = default!;
 #nullable restore
 #else
-        public string Native { get => _explicitNullValueNative; set { _explicitNullValueNative = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native"); else _explicitNullProperties?.Remove("native"); } }
+        public string Native { get => _explicitNullValueNative; set { _explicitNullValueNative = value; AdditionalData?.Remove("native"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("native"); else _explicitNullProperties?.Remove("native"); } }
         private string _explicitNullValueNative = default!;
 #endif
         /// <summary>The W3C property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? W3C { get => _explicitNullValueW3C; set { _explicitNullValueW3C = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("W3C"); else _explicitNullProperties?.Remove("W3C"); } }
+        public string? W3C { get => _explicitNullValueW3C; set { _explicitNullValueW3C = value; AdditionalData?.Remove("W3C"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("W3C"); else _explicitNullProperties?.Remove("W3C"); } }
         private string? _explicitNullValueW3C = default!;
 #nullable restore
 #else
-        public string W3C { get => _explicitNullValueW3C; set { _explicitNullValueW3C = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("W3C"); else _explicitNullProperties?.Remove("W3C"); } }
+        public string W3C { get => _explicitNullValueW3C; set { _explicitNullValueW3C = value; AdditionalData?.Remove("W3C"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("W3C"); else _explicitNullProperties?.Remove("W3C"); } }
         private string _explicitNullValueW3C = default!;
 #endif
         /// <summary>

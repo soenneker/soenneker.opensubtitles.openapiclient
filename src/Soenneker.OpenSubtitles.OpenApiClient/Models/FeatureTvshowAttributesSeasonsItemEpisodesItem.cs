@@ -17,31 +17,35 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("episode_number") is { } nullNodeEpisodeNumber && nullNodeEpisodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EpisodeNumber = null;
-            if (parseNode.GetChildNode("feature_id") is { } nullNodeFeatureId && nullNodeFeatureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureId = null;
-            if (parseNode.GetChildNode("feature_imdb_id") is { } nullNodeFeatureImdbId && nullNodeFeatureImdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureImdbId = null;
-            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("episode_number") is null) { _explicitNullValueEpisodeNumber = default!; _explicitNullProperties?.Remove("episode_number"); }
+            else if (parseNode.GetChildNode("episode_number") is { } nullNodeEpisodeNumber && nullNodeEpisodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EpisodeNumber = null;
+            if (parseNode.GetChildNode("feature_id") is null) { _explicitNullValueFeatureId = default!; _explicitNullProperties?.Remove("feature_id"); }
+            else if (parseNode.GetChildNode("feature_id") is { } nullNodeFeatureId && nullNodeFeatureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureId = null;
+            if (parseNode.GetChildNode("feature_imdb_id") is null) { _explicitNullValueFeatureImdbId = default!; _explicitNullProperties?.Remove("feature_imdb_id"); }
+            else if (parseNode.GetChildNode("feature_imdb_id") is { } nullNodeFeatureImdbId && nullNodeFeatureImdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureImdbId = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The episode_number property</summary>
-        public double? EpisodeNumber { get => _explicitNullValueEpisodeNumber; set { _explicitNullValueEpisodeNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode_number"); else _explicitNullProperties?.Remove("episode_number"); } }
+        public double? EpisodeNumber { get => _explicitNullValueEpisodeNumber; set { _explicitNullValueEpisodeNumber = value; AdditionalData?.Remove("episode_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode_number"); else _explicitNullProperties?.Remove("episode_number"); } }
         private double? _explicitNullValueEpisodeNumber = default!;
         /// <summary>The feature_id property</summary>
-        public double? FeatureId { get => _explicitNullValueFeatureId; set { _explicitNullValueFeatureId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_id"); else _explicitNullProperties?.Remove("feature_id"); } }
+        public double? FeatureId { get => _explicitNullValueFeatureId; set { _explicitNullValueFeatureId = value; AdditionalData?.Remove("feature_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_id"); else _explicitNullProperties?.Remove("feature_id"); } }
         private double? _explicitNullValueFeatureId = default!;
         /// <summary>The feature_imdb_id property</summary>
-        public double? FeatureImdbId { get => _explicitNullValueFeatureImdbId; set { _explicitNullValueFeatureImdbId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_imdb_id"); else _explicitNullProperties?.Remove("feature_imdb_id"); } }
+        public double? FeatureImdbId { get => _explicitNullValueFeatureImdbId; set { _explicitNullValueFeatureImdbId = value; AdditionalData?.Remove("feature_imdb_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_imdb_id"); else _explicitNullProperties?.Remove("feature_imdb_id"); } }
         private double? _explicitNullValueFeatureImdbId = default!;
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>

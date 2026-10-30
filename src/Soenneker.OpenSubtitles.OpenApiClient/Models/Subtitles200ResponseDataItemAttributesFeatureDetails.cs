@@ -17,89 +17,102 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("episode_number") is { } nullNodeEpisodeNumber && nullNodeEpisodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EpisodeNumber = null;
-            if (parseNode.GetChildNode("feature_id") is { } nullNodeFeatureId && nullNodeFeatureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureId = null;
-            if (parseNode.GetChildNode("feature_type") is { } nullNodeFeatureType && nullNodeFeatureType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureType = null;
-            if (parseNode.GetChildNode("imdb_id") is { } nullNodeImdbId && nullNodeImdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImdbId = null;
-            if (parseNode.GetChildNode("movie_name") is { } nullNodeMovieName && nullNodeMovieName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MovieName = null;
-            if (parseNode.GetChildNode("parent_feature_id") is { } nullNodeParentFeatureId && nullNodeParentFeatureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentFeatureId = null;
-            if (parseNode.GetChildNode("parent_imdb_id") is { } nullNodeParentImdbId && nullNodeParentImdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentImdbId = null;
-            if (parseNode.GetChildNode("parent_title") is { } nullNodeParentTitle && nullNodeParentTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentTitle = null;
-            if (parseNode.GetChildNode("parent_tmdb_id") is { } nullNodeParentTmdbId && nullNodeParentTmdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentTmdbId = null;
-            if (parseNode.GetChildNode("season_number") is { } nullNodeSeasonNumber && nullNodeSeasonNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeasonNumber = null;
-            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
-            if (parseNode.GetChildNode("tmdb_id") is { } nullNodeTmdbId && nullNodeTmdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TmdbId = null;
-            if (parseNode.GetChildNode("year") is { } nullNodeYear && nullNodeYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Year = null;
+            if (parseNode.GetChildNode("episode_number") is null) { _explicitNullValueEpisodeNumber = default!; _explicitNullProperties?.Remove("episode_number"); }
+            else if (parseNode.GetChildNode("episode_number") is { } nullNodeEpisodeNumber && nullNodeEpisodeNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EpisodeNumber = null;
+            if (parseNode.GetChildNode("feature_id") is null) { _explicitNullValueFeatureId = default!; _explicitNullProperties?.Remove("feature_id"); }
+            else if (parseNode.GetChildNode("feature_id") is { } nullNodeFeatureId && nullNodeFeatureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureId = null;
+            if (parseNode.GetChildNode("feature_type") is null) { _explicitNullValueFeatureType = default!; _explicitNullProperties?.Remove("feature_type"); }
+            else if (parseNode.GetChildNode("feature_type") is { } nullNodeFeatureType && nullNodeFeatureType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureType = null;
+            if (parseNode.GetChildNode("imdb_id") is null) { _explicitNullValueImdbId = default!; _explicitNullProperties?.Remove("imdb_id"); }
+            else if (parseNode.GetChildNode("imdb_id") is { } nullNodeImdbId && nullNodeImdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImdbId = null;
+            if (parseNode.GetChildNode("movie_name") is null) { _explicitNullValueMovieName = default!; _explicitNullProperties?.Remove("movie_name"); }
+            else if (parseNode.GetChildNode("movie_name") is { } nullNodeMovieName && nullNodeMovieName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MovieName = null;
+            if (parseNode.GetChildNode("parent_feature_id") is null) { _explicitNullValueParentFeatureId = default!; _explicitNullProperties?.Remove("parent_feature_id"); }
+            else if (parseNode.GetChildNode("parent_feature_id") is { } nullNodeParentFeatureId && nullNodeParentFeatureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentFeatureId = null;
+            if (parseNode.GetChildNode("parent_imdb_id") is null) { _explicitNullValueParentImdbId = default!; _explicitNullProperties?.Remove("parent_imdb_id"); }
+            else if (parseNode.GetChildNode("parent_imdb_id") is { } nullNodeParentImdbId && nullNodeParentImdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentImdbId = null;
+            if (parseNode.GetChildNode("parent_title") is null) { _explicitNullValueParentTitle = default!; _explicitNullProperties?.Remove("parent_title"); }
+            else if (parseNode.GetChildNode("parent_title") is { } nullNodeParentTitle && nullNodeParentTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentTitle = null;
+            if (parseNode.GetChildNode("parent_tmdb_id") is null) { _explicitNullValueParentTmdbId = default!; _explicitNullProperties?.Remove("parent_tmdb_id"); }
+            else if (parseNode.GetChildNode("parent_tmdb_id") is { } nullNodeParentTmdbId && nullNodeParentTmdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentTmdbId = null;
+            if (parseNode.GetChildNode("season_number") is null) { _explicitNullValueSeasonNumber = default!; _explicitNullProperties?.Remove("season_number"); }
+            else if (parseNode.GetChildNode("season_number") is { } nullNodeSeasonNumber && nullNodeSeasonNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeasonNumber = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("tmdb_id") is null) { _explicitNullValueTmdbId = default!; _explicitNullProperties?.Remove("tmdb_id"); }
+            else if (parseNode.GetChildNode("tmdb_id") is { } nullNodeTmdbId && nullNodeTmdbId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TmdbId = null;
+            if (parseNode.GetChildNode("year") is null) { _explicitNullValueYear = default!; _explicitNullProperties?.Remove("year"); }
+            else if (parseNode.GetChildNode("year") is { } nullNodeYear && nullNodeYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Year = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The episode_number property</summary>
-        public int? EpisodeNumber { get => _explicitNullValueEpisodeNumber; set { _explicitNullValueEpisodeNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode_number"); else _explicitNullProperties?.Remove("episode_number"); } }
+        public int? EpisodeNumber { get => _explicitNullValueEpisodeNumber; set { _explicitNullValueEpisodeNumber = value; AdditionalData?.Remove("episode_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode_number"); else _explicitNullProperties?.Remove("episode_number"); } }
         private int? _explicitNullValueEpisodeNumber = default!;
         /// <summary>The feature_id property</summary>
-        public int? FeatureId { get => _explicitNullValueFeatureId; set { _explicitNullValueFeatureId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_id"); else _explicitNullProperties?.Remove("feature_id"); } }
+        public int? FeatureId { get => _explicitNullValueFeatureId; set { _explicitNullValueFeatureId = value; AdditionalData?.Remove("feature_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_id"); else _explicitNullProperties?.Remove("feature_id"); } }
         private int? _explicitNullValueFeatureId = default!;
         /// <summary>The feature_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FeatureType { get => _explicitNullValueFeatureType; set { _explicitNullValueFeatureType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_type"); else _explicitNullProperties?.Remove("feature_type"); } }
+        public string? FeatureType { get => _explicitNullValueFeatureType; set { _explicitNullValueFeatureType = value; AdditionalData?.Remove("feature_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_type"); else _explicitNullProperties?.Remove("feature_type"); } }
         private string? _explicitNullValueFeatureType = default!;
 #nullable restore
 #else
-        public string FeatureType { get => _explicitNullValueFeatureType; set { _explicitNullValueFeatureType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_type"); else _explicitNullProperties?.Remove("feature_type"); } }
+        public string FeatureType { get => _explicitNullValueFeatureType; set { _explicitNullValueFeatureType = value; AdditionalData?.Remove("feature_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_type"); else _explicitNullProperties?.Remove("feature_type"); } }
         private string _explicitNullValueFeatureType = default!;
 #endif
         /// <summary>The imdb_id property</summary>
-        public int? ImdbId { get => _explicitNullValueImdbId; set { _explicitNullValueImdbId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imdb_id"); else _explicitNullProperties?.Remove("imdb_id"); } }
+        public int? ImdbId { get => _explicitNullValueImdbId; set { _explicitNullValueImdbId = value; AdditionalData?.Remove("imdb_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imdb_id"); else _explicitNullProperties?.Remove("imdb_id"); } }
         private int? _explicitNullValueImdbId = default!;
         /// <summary>The movie_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MovieName { get => _explicitNullValueMovieName; set { _explicitNullValueMovieName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("movie_name"); else _explicitNullProperties?.Remove("movie_name"); } }
+        public string? MovieName { get => _explicitNullValueMovieName; set { _explicitNullValueMovieName = value; AdditionalData?.Remove("movie_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("movie_name"); else _explicitNullProperties?.Remove("movie_name"); } }
         private string? _explicitNullValueMovieName = default!;
 #nullable restore
 #else
-        public string MovieName { get => _explicitNullValueMovieName; set { _explicitNullValueMovieName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("movie_name"); else _explicitNullProperties?.Remove("movie_name"); } }
+        public string MovieName { get => _explicitNullValueMovieName; set { _explicitNullValueMovieName = value; AdditionalData?.Remove("movie_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("movie_name"); else _explicitNullProperties?.Remove("movie_name"); } }
         private string _explicitNullValueMovieName = default!;
 #endif
         /// <summary>The parent_feature_id property</summary>
-        public int? ParentFeatureId { get => _explicitNullValueParentFeatureId; set { _explicitNullValueParentFeatureId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_feature_id"); else _explicitNullProperties?.Remove("parent_feature_id"); } }
+        public int? ParentFeatureId { get => _explicitNullValueParentFeatureId; set { _explicitNullValueParentFeatureId = value; AdditionalData?.Remove("parent_feature_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_feature_id"); else _explicitNullProperties?.Remove("parent_feature_id"); } }
         private int? _explicitNullValueParentFeatureId = default!;
         /// <summary>The parent_imdb_id property</summary>
-        public int? ParentImdbId { get => _explicitNullValueParentImdbId; set { _explicitNullValueParentImdbId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_imdb_id"); else _explicitNullProperties?.Remove("parent_imdb_id"); } }
+        public int? ParentImdbId { get => _explicitNullValueParentImdbId; set { _explicitNullValueParentImdbId = value; AdditionalData?.Remove("parent_imdb_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_imdb_id"); else _explicitNullProperties?.Remove("parent_imdb_id"); } }
         private int? _explicitNullValueParentImdbId = default!;
         /// <summary>The parent_title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentTitle { get => _explicitNullValueParentTitle; set { _explicitNullValueParentTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_title"); else _explicitNullProperties?.Remove("parent_title"); } }
+        public string? ParentTitle { get => _explicitNullValueParentTitle; set { _explicitNullValueParentTitle = value; AdditionalData?.Remove("parent_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_title"); else _explicitNullProperties?.Remove("parent_title"); } }
         private string? _explicitNullValueParentTitle = default!;
 #nullable restore
 #else
-        public string ParentTitle { get => _explicitNullValueParentTitle; set { _explicitNullValueParentTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_title"); else _explicitNullProperties?.Remove("parent_title"); } }
+        public string ParentTitle { get => _explicitNullValueParentTitle; set { _explicitNullValueParentTitle = value; AdditionalData?.Remove("parent_title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_title"); else _explicitNullProperties?.Remove("parent_title"); } }
         private string _explicitNullValueParentTitle = default!;
 #endif
         /// <summary>The parent_tmdb_id property</summary>
-        public int? ParentTmdbId { get => _explicitNullValueParentTmdbId; set { _explicitNullValueParentTmdbId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_tmdb_id"); else _explicitNullProperties?.Remove("parent_tmdb_id"); } }
+        public int? ParentTmdbId { get => _explicitNullValueParentTmdbId; set { _explicitNullValueParentTmdbId = value; AdditionalData?.Remove("parent_tmdb_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_tmdb_id"); else _explicitNullProperties?.Remove("parent_tmdb_id"); } }
         private int? _explicitNullValueParentTmdbId = default!;
         /// <summary>The season_number property</summary>
-        public int? SeasonNumber { get => _explicitNullValueSeasonNumber; set { _explicitNullValueSeasonNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("season_number"); else _explicitNullProperties?.Remove("season_number"); } }
+        public int? SeasonNumber { get => _explicitNullValueSeasonNumber; set { _explicitNullValueSeasonNumber = value; AdditionalData?.Remove("season_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("season_number"); else _explicitNullProperties?.Remove("season_number"); } }
         private int? _explicitNullValueSeasonNumber = default!;
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>The tmdb_id property</summary>
-        public int? TmdbId { get => _explicitNullValueTmdbId; set { _explicitNullValueTmdbId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tmdb_id"); else _explicitNullProperties?.Remove("tmdb_id"); } }
+        public int? TmdbId { get => _explicitNullValueTmdbId; set { _explicitNullValueTmdbId = value; AdditionalData?.Remove("tmdb_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tmdb_id"); else _explicitNullProperties?.Remove("tmdb_id"); } }
         private int? _explicitNullValueTmdbId = default!;
         /// <summary>The year property</summary>
-        public int? Year { get => _explicitNullValueYear; set { _explicitNullValueYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("year"); else _explicitNullProperties?.Remove("year"); } }
+        public int? Year { get => _explicitNullValueYear; set { _explicitNullValueYear = value; AdditionalData?.Remove("year"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("year"); else _explicitNullProperties?.Remove("year"); } }
         private int? _explicitNullValueYear = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.Subtitles200ResponseDataItemAttributesFeatureDetails"/> and sets the default values.

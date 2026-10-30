@@ -17,8 +17,10 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("episodes") is { } nullNodeEpisodes && nullNodeEpisodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Episodes = null;
-            if (parseNode.GetChildNode("season_number") is { } nullNodeSeasonNumber && nullNodeSeasonNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeasonNumber = null;
+            if (parseNode.GetChildNode("episodes") is null) { _explicitNullValueEpisodes = default!; _explicitNullProperties?.Remove("episodes"); }
+            else if (parseNode.GetChildNode("episodes") is { } nullNodeEpisodes && nullNodeEpisodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Episodes = null;
+            if (parseNode.GetChildNode("season_number") is null) { _explicitNullValueSeasonNumber = default!; _explicitNullProperties?.Remove("season_number"); }
+            else if (parseNode.GetChildNode("season_number") is { } nullNodeSeasonNumber && nullNodeSeasonNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeasonNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <summary>The episodes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItemEpisodesItem>? Episodes { get => _explicitNullValueEpisodes; set { _explicitNullValueEpisodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episodes"); else _explicitNullProperties?.Remove("episodes"); } }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItemEpisodesItem>? Episodes { get => _explicitNullValueEpisodes; set { _explicitNullValueEpisodes = value; AdditionalData?.Remove("episodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episodes"); else _explicitNullProperties?.Remove("episodes"); } }
         private List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItemEpisodesItem>? _explicitNullValueEpisodes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItemEpisodesItem> Episodes { get => _explicitNullValueEpisodes; set { _explicitNullValueEpisodes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episodes"); else _explicitNullProperties?.Remove("episodes"); } }
+        public List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItemEpisodesItem> Episodes { get => _explicitNullValueEpisodes; set { _explicitNullValueEpisodes = value; AdditionalData?.Remove("episodes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episodes"); else _explicitNullProperties?.Remove("episodes"); } }
         private List<global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItemEpisodesItem> _explicitNullValueEpisodes = default!;
 #endif
         /// <summary>The season_number property</summary>
-        public double? SeasonNumber { get => _explicitNullValueSeasonNumber; set { _explicitNullValueSeasonNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("season_number"); else _explicitNullProperties?.Remove("season_number"); } }
+        public double? SeasonNumber { get => _explicitNullValueSeasonNumber; set { _explicitNullValueSeasonNumber = value; AdditionalData?.Remove("season_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("season_number"); else _explicitNullProperties?.Remove("season_number"); } }
         private double? _explicitNullValueSeasonNumber = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenSubtitles.OpenApiClient.Models.FeatureTvshowAttributesSeasonsItem"/> and sets the default values.

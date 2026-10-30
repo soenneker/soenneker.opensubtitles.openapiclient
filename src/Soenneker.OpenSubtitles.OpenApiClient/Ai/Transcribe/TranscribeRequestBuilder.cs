@@ -78,7 +78,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Ai.Transcribe
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.OpenSubtitles.OpenApiClient.Ai.Transcribe.TranscribeRequestBuilder.TranscribeRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.opensubtitles.com/api/v1", "/ai/transcribe", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "multipart/form-data;q=0.1");
             return requestInfo;
