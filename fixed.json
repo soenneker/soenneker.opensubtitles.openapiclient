@@ -19,10 +19,6 @@
     {
       "url": "https://api.opensubtitles.com/api/v1",
       "description": "Default server"
-    },
-    {
-      "url": "https://vip-api.opensubtitles.com/api/v1",
-      "description": "VIP server"
     }
   ],
   "paths": {
@@ -4945,9 +4941,6 @@
           }
         }
       },
-      "SubtitleAttributesRelatedLinksItem": {
-        "type": "object"
-      },
       "SubtitleAttributesFilesItem": {
         "required": [
           "file_id",
@@ -4966,9 +4959,6 @@
             "type": "string"
           }
         }
-      },
-      "FeatureTvshowAttributesTitleAkaItem": {
-        "type": "object"
       },
       "FeatureTvshowAttributesSubtitlesCounts": {
         "required": [
@@ -5147,15 +5137,6 @@
             }
           }
         }
-      },
-      "FeatureEpisodeAttributesOriginalTitle": {
-        "type": "object"
-      },
-      "FeatureEpisodeAttributesParentImdbId": {
-        "type": "object"
-      },
-      "FeatureEpisodeAttributesTitleAkaItem": {
-        "type": "object"
       },
       "FeatureEpisodeAttributesSubtitlesCounts": {
         "required": [
@@ -5459,15 +5440,6 @@
           }
         }
       },
-      "FeatureMovieAttributesEpisodeNumber": {
-        "type": "object"
-      },
-      "FeatureMovieAttributesParentImdbId": {
-        "type": "object"
-      },
-      "FeatureMovieAttributesTitleAkaItem": {
-        "type": "object"
-      },
       "FeatureTvshowAttributesSeasonsItemEpisodesItem": {
         "required": [
           "episode_number",
@@ -5536,9 +5508,6 @@
             "type": "number"
           }
         }
-      },
-      "Logout200Response": {
-        "type": "object"
       },
       "Formats200Response": {
         "required": [
@@ -7901,9 +7870,6 @@
           }
         }
       },
-      "Translate200FormDataResponse": {
-        "type": "object"
-      },
       "Transcription200Response": {
         "type": "object",
         "properties": {
@@ -9223,9 +9189,6 @@
           }
         }
       },
-      "Transcribe200FormDataResponse": {
-        "type": "object"
-      },
       "DetectLanguageText200FormDataResponse": {
         "type": "object",
         "properties": {
@@ -9248,13 +9211,6 @@
             }
           }
         }
-      },
-      "DetectLanguageAudio200FormDataResponse": {
-        "type": "object"
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       },
       "Logout200ResponseSchema": {
         "type": "object"
@@ -9986,8 +9942,8 @@
           "vip-api.opensubtitles.com"
         ],
         "type": "string",
-        "format": "hostname",
         "example": "api.opensubtitles.com",
+        "x-client-original-format": "hostname",
         "x-ms-enum": {
           "name": "Login200ResponseBaseUrl",
           "modelAsString": false,
@@ -10076,5 +10032,57 @@
       "name": "Utilities",
       "description": "Various utilities"
     }
-  ]
+  ],
+  "x-client-original-servers": [
+    {
+      "url": "https://api.opensubtitles.com/api/v1",
+      "description": "Default server"
+    },
+    {
+      "url": "https://vip-api.opensubtitles.com/api/v1",
+      "description": "VIP server"
+    }
+  ],
+  "x-client-unused-schemas": {
+    "SubtitleAttributesRelatedLinksItem": {
+      "type": "object"
+    },
+    "FeatureTvshowAttributesTitleAkaItem": {
+      "type": "object"
+    },
+    "FeatureEpisodeAttributesOriginalTitle": {
+      "type": "object"
+    },
+    "FeatureEpisodeAttributesParentImdbId": {
+      "type": "object"
+    },
+    "FeatureEpisodeAttributesTitleAkaItem": {
+      "type": "object"
+    },
+    "FeatureMovieAttributesEpisodeNumber": {
+      "type": "object"
+    },
+    "FeatureMovieAttributesParentImdbId": {
+      "type": "object"
+    },
+    "FeatureMovieAttributesTitleAkaItem": {
+      "type": "object"
+    },
+    "Logout200Response": {
+      "type": "object"
+    },
+    "Translate200FormDataResponse": {
+      "type": "object"
+    },
+    "Transcribe200FormDataResponse": {
+      "type": "object"
+    },
+    "DetectLanguageAudio200FormDataResponse": {
+      "type": "object"
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
+    }
+  }
 }
