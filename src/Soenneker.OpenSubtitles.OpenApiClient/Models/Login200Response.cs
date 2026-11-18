@@ -78,7 +78,7 @@ namespace Soenneker.OpenSubtitles.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "base_url", n => { var parsed = n.GetEnumValue<global::Soenneker.OpenSubtitles.OpenApiClient.Models.Login200ResponseBaseUrl>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBaseUrl = default; _explicitNullProperties?.Remove("base_url"); AdditionalData["base_url"] = unknown; } else { BaseUrl = parsed; AdditionalData.Remove("base_url"); } } },
                 { "status", n => { Status = n.GetDoubleValue(); } },
