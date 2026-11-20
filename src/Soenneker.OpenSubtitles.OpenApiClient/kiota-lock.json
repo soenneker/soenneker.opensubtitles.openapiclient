@@ -2,7 +2,7 @@
   "descriptionHash": "CA29CBD669E56E5EC2B0601D6D09448712ACC5D818853272365F31A3DF9D0750550397F13C402E3C9345EB319A1164ECA067056601AC9BF1C0D532911E36B450",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.38.0",
+  "kiotaVersion": "1.39.0",
   "clientClassName": "OpenSubtitlesOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.OpenSubtitles.OpenApiClient",
